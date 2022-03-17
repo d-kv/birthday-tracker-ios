@@ -11,6 +11,12 @@
 		57E10B5327CCED96002B9749 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E10B5227CCED96002B9749 /* ContentView.swift */; };
 		57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5427CCED98002B9749 /* Assets.xcassets */; };
 		57E10B5827CCED98002B9749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5727CCED98002B9749 /* Preview Assets.xcassets */; };
+		A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */; };
+		A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF327E33CA8005A4B8F /* NetworkService.swift */; };
+		A836EAF627E33D86005A4B8F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF527E33D86005A4B8F /* Employee.swift */; };
+		A836EAF827E35158005A4B8F /* Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF727E35158005A4B8F /* Present.swift */; };
+		A836EAFA27E35507005A4B8F /* UpcomingBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF927E35507005A4B8F /* UpcomingBirthday.swift */; };
+		A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAFB27E35695005A4B8F /* Wishlist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		57E10B5227CCED96002B9749 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		57E10B5427CCED98002B9749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57E10B5727CCED98002B9749 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeServiceImpl.swift; sourceTree = "<group>"; };
+		A836EAF327E33CA8005A4B8F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A836EAF527E33D86005A4B8F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		A836EAF727E35158005A4B8F /* Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Present.swift; sourceTree = "<group>"; };
+		A836EAF927E35507005A4B8F /* UpcomingBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingBirthday.swift; sourceTree = "<group>"; };
+		A836EAFB27E35695005A4B8F /* Wishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,12 @@
 			children = (
 				57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */,
 				57E10B5227CCED96002B9749 /* ContentView.swift */,
+				A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */,
+				A836EAF327E33CA8005A4B8F /* NetworkService.swift */,
+				A836EAF527E33D86005A4B8F /* Employee.swift */,
+				A836EAF927E35507005A4B8F /* UpcomingBirthday.swift */,
+				A836EAFB27E35695005A4B8F /* Wishlist.swift */,
+				A836EAF727E35158005A4B8F /* Present.swift */,
 				57E10B5427CCED98002B9749 /* Assets.xcassets */,
 				57E10B5627CCED98002B9749 /* Preview Content */,
 			);
@@ -137,7 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */,
 				57E10B5327CCED96002B9749 /* ContentView.swift in Sources */,
+				A836EAF827E35158005A4B8F /* Present.swift in Sources */,
+				A836EAFA27E35507005A4B8F /* UpcomingBirthday.swift in Sources */,
+				A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */,
+				A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */,
+				A836EAF627E33D86005A4B8F /* Employee.swift in Sources */,
 				57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
