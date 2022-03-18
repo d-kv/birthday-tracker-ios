@@ -1,6 +1,6 @@
 import Foundation
 
-class UpcomingBirthdays {
+struct UpcomingBirthdays {
     let projectId: Int
     let employees: Array<Employee>
     
@@ -9,7 +9,7 @@ class UpcomingBirthdays {
         self.employees = employees
     }
     
-    func getMyNotifications(userId: Int) -> Array<Employee> {
+    func getMyNotifications(userId: Int){
         
     }
 }

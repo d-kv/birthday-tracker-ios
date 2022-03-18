@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CD27E4A49500D7B5AD /* EmployeeService.swift */; };
+		574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CF27E4A51200D7B5AD /* WishlistService.swift */; };
+		574665D227E4A55100D7B5AD /* PresentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D127E4A55100D7B5AD /* PresentService.swift */; };
+		574665D427E4A59B00D7B5AD /* UpcomingBirthdayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D327E4A59B00D7B5AD /* UpcomingBirthdayService.swift */; };
+		574665D627E4A5CC00D7B5AD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D527E4A5CC00D7B5AD /* AuthService.swift */; };
+		574665D827E4A6EE00D7B5AD /* WishlistServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */; };
+		574665DA27E4A73500D7B5AD /* PresentServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */; };
+		574665DC27E4A75700D7B5AD /* UpcomingBirthdayServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DB27E4A75700D7B5AD /* UpcomingBirthdayServiceImpl.swift */; };
+		574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */; };
+		574665E027E4A7DA00D7B5AD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DF27E4A7DA00D7B5AD /* AuthService.swift */; };
+		574665E227E4A82E00D7B5AD /* EmployeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */; };
+		574665E427E4A84300D7B5AD /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E327E4A84300D7B5AD /* WishlistPresenter.swift */; };
+		574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E527E4A86A00D7B5AD /* PresentPresenter.swift */; };
+		574665E827E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E727E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift */; };
+		574665EA27E4A8F700D7B5AD /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E927E4A8F700D7B5AD /* AuthPresenter.swift */; };
+		574665EC27E4A91900D7B5AD /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665EB27E4A91900D7B5AD /* EmployeeView.swift */; };
+		574665EE27E4A92F00D7B5AD /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665ED27E4A92F00D7B5AD /* WishlistView.swift */; };
+		574665F027E4A94800D7B5AD /* PresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665EF27E4A94800D7B5AD /* PresentView.swift */; };
+		574665F227E4A96A00D7B5AD /* UpcomingBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F127E4A96A00D7B5AD /* UpcomingBirthdayView.swift */; };
+		574665F627E4A99900D7B5AD /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F527E4A99900D7B5AD /* AuthView.swift */; };
 		57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */; };
 		57E10B5327CCED96002B9749 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E10B5227CCED96002B9749 /* ContentView.swift */; };
 		57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5427CCED98002B9749 /* Assets.xcassets */; };
@@ -20,6 +40,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		574665CD27E4A49500D7B5AD /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
+		574665CF27E4A51200D7B5AD /* WishlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistService.swift; sourceTree = "<group>"; };
+		574665D127E4A55100D7B5AD /* PresentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentService.swift; sourceTree = "<group>"; };
+		574665D327E4A59B00D7B5AD /* UpcomingBirthdayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingBirthdayService.swift; sourceTree = "<group>"; };
+		574665D527E4A5CC00D7B5AD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistServiceImpl.swift; sourceTree = "<group>"; };
+		574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentServiceImpl.swift; sourceTree = "<group>"; };
+		574665DB27E4A75700D7B5AD /* UpcomingBirthdayServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingBirthdayServiceImpl.swift; sourceTree = "<group>"; };
+		574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceImpl.swift; sourceTree = "<group>"; };
+		574665DF27E4A7DA00D7B5AD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeePresenter.swift; sourceTree = "<group>"; };
+		574665E327E4A84300D7B5AD /* WishlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
+		574665E527E4A86A00D7B5AD /* PresentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentPresenter.swift; sourceTree = "<group>"; };
+		574665E727E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingBirthdayPresenter.swift; sourceTree = "<group>"; };
+		574665E927E4A8F700D7B5AD /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		574665EB27E4A91900D7B5AD /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
+		574665ED27E4A92F00D7B5AD /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		574665EF27E4A94800D7B5AD /* PresentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentView.swift; sourceTree = "<group>"; };
+		574665F127E4A96A00D7B5AD /* UpcomingBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingBirthdayView.swift; sourceTree = "<group>"; };
+		574665F527E4A99900D7B5AD /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "birthday-tracker-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birthday_tracker_iosApp.swift; sourceTree = "<group>"; };
 		57E10B5227CCED96002B9749 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,8 +87,64 @@
 		574665C627E4A2C200D7B5AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57E10B5227CCED96002B9749 /* ContentView.swift */,
+				574665EB27E4A91900D7B5AD /* EmployeeView.swift */,
+				574665ED27E4A92F00D7B5AD /* WishlistView.swift */,
+				574665EF27E4A94800D7B5AD /* PresentView.swift */,
+				574665F127E4A96A00D7B5AD /* UpcomingBirthdayView.swift */,
+				574665F527E4A99900D7B5AD /* AuthView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		574665C927E4A3C600D7B5AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A836EAF927E35507005A4B8F /* UpcomingBirthday.swift */,
+				A836EAF727E35158005A4B8F /* Present.swift */,
+				A836EAFB27E35695005A4B8F /* Wishlist.swift */,
+				A836EAF527E33D86005A4B8F /* Employee.swift */,
+				574665DF27E4A7DA00D7B5AD /* AuthService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		574665CA27E4A3D600D7B5AD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				574665CC27E4A44200D7B5AD /* ServiceImpl */,
+				574665CB27E4A3FD00D7B5AD /* ServiceProtocols */,
+				574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */,
+				574665E327E4A84300D7B5AD /* WishlistPresenter.swift */,
+				574665E527E4A86A00D7B5AD /* PresentPresenter.swift */,
+				574665E727E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift */,
+				574665E927E4A8F700D7B5AD /* AuthPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		574665CB27E4A3FD00D7B5AD /* ServiceProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				574665CD27E4A49500D7B5AD /* EmployeeService.swift */,
+				574665CF27E4A51200D7B5AD /* WishlistService.swift */,
+				574665D127E4A55100D7B5AD /* PresentService.swift */,
+				574665D327E4A59B00D7B5AD /* UpcomingBirthdayService.swift */,
+				574665D527E4A5CC00D7B5AD /* AuthService.swift */,
+			);
+			path = ServiceProtocols;
+			sourceTree = "<group>";
+		};
+		574665CC27E4A44200D7B5AD /* ServiceImpl */ = {
+			isa = PBXGroup;
+			children = (
+				A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */,
+				574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */,
+				574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */,
+				574665DB27E4A75700D7B5AD /* UpcomingBirthdayServiceImpl.swift */,
+				574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */,
+			);
+			path = ServiceImpl;
 			sourceTree = "<group>";
 		};
 		57E10B4427CCED96002B9749 = {
@@ -70,15 +166,11 @@
 		57E10B4F27CCED96002B9749 /* birthday-tracker-ios */ = {
 			isa = PBXGroup;
 			children = (
+				574665CA27E4A3D600D7B5AD /* Presenter */,
+				574665C927E4A3C600D7B5AD /* Model */,
 				574665C627E4A2C200D7B5AD /* View */,
 				57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */,
-				57E10B5227CCED96002B9749 /* ContentView.swift */,
-				A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */,
 				A836EAF327E33CA8005A4B8F /* NetworkService.swift */,
-				A836EAF527E33D86005A4B8F /* Employee.swift */,
-				A836EAF927E35507005A4B8F /* UpcomingBirthday.swift */,
-				A836EAFB27E35695005A4B8F /* Wishlist.swift */,
-				A836EAF727E35158005A4B8F /* Present.swift */,
 				57E10B5427CCED98002B9749 /* Assets.xcassets */,
 				57E10B5627CCED98002B9749 /* Preview Content */,
 			);
@@ -163,13 +255,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574665F227E4A96A00D7B5AD /* UpcomingBirthdayView.swift in Sources */,
+				574665F027E4A94800D7B5AD /* PresentView.swift in Sources */,
+				574665E427E4A84300D7B5AD /* WishlistPresenter.swift in Sources */,
+				574665E227E4A82E00D7B5AD /* EmployeePresenter.swift in Sources */,
+				574665DC27E4A75700D7B5AD /* UpcomingBirthdayServiceImpl.swift in Sources */,
+				574665E827E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift in Sources */,
+				574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */,
 				A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */,
+				574665E027E4A7DA00D7B5AD /* AuthService.swift in Sources */,
+				574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */,
+				574665D427E4A59B00D7B5AD /* UpcomingBirthdayService.swift in Sources */,
+				574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */,
 				57E10B5327CCED96002B9749 /* ContentView.swift in Sources */,
 				A836EAF827E35158005A4B8F /* Present.swift in Sources */,
+				574665F627E4A99900D7B5AD /* AuthView.swift in Sources */,
+				574665D627E4A5CC00D7B5AD /* AuthService.swift in Sources */,
+				574665EE27E4A92F00D7B5AD /* WishlistView.swift in Sources */,
 				A836EAFA27E35507005A4B8F /* UpcomingBirthday.swift in Sources */,
+				574665EA27E4A8F700D7B5AD /* AuthPresenter.swift in Sources */,
 				A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */,
+				574665EC27E4A91900D7B5AD /* EmployeeView.swift in Sources */,
+				574665DA27E4A73500D7B5AD /* PresentServiceImpl.swift in Sources */,
+				574665D227E4A55100D7B5AD /* PresentService.swift in Sources */,
+				574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */,
 				A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */,
 				A836EAF627E33D86005A4B8F /* Employee.swift in Sources */,
+				574665D827E4A6EE00D7B5AD /* WishlistServiceImpl.swift in Sources */,
 				57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

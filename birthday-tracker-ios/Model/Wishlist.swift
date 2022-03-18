@@ -1,6 +1,6 @@
 import Foundation
 
-class Wishlist {
+struct Wishlist {
     let employeeId: Int
     var presents: Array<Present>
 

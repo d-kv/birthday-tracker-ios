@@ -1,6 +1,6 @@
 import Foundation
 
-class Present {
+struct Present {
     let id: Int
     let name: String
     let link: String

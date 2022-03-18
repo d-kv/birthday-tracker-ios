@@ -1,6 +1,6 @@
 import Foundation
 
-class Employee {
+struct Employee {
     let id, project: Int
     let phone, name, city: String
     let birthday, startwork: Date
