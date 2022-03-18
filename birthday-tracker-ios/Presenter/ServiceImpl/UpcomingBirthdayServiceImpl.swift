@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class UpcomingBirthdayImpl: UpcomingBirthdayService {
+    func edit(employee _: Employee, completion _: () -> Void) {
+        <#code#>
+    }
+
+    func load(id _: Int, completion _: () -> Void) {
+        <#code#>
+    }
+}

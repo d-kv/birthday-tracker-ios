@@ -8,6 +8,4 @@
 import Foundation
 import SwiftUI
 
-class WishlistView: UIViewController{
-    
-}
+class WishlistView: UIViewController {}

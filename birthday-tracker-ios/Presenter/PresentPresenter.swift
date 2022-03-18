@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class PresentPresenter {
+    func viewWillAppear() {}
+}

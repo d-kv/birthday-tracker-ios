@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				574665CC27E4A44200D7B5AD /* ServiceImpl */,
-				574665CB27E4A3FD00D7B5AD /* ServiceProtocols */,
+				574665CB27E4A3FD00D7B5AD /* ServicesProtocols */,
 				574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */,
 				574665E327E4A84300D7B5AD /* WishlistPresenter.swift */,
 				574665E527E4A86A00D7B5AD /* PresentPresenter.swift */,
@@ -120,7 +120,7 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		574665CB27E4A3FD00D7B5AD /* ServiceProtocols */ = {
+		574665CB27E4A3FD00D7B5AD /* ServicesProtocols */ = {
 			isa = PBXGroup;
 			children = (
 				574665CD27E4A49500D7B5AD /* EmployeeService.swift */,
@@ -129,7 +129,7 @@
 				574665D327E4A59B00D7B5AD /* UpcomingBirthdayService.swift */,
 				574665D527E4A5CC00D7B5AD /* AuthService.swift */,
 			);
-			path = ServiceProtocols;
+			path = ServicesProtocols;
 			sourceTree = "<group>";
 		};
 		574665CC27E4A44200D7B5AD /* ServiceImpl */ = {

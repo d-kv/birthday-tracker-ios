@@ -2,14 +2,14 @@ import Foundation
 
 struct Wishlist {
     let employeeId: Int
-    var presents: Array<Present>
+    var presents: [Present]
 
-    init(employeeId: Int, presents: Array<Present>){
+    init(employeeId: Int, presents: [Present]) {
         self.employeeId = employeeId
         self.presents = presents
     }
 
     mutating func addPresent(present: Present) {
-        self.presents.append(present)
+        presents.append(present)
     }
 }

@@ -5,8 +5,8 @@ struct Employee {
     let phone, name, city: String
     let birthday, startwork: Date
     let wishlist: Wishlist
-    
-    init(id: Int, project: Int, phone: String, name: String, city: String, birthday: Date, startwork: Date, wishlist: Wishlist){
+
+    init(id: Int, project: Int, phone: String, name: String, city: String, birthday: Date, startwork: Date, wishlist: Wishlist) {
         self.id = id
         self.project = project
         self.phone = phone
@@ -16,11 +16,6 @@ struct Employee {
         self.startwork = startwork
         self.wishlist = wishlist
     }
-    
-    func getWishlist(id: Int){
-        
-        
-    }
-    
-}
 
+    func getWishlist(id _: Int) {}
+}

@@ -8,6 +8,4 @@
 import Foundation
 import SwiftUI
 
-class UpcomingBirthdayView: UIViewController{
-    
-}
+class UpcomingBirthdayView: UIViewController {}

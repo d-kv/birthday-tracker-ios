@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class AuthServiceImpl: AuthService {
+    func load(id _: Int, completion _: () -> Void) {
+        <#code#>
+    }
+}

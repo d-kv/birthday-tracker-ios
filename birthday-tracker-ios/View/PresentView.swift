@@ -8,6 +8,4 @@
 import Foundation
 import SwiftUI
 
-class PresentView: UIViewController{
-    
-}
+class PresentView: UIViewController {}

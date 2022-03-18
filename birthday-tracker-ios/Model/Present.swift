@@ -7,7 +7,6 @@ struct Present {
     let description: String
     let employeeId: Int
 
-
     init(id: Int, name: String, link: String, description: String, employeeId: Int) {
         self.id = id
         self.name = name

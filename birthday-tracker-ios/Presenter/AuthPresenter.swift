@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class AuthPresenter {
+    func viewWillAppear() {}
+}
