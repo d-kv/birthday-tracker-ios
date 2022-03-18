@@ -9,7 +9,7 @@ struct Wishlist {
         self.presents = presents
     }
 
-    func addPresent(present: Present) {
+    mutating func addPresent(present: Present) {
         self.presents.append(present)
     }
 }

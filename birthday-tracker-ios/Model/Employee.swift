@@ -17,7 +17,7 @@ struct Employee {
         self.wishlist = wishlist
     }
     
-    func getWishlist(id: Int) -> Array<Present> {
+    func getWishlist(id: Int){
         
         
     }
