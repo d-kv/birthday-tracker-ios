@@ -44,6 +44,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		574665C627E4A2C200D7B5AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		57E10B4427CCED96002B9749 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +70,7 @@
 		57E10B4F27CCED96002B9749 /* birthday-tracker-ios */ = {
 			isa = PBXGroup;
 			children = (
+				574665C627E4A2C200D7B5AD /* View */,
 				57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */,
 				57E10B5227CCED96002B9749 /* ContentView.swift */,
 				A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */,
