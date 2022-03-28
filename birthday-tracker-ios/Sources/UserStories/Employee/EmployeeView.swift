@@ -8,4 +8,15 @@
 import Foundation
 import SwiftUI
 
-class EmployeeView: UIViewController {}
+struct EmployeeUIView: View {
+    var body: some View {
+        Text("Hello, Employee!")
+    }
+}
+
+struct EmployeeUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        EmployeeUIView()
+    }
+}
+
