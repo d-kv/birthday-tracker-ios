@@ -16,19 +16,22 @@
 		574665DA27E4A73500D7B5AD /* PresentServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */; };
 		574665DC27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DB27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift */; };
 		574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */; };
-		574665E027E4A7DA00D7B5AD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DF27E4A7DA00D7B5AD /* AuthService.swift */; };
+		574665E027E4A7DA00D7B5AD /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DF27E4A7DA00D7B5AD /* Auth.swift */; };
 		574665E227E4A82E00D7B5AD /* EmployeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */; };
 		574665E427E4A84300D7B5AD /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E327E4A84300D7B5AD /* WishlistPresenter.swift */; };
 		574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E527E4A86A00D7B5AD /* PresentPresenter.swift */; };
-		574665E827E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E727E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift */; };
+		574665E827E4A8DC00D7B5AD /* MyNotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E727E4A8DC00D7B5AD /* MyNotificationsPresenter.swift */; };
 		574665EA27E4A8F700D7B5AD /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E927E4A8F700D7B5AD /* AuthPresenter.swift */; };
 		574665EC27E4A91900D7B5AD /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665EB27E4A91900D7B5AD /* EmployeeView.swift */; };
 		574665EE27E4A92F00D7B5AD /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665ED27E4A92F00D7B5AD /* WishlistView.swift */; };
 		574665F027E4A94800D7B5AD /* PresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665EF27E4A94800D7B5AD /* PresentView.swift */; };
-		574665F227E4A96A00D7B5AD /* UpcomingBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F127E4A96A00D7B5AD /* UpcomingBirthdayView.swift */; };
+		574665F227E4A96A00D7B5AD /* MyNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F127E4A96A00D7B5AD /* MyNotificationsView.swift */; };
 		574665F627E4A99900D7B5AD /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F527E4A99900D7B5AD /* AuthView.swift */; };
 		5746660F27F1B57E00D7B5AD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746660E27F1B57E00D7B5AD /* ProfileView.swift */; };
 		5746661327F1B5C700D7B5AD /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */; };
+		5746661927F1C16600D7B5AD /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661827F1C16600D7B5AD /* ProfileService.swift */; };
+		5746661B27F1C18100D7B5AD /* ProfileServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */; };
+		5746661D27F1C19600D7B5AD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661C27F1C19600D7B5AD /* Profile.swift */; };
 		57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */; };
 		57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5427CCED98002B9749 /* Assets.xcassets */; };
 		57E10B5827CCED98002B9749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5727CCED98002B9749 /* Preview Assets.xcassets */; };
@@ -50,19 +53,22 @@
 		574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentServiceImpl.swift; sourceTree = "<group>"; };
 		574665DB27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsServiceImpl.swift; sourceTree = "<group>"; };
 		574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceImpl.swift; sourceTree = "<group>"; };
-		574665DF27E4A7DA00D7B5AD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		574665DF27E4A7DA00D7B5AD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeePresenter.swift; sourceTree = "<group>"; };
 		574665E327E4A84300D7B5AD /* WishlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
 		574665E527E4A86A00D7B5AD /* PresentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentPresenter.swift; sourceTree = "<group>"; };
-		574665E727E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingBirthdayPresenter.swift; sourceTree = "<group>"; };
+		574665E727E4A8DC00D7B5AD /* MyNotificationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsPresenter.swift; sourceTree = "<group>"; };
 		574665E927E4A8F700D7B5AD /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		574665EB27E4A91900D7B5AD /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
 		574665ED27E4A92F00D7B5AD /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 		574665EF27E4A94800D7B5AD /* PresentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentView.swift; sourceTree = "<group>"; };
-		574665F127E4A96A00D7B5AD /* UpcomingBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingBirthdayView.swift; sourceTree = "<group>"; };
+		574665F127E4A96A00D7B5AD /* MyNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsView.swift; sourceTree = "<group>"; };
 		574665F527E4A99900D7B5AD /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		5746660E27F1B57E00D7B5AD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		5746661827F1C16600D7B5AD /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceImpl.swift; sourceTree = "<group>"; };
+		5746661C27F1C19600D7B5AD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "birthday-tracker-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birthday_tracker_iosApp.swift; sourceTree = "<group>"; };
 		57E10B5427CCED98002B9749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 		574665FC27F1B0F500D7B5AD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5746661627F1C13400D7B5AD /* ProfileService */,
 				5746660827F1B3D900D7B5AD /* AuthService */,
 				5746660727F1B35800D7B5AD /* MyNotificationsService */,
 				5746660327F1B2B100D7B5AD /* PresentService */,
@@ -214,8 +221,8 @@
 		5746660627F1B32500D7B5AD /* MyNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				574665E727E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift */,
-				574665F127E4A96A00D7B5AD /* UpcomingBirthdayView.swift */,
+				574665E727E4A8DC00D7B5AD /* MyNotificationsPresenter.swift */,
+				574665F127E4A96A00D7B5AD /* MyNotificationsView.swift */,
 			);
 			path = MyNotifications;
 			sourceTree = "<group>";
@@ -243,7 +250,7 @@
 		5746660927F1B3F100D7B5AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				574665DF27E4A7DA00D7B5AD /* AuthService.swift */,
+				574665DF27E4A7DA00D7B5AD /* Auth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +288,24 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		5746661627F1C13400D7B5AD /* ProfileService */ = {
+			isa = PBXGroup;
+			children = (
+				5746661827F1C16600D7B5AD /* ProfileService.swift */,
+				5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */,
+				5746661727F1C14400D7B5AD /* Model */,
+			);
+			path = ProfileService;
+			sourceTree = "<group>";
+		};
+		5746661727F1C14400D7B5AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5746661C27F1C19600D7B5AD /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		57E10B4427CCED96002B9749 = {
 			isa = PBXGroup;
 			children = (
@@ -300,8 +325,8 @@
 		57E10B4F27CCED96002B9749 /* birthday-tracker-ios */ = {
 			isa = PBXGroup;
 			children = (
-				574665FA27F1B0D600D7B5AD /* Sources */,
 				574665F927F1B0CB00D7B5AD /* Resources */,
+				574665FA27F1B0D600D7B5AD /* Sources */,
 				57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */,
 				57E10B5627CCED98002B9749 /* Preview Content */,
 			);
@@ -386,15 +411,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				574665F227E4A96A00D7B5AD /* UpcomingBirthdayView.swift in Sources */,
+				574665F227E4A96A00D7B5AD /* MyNotificationsView.swift in Sources */,
 				574665F027E4A94800D7B5AD /* PresentView.swift in Sources */,
 				574665E427E4A84300D7B5AD /* WishlistPresenter.swift in Sources */,
 				574665E227E4A82E00D7B5AD /* EmployeePresenter.swift in Sources */,
 				574665DC27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift in Sources */,
-				574665E827E4A8DC00D7B5AD /* UpcomingBirthdayPresenter.swift in Sources */,
+				574665E827E4A8DC00D7B5AD /* MyNotificationsPresenter.swift in Sources */,
 				574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */,
 				A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */,
-				574665E027E4A7DA00D7B5AD /* AuthService.swift in Sources */,
+				574665E027E4A7DA00D7B5AD /* Auth.swift in Sources */,
+				5746661B27F1C18100D7B5AD /* ProfileServiceImpl.swift in Sources */,
 				574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */,
 				574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */,
 				574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */,
@@ -410,11 +436,13 @@
 				5746661327F1B5C700D7B5AD /* ProfilePresenter.swift in Sources */,
 				574665DA27E4A73500D7B5AD /* PresentServiceImpl.swift in Sources */,
 				574665D227E4A55100D7B5AD /* PresentService.swift in Sources */,
+				5746661D27F1C19600D7B5AD /* Profile.swift in Sources */,
 				574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */,
 				A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */,
 				A836EAF627E33D86005A4B8F /* Employee.swift in Sources */,
 				574665D827E4A6EE00D7B5AD /* WishlistServiceImpl.swift in Sources */,
 				57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */,
+				5746661927F1C16600D7B5AD /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

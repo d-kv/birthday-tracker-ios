@@ -5,7 +5,16 @@
 //  Created by Darvin on 18.03.2022.
 //
 
-import Foundation
 import SwiftUI
 
-class PresentView: UIViewController {}
+struct PresentUIView: View {
+    var body: some View {
+        Text("Hello, Present!")
+    }
+}
+
+struct PresentUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        PresentUIView()
+    }
+}
