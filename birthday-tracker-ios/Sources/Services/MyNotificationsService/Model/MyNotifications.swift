@@ -1,6 +1,6 @@
 import Foundation
 
-struct UpcomingBirthdays {
+struct MyNotifications {
     let projectId: Int
     let employees: [Employee]
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UpcomingBirthdayImpl: UpcomingBirthdayService {
+class MyNotificationServiceImpl: MyNotificationService {
     func edit(employee _: Employee, completion _: () -> Void) {
         <#code#>
     }

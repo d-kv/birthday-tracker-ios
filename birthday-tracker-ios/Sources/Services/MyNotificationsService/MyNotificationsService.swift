@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol UpcomingBirthdayService {
+protocol MyNotificationService {
     func edit(employee: Employee, completion: () -> Void)
     func load(id: Int, completion: () -> Void)
 }
