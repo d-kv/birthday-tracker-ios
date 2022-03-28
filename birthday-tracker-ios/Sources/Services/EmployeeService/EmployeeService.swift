@@ -9,6 +9,6 @@ import Foundation
 
 protocol EmployeeService {
     func edit(employee: Employee, completion: () -> Void)
-    func load(id: Int, completion: () -> Void)
+    func load(id: Int, completion: () -> Void) -> Employee
     func send(request: URLRequest, completion: () -> Void)
 }

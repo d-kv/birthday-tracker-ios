@@ -1,10 +1,10 @@
 import Foundation
 
-struct Employee {
-    let id, project: Int
-    let phone, name, city: String
-    let birthday, startwork: Date
-    let wishlist: Wishlist
+struct Employee: Codable{
+    let id, project: Int?
+    let phone, name, city: String?
+    let birthday, startwork: Date?
+    let wishlist: Wishlist?
 
     init(id: Int, project: Int, phone: String, name: String, city: String, birthday: Date, startwork: Date, wishlist: Wishlist) {
         self.id = id

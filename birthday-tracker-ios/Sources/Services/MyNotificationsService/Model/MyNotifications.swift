@@ -1,6 +1,6 @@
 import Foundation
 
-struct MyNotifications {
+struct MyNotifications: Codable {
     let projectId: Int
     let employees: [Employee]
 

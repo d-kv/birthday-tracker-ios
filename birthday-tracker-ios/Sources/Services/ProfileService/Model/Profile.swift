@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Profile {
+struct Profile: Codable{
     let id, project: Int
     let phone, name, city: String
     let birthday, startwork: Date

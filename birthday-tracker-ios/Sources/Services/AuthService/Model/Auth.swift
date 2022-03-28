@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Auth {
+struct Auth: Codable{
     let username: String
     let password: String
     let full_name: String

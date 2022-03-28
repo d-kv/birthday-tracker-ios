@@ -1,6 +1,6 @@
 import Foundation
 
-struct Wishlist {
+struct Wishlist: Codable{
     let employeeId: Int
     var presents: [Present]
 
