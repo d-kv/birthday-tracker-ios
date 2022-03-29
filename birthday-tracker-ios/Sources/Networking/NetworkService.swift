@@ -28,8 +28,8 @@ class NetworkService {
 
         task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
-                failure?(data, error as? NSError, 0)
-                return
+                failure?(data, error as NSError?, 0)
+                return;
             }
 
             if let error = error {

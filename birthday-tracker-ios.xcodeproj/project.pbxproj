@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5743639C27F3302700B0D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639B27F3302700B0D9C5 /* AppDelegate.swift */; };
 		574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CD27E4A49500D7B5AD /* EmployeeService.swift */; };
 		574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CF27E4A51200D7B5AD /* WishlistService.swift */; };
 		574665D227E4A55100D7B5AD /* PresentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D127E4A55100D7B5AD /* PresentService.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5743639B27F3302700B0D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		574665CD27E4A49500D7B5AD /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
 		574665CF27E4A51200D7B5AD /* WishlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistService.swift; sourceTree = "<group>"; };
 		574665D127E4A55100D7B5AD /* PresentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentService.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				574665FD27F1B11700D7B5AD /* UserStories */,
 				574665FC27F1B0F500D7B5AD /* Services */,
 				574665FB27F1B0EC00D7B5AD /* Networking */,
+				5743639B27F3302700B0D9C5 /* AppDelegate.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5743639C27F3302700B0D9C5 /* AppDelegate.swift in Sources */,
 				574665F227E4A96A00D7B5AD /* MyNotificationsView.swift in Sources */,
 				574665F027E4A94800D7B5AD /* PresentView.swift in Sources */,
 				574665E427E4A84300D7B5AD /* WishlistPresenter.swift in Sources */,
