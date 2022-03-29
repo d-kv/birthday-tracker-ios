@@ -11,7 +11,7 @@ import SwiftUI
 struct birthday_tracker_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            AuthUIView()
         }
     }
 }

@@ -9,5 +9,5 @@ import Foundation
 
 protocol PresentService {
     func edit(employee: Employee, completion: () -> Void)
-    func load(id: Int, completion: () -> Void)
+    func load(id: Int, completion: @escaping (Result<Present, Error>) -> Void)
 }

@@ -9,10 +9,19 @@ import Foundation
 
 class MyNotificationServiceImpl: MyNotificationService {
     func edit(employee _: Employee, completion _: () -> Void) {
-        <#code#>
     }
 
-    func load(id _: Int, completion _: () -> Void) {
-        <#code#>
+    func load(id: Int, completion: @escaping (Result<MyNotifications, Error>) -> Void){
+        let answer = NetworkService()
+        answer.makeRequest(for: URL(string: "/api/present/get")!,
+                              method: NetworkService.Method.get,
+                              query: NetworkService.QueryType.json,
+                              params: ["present_id": id],
+                              success: { data in
+            print(String(decoding: data!, as: UTF8.self))
+            if let data = data, let notifications = try? JSONDecoder().decode(MyNotifications.self, from: data) {
+                completion(.success(notifications))
+            }
+        })
     }
 }

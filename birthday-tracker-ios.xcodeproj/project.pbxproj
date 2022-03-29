@@ -291,8 +291,8 @@
 		5746661627F1C13400D7B5AD /* ProfileService */ = {
 			isa = PBXGroup;
 			children = (
-				5746661827F1C16600D7B5AD /* ProfileService.swift */,
 				5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */,
+				5746661827F1C16600D7B5AD /* ProfileService.swift */,
 				5746661727F1C14400D7B5AD /* Model */,
 			);
 			path = ProfileService;
