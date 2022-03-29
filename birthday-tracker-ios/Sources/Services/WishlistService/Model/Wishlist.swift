@@ -1,15 +1,13 @@
 import Foundation
 
-struct Wishlist: Codable{
-    let employeeId: Int
-    var presents: [Present]
+struct Wishlist: Codable {
+    let id: Int
+    let name, link, wishlistDescription: String
+    let employeeID: Int
 
-    init(employeeId: Int, presents: [Present]) {
-        self.employeeId = employeeId
-        self.presents = presents
-    }
-
-    mutating func addPresent(present: Present) {
-        presents.append(present)
+    enum CodingKeys: String, CodingKey {
+        case id, name, link
+        case wishlistDescription = "description"
+        case employeeID = "employee_id"
     }
 }

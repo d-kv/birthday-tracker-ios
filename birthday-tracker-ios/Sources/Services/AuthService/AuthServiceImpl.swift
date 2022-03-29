@@ -13,7 +13,14 @@ class AuthServiceImpl: AuthService {
             answer.makeRequest(for: URL(string: "/api/employee/get")!,
                                   method:NetworkService.Method.post,
                                   query: NetworkService.QueryType.json,
-                                  params: ["employee_id": authentification], success: { data in
+                                  params: ["username": authentification.username,
+                                           "password":authentification.password,
+                                           "full_name": authentification.fullName,
+                                           "phone": authentification.phone,
+                                           "birthday": authentification.birthday,
+                                           "start_work": authentification.startWork,
+                                           "city": authentification.city],
+                                  success: { data in
                 print(String(decoding: data!, as: UTF8.self))
                 if let data = data, let auth = try? JSONDecoder().decode(Auth.self, from: data) {
                     completion(.success(auth))

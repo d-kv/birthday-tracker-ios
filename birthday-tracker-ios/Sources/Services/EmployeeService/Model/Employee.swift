@@ -1,21 +1,18 @@
 import Foundation
 
-struct Employee: Codable{
-    let id, project: Int?
-    let phone, name, city: String?
-    let birthday, startwork: String?
-    let wishlist: Wishlist?
+struct Employee: Codable {
+    let id: Int
+    let fullName, phone: String
+    let projects: [Project]
+    let birthday, startWork: String
+    let wishlist: [Wishlist]
+    let city, username: String
 
-    init(id: Int, project: Int, phone: String, name: String, city: String, birthday: String, startwork: String, wishlist: Wishlist) {
-        self.id = id
-        self.project = project
-        self.phone = phone
-        self.name = name
-        self.city = city
-        self.birthday = birthday
-        self.startwork = startwork
-        self.wishlist = wishlist
+    enum CodingKeys: String, CodingKey {
+        case id
+        case fullName = "full_name"
+        case phone, projects, birthday
+        case startWork = "start_work"
+        case wishlist, city, username
     }
-
-    func getWishlist(id _: Int) {}
 }

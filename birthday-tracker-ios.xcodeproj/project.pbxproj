@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5743639C27F3302700B0D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639B27F3302700B0D9C5 /* AppDelegate.swift */; };
+		574363A027F33BF200B0D9C5 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639F27F33BF200B0D9C5 /* Project.swift */; };
 		574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CD27E4A49500D7B5AD /* EmployeeService.swift */; };
 		574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CF27E4A51200D7B5AD /* WishlistService.swift */; };
 		574665D227E4A55100D7B5AD /* PresentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D127E4A55100D7B5AD /* PresentService.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		5743639B27F3302700B0D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5743639F27F33BF200B0D9C5 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		574665CD27E4A49500D7B5AD /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
 		574665CF27E4A51200D7B5AD /* WishlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistService.swift; sourceTree = "<group>"; };
 		574665D127E4A55100D7B5AD /* PresentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentService.swift; sourceTree = "<group>"; };
@@ -94,6 +96,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5743639D27F33BC700B0D9C5 /* ProjectService */ = {
+			isa = PBXGroup;
+			children = (
+				5743639E27F33BDF00B0D9C5 /* Model */,
+			);
+			path = ProjectService;
+			sourceTree = "<group>";
+		};
+		5743639E27F33BDF00B0D9C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5743639F27F33BF200B0D9C5 /* Project.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		574665F927F1B0CB00D7B5AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +142,7 @@
 		574665FC27F1B0F500D7B5AD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5743639D27F33BC700B0D9C5 /* ProjectService */,
 				5746661627F1C13400D7B5AD /* ProfileService */,
 				5746660827F1B3D900D7B5AD /* AuthService */,
 				5746660727F1B35800D7B5AD /* MyNotificationsService */,
@@ -445,6 +464,7 @@
 				A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */,
 				A836EAF627E33D86005A4B8F /* Employee.swift in Sources */,
 				574665D827E4A6EE00D7B5AD /* WishlistServiceImpl.swift in Sources */,
+				574363A027F33BF200B0D9C5 /* Project.swift in Sources */,
 				57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */,
 				5746661927F1C16600D7B5AD /* ProfileService.swift in Sources */,
 			);

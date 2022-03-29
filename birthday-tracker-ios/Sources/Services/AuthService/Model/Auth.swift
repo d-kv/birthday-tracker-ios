@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct Auth: Codable{
-    let username: String
-    let password: String
-    let full_name: String
-    let phone: String
-    let birthday: String
-    let start_work: String
-    let city: String
+struct Auth: Codable {
+    let username, password, fullName, phone: String
+    let birthday, startWork, city: String
 
-    func getWishlist(id _: Int) {}
+    enum CodingKeys: String, CodingKey {
+        case username, password
+        case fullName = "full_name"
+        case phone, birthday
+        case startWork = "start_work"
+        case city
+    }
 }
