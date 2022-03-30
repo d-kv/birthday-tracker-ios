@@ -8,9 +8,9 @@
 import Foundation
 
 class AuthServiceImpl: AuthService {
-    func register(authentification: Auth, completion: @escaping (Result<Auth, Error>) -> Void) {
+    func register(authentification: Auth, completion: @escaping (Result<Auth, Error>) -> Void) {//it doesn't work now
             let answer = NetworkService()
-            answer.makeRequest(for: URL(string: "/api/employee/get")!,
+            answer.makeRequest(for: URL(string: baseURL + "/api/employee/get")!,
                                   method:NetworkService.Method.post,
                                   query: NetworkService.QueryType.json,
                                   params: ["username": authentification.username,

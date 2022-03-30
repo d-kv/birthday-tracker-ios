@@ -23,6 +23,7 @@ class NetworkService {
 
         mutableRequest.allHTTPHeaderFields = headers
         mutableRequest.httpMethod = method.rawValue
+        
 
         let session = URLSession.shared
 

@@ -14,17 +14,15 @@ class ProfileServiceImpl: ProfileService {
 
     func load(id: Int, completion: @escaping (Result<Profile, Error>) -> Void) {
         let answer = NetworkService()
-        let username = "string"                         //Unfourtanetly,
-        let password = "string"                         //It's only "затычка"
-        let loginString = "\(username):\(password)"
+        let loginString = "\(login):\(password)"
 
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
         }
         let base64LoginString = loginData.base64EncodedString()
-        answer.makeRequest(for: URL(string: "/api/employee/get")!,
+        answer.makeRequest(for: URL(string: baseURL + "/api/employee/get")!,
                               method: NetworkService.Method.get,
-                              query: NetworkService.QueryType.json,
+                              query: NetworkService.QueryType.path,
                               params: ["employee_id": id],
                               headers: ["Authorization": "Basic \(base64LoginString)"],
                               success: { data in

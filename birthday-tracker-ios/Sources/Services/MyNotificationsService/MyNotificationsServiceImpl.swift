@@ -13,18 +13,16 @@ class MyNotificationServiceImpl: MyNotificationService {
 
     func load(id: Int, completion: @escaping (Result<MyNotifications, Error>) -> Void){
         let answer = NetworkService()
-        let username = "string"                         //Unfourtanetly,
-        let password = "string"                         //It's only "затычка"
-        let loginString = "\(username):\(password)"
+        let loginString = "\(login):\(password)"
 
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
         }
         let base64LoginString = loginData.base64EncodedString()
-        answer.makeRequest(for: URL(string: "/api/present/get")!,
+        answer.makeRequest(for: URL(string: baseURL + "/api/employee/getMyNotigications")!,
                               method: NetworkService.Method.get,
-                              query: NetworkService.QueryType.json,
-                              params: ["present_id": id],
+                              query: NetworkService.QueryType.path,
+                              params: ["employee_id": id],
                               headers: ["Authorization": "Basic \(base64LoginString)"],
                               success: { data in
             print(String(decoding: data!, as: UTF8.self))

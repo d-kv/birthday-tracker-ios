@@ -34,6 +34,9 @@
 		5746661927F1C16600D7B5AD /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661827F1C16600D7B5AD /* ProfileService.swift */; };
 		5746661B27F1C18100D7B5AD /* ProfileServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */; };
 		5746661D27F1C19600D7B5AD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661C27F1C19600D7B5AD /* Profile.swift */; };
+		57D4045C27F45505001AFA49 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045B27F45505001AFA49 /* ProjectService.swift */; };
+		57D4045E27F4551A001AFA49 /* ProjectServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */; };
+		57D4046027F45851001AFA49 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045F27F45851001AFA49 /* Settings.swift */; };
 		57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */; };
 		57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5427CCED98002B9749 /* Assets.xcassets */; };
 		57E10B5827CCED98002B9749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5727CCED98002B9749 /* Preview Assets.xcassets */; };
@@ -73,6 +76,9 @@
 		5746661827F1C16600D7B5AD /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceImpl.swift; sourceTree = "<group>"; };
 		5746661C27F1C19600D7B5AD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		57D4045B27F45505001AFA49 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectServiceImpl.swift; sourceTree = "<group>"; };
+		57D4045F27F45851001AFA49 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "birthday-tracker-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birthday_tracker_iosApp.swift; sourceTree = "<group>"; };
 		57E10B5427CCED98002B9749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +105,8 @@
 		5743639D27F33BC700B0D9C5 /* ProjectService */ = {
 			isa = PBXGroup;
 			children = (
+				57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */,
+				57D4045B27F45505001AFA49 /* ProjectService.swift */,
 				5743639E27F33BDF00B0D9C5 /* Model */,
 			);
 			path = ProjectService;
@@ -135,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A836EAF327E33CA8005A4B8F /* NetworkService.swift */,
+				57D4045F27F45851001AFA49 /* Settings.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -444,11 +453,14 @@
 				A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */,
 				574665E027E4A7DA00D7B5AD /* Auth.swift in Sources */,
 				5746661B27F1C18100D7B5AD /* ProfileServiceImpl.swift in Sources */,
+				57D4046027F45851001AFA49 /* Settings.swift in Sources */,
 				574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */,
 				574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */,
 				574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */,
 				5746660F27F1B57E00D7B5AD /* ProfileView.swift in Sources */,
+				57D4045C27F45505001AFA49 /* ProjectService.swift in Sources */,
 				A836EAF827E35158005A4B8F /* Present.swift in Sources */,
+				57D4045E27F4551A001AFA49 /* ProjectServiceImpl.swift in Sources */,
 				574665F627E4A99900D7B5AD /* AuthView.swift in Sources */,
 				574665D627E4A5CC00D7B5AD /* AuthService.swift in Sources */,
 				574665EE27E4A92F00D7B5AD /* WishlistView.swift in Sources */,
