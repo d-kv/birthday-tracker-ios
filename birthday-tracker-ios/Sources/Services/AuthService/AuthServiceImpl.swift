@@ -8,7 +8,7 @@
 import Foundation
 
 class AuthServiceImpl: AuthService {
-    func register(authentification: Auth, completion: @escaping (Result<Auth, Error>) -> Void) {//it doesn't work now
+    func register(authentification: Auth, completion: @escaping (Result<Profile, Error>) -> Void) {//it doesn't work now
             let answer = NetworkService()
             answer.makeRequest(for: URL(string: baseURL + "/api/employee/get")!,
                                   method:NetworkService.Method.post,
@@ -20,9 +20,10 @@ class AuthServiceImpl: AuthService {
                                            "birthday": authentification.birthday,
                                            "start_work": authentification.startWork,
                                            "city": authentification.city],
+                                  headers: ["Content-Type": "application/json"],
                                   success: { data in
                 print(String(decoding: data!, as: UTF8.self))
-                if let data = data, let auth = try? JSONDecoder().decode(Auth.self, from: data) {
+                if let data = data, let auth = try? JSONDecoder().decode(Profile.self, from: data) {
                     completion(.success(auth))
                 }
                 })

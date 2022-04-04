@@ -22,6 +22,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                                        "birthday": authentification.birthday,
                                        "start_work": authentification.startWork,
                                        "city": authentification.city],
+                              headers: ["Content-Type": "application/json"],
                               success: { data in
             print(String(decoding: data!, as: UTF8.self))
             if let data = data, let auth = try? JSONDecoder().decode(Auth.self, from: data) {

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AuthService {
-    func register(authentification: Auth, completion: @escaping (Result<Auth, Error>) -> Void)
+    func register(authentification: Auth, completion: @escaping (Result<Profile, Error>) -> Void)
 }
