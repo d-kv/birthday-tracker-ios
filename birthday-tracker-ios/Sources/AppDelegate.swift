@@ -8,30 +8,37 @@
 import UIKit
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        let authentification = Auth(username: "test1234", password: "test123", fullName: "Lexaex Lexa Lex", phone: "+79818904325", birthday: "2001-02-02", startWork: "2020-08-08", city: "Gorkiy")
+    func application(_: UIApplication,
+                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool
+    {
         let answer = NetworkService()
-        answer.makeRequest(for: URL(string: "http://localhost:8080/auth/register")!,
-                              method:NetworkService.Method.post,
-                              query: NetworkService.QueryType.json,
-                              params: ["username": authentification.username,
-                                       "password":authentification.password,
-                                       "full_name": authentification.fullName,
-                                       "phone": authentification.phone,
-                                       "birthday": authentification.birthday,
-                                       "start_work": authentification.startWork,
-                                       "city": authentification.city],
-                              headers: ["Content-Type": "application/json"],
-                              success: { data in
-            print(String(decoding: data!, as: UTF8.self))
-            if let data = data, let auth = try? JSONDecoder().decode(Auth.self, from: data) {
-                print(auth.city)
-            }
-        }, failure: { data, error, responseCode in
-            print(String(decoding: data!, as: UTF8.self), data!, "\n", error ?? "none","\n", responseCode)
-        })
-        
+        let loginString = "\(login):\(password)"
+        let present = Present(id: 89, name: "PresentTest", link: "dota2.com", description: "very want", employeeId: 5)
+        guard let loginData = loginString.data(using: String.Encoding.utf8) else {
+            return false
+        }
+        let project = Project(id: 0, name: "Yeeeesergajn", projectDescription: "Yeseagkjernakl")
+        let base64LoginString = loginData.base64EncodedString()
+        answer.makeRequest(for: URL(string: "http://localhost:8080/api/project/save")!,
+                           method: NetworkService.Method.post,
+                           query: NetworkService.QueryType.json,
+                           params: ["id": project.id,
+                                    "name": project.name,
+                                    "description": project.projectDescription],
+                           headers: ["Authorization": "Basic \(base64LoginString)",
+                                     "Content-Type": "application/json"],
+                           success: { data in
+                               print(String(decoding: data!, as: UTF8.self))
+                               if let data = data, let project = try?
+                                   JSONDecoder().decode(Project.self, from: data)
+                               {
+                                   print(project.name)
+                               }
+                           },
+                           failure: { data, error, responseCode in
+                               print(String(decoding: data!, as: UTF8.self), data!, "\n", error ?? "none", "\n", responseCode)
+                           })
+
         return true
     }
 }

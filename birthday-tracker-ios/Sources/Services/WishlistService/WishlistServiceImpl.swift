@@ -6,11 +6,9 @@
 //
 
 import Foundation
-
+/* Wishlist не существует в Api, он передается внутри эмплоя - как тогда его load'ать?*/
 class WishlistServiceImpl: WishlistService {
     func edit(employee _: Employee, completion _: () -> Void) {}
 
-    func load(id: Int, completion: @escaping (Result<Wishlist, Error>) -> Void){
-       
-    }
+    func load(id _: Int, completion _: @escaping (Result<Wishlist, Error>) -> Void) {}
 }

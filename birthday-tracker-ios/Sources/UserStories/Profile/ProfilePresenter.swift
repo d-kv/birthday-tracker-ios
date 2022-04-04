@@ -7,6 +7,6 @@
 
 import Foundation
 
-class ProfilePresenter{
-    func viewWillAppear(){}
+class ProfilePresenter {
+    func viewWillAppear() {}
 }

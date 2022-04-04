@@ -6,7 +6,7 @@ class NetworkService {
     private var failureCodes: CountableRange<Int> = 400 ..< 499
 
     enum Method: String {
-        case get, post, put, delete
+        case get, post, put, delete, update, patch
     }
 
     enum QueryType {
@@ -23,14 +23,13 @@ class NetworkService {
 
         mutableRequest.allHTTPHeaderFields = headers
         mutableRequest.httpMethod = method.rawValue
-        
 
         let session = URLSession.shared
 
         task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
                 failure?(data, error as NSError?, 0)
-                return;
+                return
             }
 
             if let error = error {

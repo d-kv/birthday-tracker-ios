@@ -8,6 +8,7 @@
 import Foundation
 
 protocol PresentService {
-    func edit(employee: Employee, completion: () -> Void)
+    func edit(present: Present, completion: @escaping (Result<Present, Error>) -> Void)
     func load(id: Int, completion: @escaping (Result<Present, Error>) -> Void)
+    func send(present: Present, completion: @escaping (Result<Present, Error>) -> Void)
 }

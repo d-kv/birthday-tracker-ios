@@ -19,4 +19,3 @@ struct EmployeeUIView_Previews: PreviewProvider {
         EmployeeUIView()
     }
 }
-
