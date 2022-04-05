@@ -7,92 +7,97 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5743639C27F3302700B0D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639B27F3302700B0D9C5 /* AppDelegate.swift */; };
-		574363A027F33BF200B0D9C5 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639F27F33BF200B0D9C5 /* Project.swift */; };
-		574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CD27E4A49500D7B5AD /* EmployeeService.swift */; };
-		574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CF27E4A51200D7B5AD /* WishlistService.swift */; };
-		574665D227E4A55100D7B5AD /* PresentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D127E4A55100D7B5AD /* PresentService.swift */; };
-		574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D327E4A59B00D7B5AD /* MyNotificationsService.swift */; };
-		574665D627E4A5CC00D7B5AD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D527E4A5CC00D7B5AD /* AuthService.swift */; };
-		574665D827E4A6EE00D7B5AD /* WishlistServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */; };
-		574665DA27E4A73500D7B5AD /* PresentServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */; };
-		574665DC27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DB27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift */; };
-		574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */; };
-		574665E027E4A7DA00D7B5AD /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DF27E4A7DA00D7B5AD /* Auth.swift */; };
-		574665E227E4A82E00D7B5AD /* EmployeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */; };
-		574665E427E4A84300D7B5AD /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E327E4A84300D7B5AD /* WishlistPresenter.swift */; };
-		574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E527E4A86A00D7B5AD /* PresentPresenter.swift */; };
-		574665E827E4A8DC00D7B5AD /* MyNotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E727E4A8DC00D7B5AD /* MyNotificationsPresenter.swift */; };
-		574665EA27E4A8F700D7B5AD /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665E927E4A8F700D7B5AD /* AuthPresenter.swift */; };
-		574665EC27E4A91900D7B5AD /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665EB27E4A91900D7B5AD /* EmployeeView.swift */; };
-		574665EE27E4A92F00D7B5AD /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665ED27E4A92F00D7B5AD /* WishlistView.swift */; };
-		574665F027E4A94800D7B5AD /* PresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665EF27E4A94800D7B5AD /* PresentView.swift */; };
-		574665F227E4A96A00D7B5AD /* MyNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F127E4A96A00D7B5AD /* MyNotificationsView.swift */; };
-		574665F627E4A99900D7B5AD /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F527E4A99900D7B5AD /* AuthView.swift */; };
-		5746660F27F1B57E00D7B5AD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746660E27F1B57E00D7B5AD /* ProfileView.swift */; };
-		5746661327F1B5C700D7B5AD /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */; };
-		5746661927F1C16600D7B5AD /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661827F1C16600D7B5AD /* ProfileService.swift */; };
-		5746661B27F1C18100D7B5AD /* ProfileServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */; };
-		5746661D27F1C19600D7B5AD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661C27F1C19600D7B5AD /* Profile.swift */; };
-		57D4045C27F45505001AFA49 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045B27F45505001AFA49 /* ProjectService.swift */; };
-		57D4045E27F4551A001AFA49 /* ProjectServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */; };
-		57D4046027F45851001AFA49 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045F27F45851001AFA49 /* Settings.swift */; };
-		57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */; };
-		57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5427CCED98002B9749 /* Assets.xcassets */; };
-		57E10B5827CCED98002B9749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5727CCED98002B9749 /* Preview Assets.xcassets */; };
-		A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */; };
-		A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF327E33CA8005A4B8F /* NetworkService.swift */; };
-		A836EAF627E33D86005A4B8F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF527E33D86005A4B8F /* Employee.swift */; };
-		A836EAF827E35158005A4B8F /* Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF727E35158005A4B8F /* Present.swift */; };
-		A836EAFA27E35507005A4B8F /* MyNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF927E35507005A4B8F /* MyNotifications.swift */; };
-		A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAFB27E35695005A4B8F /* Wishlist.swift */; };
+		57A213B927FC7C0100B42059 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213B827FC7C0100B42059 /* SceneDelegate.swift */; };
+		57A213BB27FC7C0100B42059 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213BA27FC7C0100B42059 /* ViewController.swift */; };
+		57A213BE27FC7C0100B42059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A213BC27FC7C0100B42059 /* Main.storyboard */; };
+		57A213C027FC7C0600B42059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A213BF27FC7C0600B42059 /* Assets.xcassets */; };
+		57A213C327FC7C0600B42059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A213C127FC7C0600B42059 /* LaunchScreen.storyboard */; };
+		57A2140827FC7C3B00B42059 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213CE27FC7C3B00B42059 /* NetworkService.swift */; };
+		57A2140927FC7C3B00B42059 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213CF27FC7C3B00B42059 /* Settings.swift */; };
+		57A2140A27FC7C3B00B42059 /* PresentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213D227FC7C3B00B42059 /* PresentPresenter.swift */; };
+		57A2140B27FC7C3B00B42059 /* PresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213D327FC7C3B00B42059 /* PresentView.swift */; };
+		57A2140C27FC7C3B00B42059 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213D527FC7C3B00B42059 /* AuthPresenter.swift */; };
+		57A2140D27FC7C3B00B42059 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213D627FC7C3B00B42059 /* AuthView.swift */; };
+		57A2140E27FC7C3B00B42059 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213D827FC7C3B00B42059 /* ProfilePresenter.swift */; };
+		57A2140F27FC7C3B00B42059 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213D927FC7C3B00B42059 /* ProfileView.swift */; };
+		57A2141027FC7C3B00B42059 /* MyNotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213DB27FC7C3B00B42059 /* MyNotificationsPresenter.swift */; };
+		57A2141127FC7C3B00B42059 /* MyNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213DC27FC7C3B00B42059 /* MyNotificationsView.swift */; };
+		57A2141227FC7C3B00B42059 /* EmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213DE27FC7C3B00B42059 /* EmployeeView.swift */; };
+		57A2141327FC7C3B00B42059 /* EmployeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213DF27FC7C3B00B42059 /* EmployeePresenter.swift */; };
+		57A2141427FC7C3B00B42059 /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213E127FC7C3B00B42059 /* WishlistPresenter.swift */; };
+		57A2141527FC7C3B00B42059 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213E227FC7C3B00B42059 /* WishlistView.swift */; };
+		57A2141627FC7C3B00B42059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213E327FC7C3B00B42059 /* AppDelegate.swift */; };
+		57A2141727FC7C3B00B42059 /* WishlistServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213E627FC7C3B00B42059 /* WishlistServiceImpl.swift */; };
+		57A2141827FC7C3B00B42059 /* WishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213E727FC7C3B00B42059 /* WishlistService.swift */; };
+		57A2141927FC7C3B00B42059 /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213E927FC7C3B00B42059 /* Wishlist.swift */; };
+		57A2141A27FC7C3B00B42059 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213EB27FC7C3B00B42059 /* ProjectService.swift */; };
+		57A2141B27FC7C3B00B42059 /* ProjectServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213EC27FC7C3B00B42059 /* ProjectServiceImpl.swift */; };
+		57A2141C27FC7C3B00B42059 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213EE27FC7C3B00B42059 /* Project.swift */; };
+		57A2141D27FC7C3B00B42059 /* MyNotificationsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213F027FC7C3B00B42059 /* MyNotificationsServiceImpl.swift */; };
+		57A2141E27FC7C3B00B42059 /* MyNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213F227FC7C3B00B42059 /* MyNotifications.swift */; };
+		57A2141F27FC7C3B00B42059 /* MyNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213F327FC7C3B00B42059 /* MyNotificationsService.swift */; };
+		57A2142027FC7C3B00B42059 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213F527FC7C3B00B42059 /* AuthService.swift */; };
+		57A2142127FC7C3B00B42059 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213F727FC7C3B00B42059 /* Auth.swift */; };
+		57A2142227FC7C3B00B42059 /* AuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213F827FC7C3B00B42059 /* AuthServiceImpl.swift */; };
+		57A2142327FC7C3B00B42059 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213FA27FC7C3B00B42059 /* ProfileService.swift */; };
+		57A2142427FC7C3B00B42059 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213FC27FC7C3B00B42059 /* Profile.swift */; };
+		57A2142527FC7C3B00B42059 /* ProfileServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A213FD27FC7C3B00B42059 /* ProfileServiceImpl.swift */; };
+		57A2142627FC7C3B00B42059 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2140027FC7C3B00B42059 /* Employee.swift */; };
+		57A2142727FC7C3B00B42059 /* EmployeeServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2140127FC7C3B00B42059 /* EmployeeServiceImpl.swift */; };
+		57A2142827FC7C3B00B42059 /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2140227FC7C3B00B42059 /* EmployeeService.swift */; };
+		57A2142927FC7C3B00B42059 /* PresentServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2140427FC7C3B00B42059 /* PresentServiceImpl.swift */; };
+		57A2142A27FC7C3B00B42059 /* Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2140627FC7C3B00B42059 /* Present.swift */; };
+		57A2142B27FC7C3B00B42059 /* PresentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A2140727FC7C3B00B42059 /* PresentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5743639B27F3302700B0D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5743639F27F33BF200B0D9C5 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		574665CD27E4A49500D7B5AD /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
-		574665CF27E4A51200D7B5AD /* WishlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistService.swift; sourceTree = "<group>"; };
-		574665D127E4A55100D7B5AD /* PresentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentService.swift; sourceTree = "<group>"; };
-		574665D327E4A59B00D7B5AD /* MyNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsService.swift; sourceTree = "<group>"; };
-		574665D527E4A5CC00D7B5AD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistServiceImpl.swift; sourceTree = "<group>"; };
-		574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentServiceImpl.swift; sourceTree = "<group>"; };
-		574665DB27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsServiceImpl.swift; sourceTree = "<group>"; };
-		574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceImpl.swift; sourceTree = "<group>"; };
-		574665DF27E4A7DA00D7B5AD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeePresenter.swift; sourceTree = "<group>"; };
-		574665E327E4A84300D7B5AD /* WishlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
-		574665E527E4A86A00D7B5AD /* PresentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentPresenter.swift; sourceTree = "<group>"; };
-		574665E727E4A8DC00D7B5AD /* MyNotificationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsPresenter.swift; sourceTree = "<group>"; };
-		574665E927E4A8F700D7B5AD /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
-		574665EB27E4A91900D7B5AD /* EmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
-		574665ED27E4A92F00D7B5AD /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
-		574665EF27E4A94800D7B5AD /* PresentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentView.swift; sourceTree = "<group>"; };
-		574665F127E4A96A00D7B5AD /* MyNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsView.swift; sourceTree = "<group>"; };
-		574665F527E4A99900D7B5AD /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		5746660E27F1B57E00D7B5AD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		5746661827F1C16600D7B5AD /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
-		5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceImpl.swift; sourceTree = "<group>"; };
-		5746661C27F1C19600D7B5AD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		57D4045B27F45505001AFA49 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
-		57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectServiceImpl.swift; sourceTree = "<group>"; };
-		57D4045F27F45851001AFA49 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "birthday-tracker-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birthday_tracker_iosApp.swift; sourceTree = "<group>"; };
-		57E10B5427CCED98002B9749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		57E10B5727CCED98002B9749 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeServiceImpl.swift; sourceTree = "<group>"; };
-		A836EAF327E33CA8005A4B8F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		A836EAF527E33D86005A4B8F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
-		A836EAF727E35158005A4B8F /* Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Present.swift; sourceTree = "<group>"; };
-		A836EAF927E35507005A4B8F /* MyNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotifications.swift; sourceTree = "<group>"; };
-		A836EAFB27E35695005A4B8F /* Wishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
+		57A213B327FC7C0100B42059 /* birthday-tracker-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "birthday-tracker-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A213B827FC7C0100B42059 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		57A213BA27FC7C0100B42059 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57A213BD27FC7C0100B42059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		57A213BF27FC7C0600B42059 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57A213C227FC7C0600B42059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		57A213C427FC7C0600B42059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57A213CE27FC7C3B00B42059 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		57A213CF27FC7C3B00B42059 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		57A213D227FC7C3B00B42059 /* PresentPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentPresenter.swift; sourceTree = "<group>"; };
+		57A213D327FC7C3B00B42059 /* PresentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentView.swift; sourceTree = "<group>"; };
+		57A213D527FC7C3B00B42059 /* AuthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		57A213D627FC7C3B00B42059 /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		57A213D827FC7C3B00B42059 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		57A213D927FC7C3B00B42059 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		57A213DB27FC7C3B00B42059 /* MyNotificationsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNotificationsPresenter.swift; sourceTree = "<group>"; };
+		57A213DC27FC7C3B00B42059 /* MyNotificationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNotificationsView.swift; sourceTree = "<group>"; };
+		57A213DE27FC7C3B00B42059 /* EmployeeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeView.swift; sourceTree = "<group>"; };
+		57A213DF27FC7C3B00B42059 /* EmployeePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeePresenter.swift; sourceTree = "<group>"; };
+		57A213E127FC7C3B00B42059 /* WishlistPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
+		57A213E227FC7C3B00B42059 /* WishlistView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		57A213E327FC7C3B00B42059 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57A213E627FC7C3B00B42059 /* WishlistServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistServiceImpl.swift; sourceTree = "<group>"; };
+		57A213E727FC7C3B00B42059 /* WishlistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistService.swift; sourceTree = "<group>"; };
+		57A213E927FC7C3B00B42059 /* Wishlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
+		57A213EB27FC7C3B00B42059 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		57A213EC27FC7C3B00B42059 /* ProjectServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectServiceImpl.swift; sourceTree = "<group>"; };
+		57A213EE27FC7C3B00B42059 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		57A213F027FC7C3B00B42059 /* MyNotificationsServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNotificationsServiceImpl.swift; sourceTree = "<group>"; };
+		57A213F227FC7C3B00B42059 /* MyNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNotifications.swift; sourceTree = "<group>"; };
+		57A213F327FC7C3B00B42059 /* MyNotificationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNotificationsService.swift; sourceTree = "<group>"; };
+		57A213F527FC7C3B00B42059 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		57A213F727FC7C3B00B42059 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		57A213F827FC7C3B00B42059 /* AuthServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceImpl.swift; sourceTree = "<group>"; };
+		57A213FA27FC7C3B00B42059 /* ProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		57A213FC27FC7C3B00B42059 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		57A213FD27FC7C3B00B42059 /* ProfileServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileServiceImpl.swift; sourceTree = "<group>"; };
+		57A2140027FC7C3B00B42059 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		57A2140127FC7C3B00B42059 /* EmployeeServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeServiceImpl.swift; sourceTree = "<group>"; };
+		57A2140227FC7C3B00B42059 /* EmployeeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
+		57A2140427FC7C3B00B42059 /* PresentServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentServiceImpl.swift; sourceTree = "<group>"; };
+		57A2140627FC7C3B00B42059 /* Present.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Present.swift; sourceTree = "<group>"; };
+		57A2140727FC7C3B00B42059 /* PresentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		57E10B4A27CCED96002B9749 /* Frameworks */ = {
+		57A213B027FC7C0100B42059 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,286 +107,274 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5743639D27F33BC700B0D9C5 /* ProjectService */ = {
+		57A213AA27FC7C0100B42059 = {
 			isa = PBXGroup;
 			children = (
-				57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */,
-				57D4045B27F45505001AFA49 /* ProjectService.swift */,
-				5743639E27F33BDF00B0D9C5 /* Model */,
-			);
-			path = ProjectService;
-			sourceTree = "<group>";
-		};
-		5743639E27F33BDF00B0D9C5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5743639F27F33BF200B0D9C5 /* Project.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		574665F927F1B0CB00D7B5AD /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				57E10B5427CCED98002B9749 /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		574665FA27F1B0D600D7B5AD /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				574665FD27F1B11700D7B5AD /* UserStories */,
-				574665FC27F1B0F500D7B5AD /* Services */,
-				574665FB27F1B0EC00D7B5AD /* Networking */,
-				5743639B27F3302700B0D9C5 /* AppDelegate.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		574665FB27F1B0EC00D7B5AD /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				A836EAF327E33CA8005A4B8F /* NetworkService.swift */,
-				57D4045F27F45851001AFA49 /* Settings.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		574665FC27F1B0F500D7B5AD /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				5743639D27F33BC700B0D9C5 /* ProjectService */,
-				5746661627F1C13400D7B5AD /* ProfileService */,
-				5746660827F1B3D900D7B5AD /* AuthService */,
-				5746660727F1B35800D7B5AD /* MyNotificationsService */,
-				5746660327F1B2B100D7B5AD /* PresentService */,
-				5746660227F1B29B00D7B5AD /* WishlistService */,
-				574665FF27F1B19800D7B5AD /* EmployeeService */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		574665FD27F1B11700D7B5AD /* UserStories */ = {
-			isa = PBXGroup;
-			children = (
-				5746660D27F1B50400D7B5AD /* Auth */,
-				5746660627F1B32500D7B5AD /* MyNotifications */,
-				5746660527F1B31100D7B5AD /* Wishlist */,
-				5746660427F1B30700D7B5AD /* Present */,
-				5746660127F1B21500D7B5AD /* Employee */,
-				574665FE27F1B12900D7B5AD /* Profile */,
-			);
-			path = UserStories;
-			sourceTree = "<group>";
-		};
-		574665FE27F1B12900D7B5AD /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				5746660E27F1B57E00D7B5AD /* ProfileView.swift */,
-				5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		574665FF27F1B19800D7B5AD /* EmployeeService */ = {
-			isa = PBXGroup;
-			children = (
-				A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */,
-				574665CD27E4A49500D7B5AD /* EmployeeService.swift */,
-				5746660027F1B1C700D7B5AD /* Model */,
-			);
-			path = EmployeeService;
-			sourceTree = "<group>";
-		};
-		5746660027F1B1C700D7B5AD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A836EAF527E33D86005A4B8F /* Employee.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5746660127F1B21500D7B5AD /* Employee */ = {
-			isa = PBXGroup;
-			children = (
-				574665E127E4A82E00D7B5AD /* EmployeePresenter.swift */,
-				574665EB27E4A91900D7B5AD /* EmployeeView.swift */,
-			);
-			path = Employee;
-			sourceTree = "<group>";
-		};
-		5746660227F1B29B00D7B5AD /* WishlistService */ = {
-			isa = PBXGroup;
-			children = (
-				574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */,
-				574665CF27E4A51200D7B5AD /* WishlistService.swift */,
-				5746660C27F1B40900D7B5AD /* Model */,
-			);
-			path = WishlistService;
-			sourceTree = "<group>";
-		};
-		5746660327F1B2B100D7B5AD /* PresentService */ = {
-			isa = PBXGroup;
-			children = (
-				574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */,
-				574665D127E4A55100D7B5AD /* PresentService.swift */,
-				5746660B27F1B40200D7B5AD /* Model */,
-			);
-			path = PresentService;
-			sourceTree = "<group>";
-		};
-		5746660427F1B30700D7B5AD /* Present */ = {
-			isa = PBXGroup;
-			children = (
-				574665EF27E4A94800D7B5AD /* PresentView.swift */,
-				574665E527E4A86A00D7B5AD /* PresentPresenter.swift */,
-			);
-			path = Present;
-			sourceTree = "<group>";
-		};
-		5746660527F1B31100D7B5AD /* Wishlist */ = {
-			isa = PBXGroup;
-			children = (
-				574665E327E4A84300D7B5AD /* WishlistPresenter.swift */,
-				574665ED27E4A92F00D7B5AD /* WishlistView.swift */,
-			);
-			path = Wishlist;
-			sourceTree = "<group>";
-		};
-		5746660627F1B32500D7B5AD /* MyNotifications */ = {
-			isa = PBXGroup;
-			children = (
-				574665E727E4A8DC00D7B5AD /* MyNotificationsPresenter.swift */,
-				574665F127E4A96A00D7B5AD /* MyNotificationsView.swift */,
-			);
-			path = MyNotifications;
-			sourceTree = "<group>";
-		};
-		5746660727F1B35800D7B5AD /* MyNotificationsService */ = {
-			isa = PBXGroup;
-			children = (
-				574665DB27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift */,
-				574665D327E4A59B00D7B5AD /* MyNotificationsService.swift */,
-				5746660A27F1B3F800D7B5AD /* Model */,
-			);
-			path = MyNotificationsService;
-			sourceTree = "<group>";
-		};
-		5746660827F1B3D900D7B5AD /* AuthService */ = {
-			isa = PBXGroup;
-			children = (
-				574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */,
-				574665D527E4A5CC00D7B5AD /* AuthService.swift */,
-				5746660927F1B3F100D7B5AD /* Model */,
-			);
-			path = AuthService;
-			sourceTree = "<group>";
-		};
-		5746660927F1B3F100D7B5AD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				574665DF27E4A7DA00D7B5AD /* Auth.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5746660A27F1B3F800D7B5AD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A836EAF927E35507005A4B8F /* MyNotifications.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5746660B27F1B40200D7B5AD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A836EAF727E35158005A4B8F /* Present.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5746660C27F1B40900D7B5AD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A836EAFB27E35695005A4B8F /* Wishlist.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5746660D27F1B50400D7B5AD /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				574665E927E4A8F700D7B5AD /* AuthPresenter.swift */,
-				574665F527E4A99900D7B5AD /* AuthView.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		5746661627F1C13400D7B5AD /* ProfileService */ = {
-			isa = PBXGroup;
-			children = (
-				5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */,
-				5746661827F1C16600D7B5AD /* ProfileService.swift */,
-				5746661727F1C14400D7B5AD /* Model */,
-			);
-			path = ProfileService;
-			sourceTree = "<group>";
-		};
-		5746661727F1C14400D7B5AD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5746661C27F1C19600D7B5AD /* Profile.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		57E10B4427CCED96002B9749 = {
-			isa = PBXGroup;
-			children = (
-				57E10B4F27CCED96002B9749 /* birthday-tracker-ios */,
-				57E10B4E27CCED96002B9749 /* Products */,
+				57A213B527FC7C0100B42059 /* birthday-tracker-ios */,
+				57A213B427FC7C0100B42059 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		57E10B4E27CCED96002B9749 /* Products */ = {
+		57A213B427FC7C0100B42059 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */,
+				57A213B327FC7C0100B42059 /* birthday-tracker-ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		57E10B4F27CCED96002B9749 /* birthday-tracker-ios */ = {
+		57A213B527FC7C0100B42059 /* birthday-tracker-ios */ = {
 			isa = PBXGroup;
 			children = (
-				574665F927F1B0CB00D7B5AD /* Resources */,
-				574665FA27F1B0D600D7B5AD /* Sources */,
-				57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */,
-				57E10B5627CCED98002B9749 /* Preview Content */,
+				57A213CC27FC7C3B00B42059 /* Sources */,
+				57A213B827FC7C0100B42059 /* SceneDelegate.swift */,
+				57A213BA27FC7C0100B42059 /* ViewController.swift */,
+				57A213BC27FC7C0100B42059 /* Main.storyboard */,
+				57A213BF27FC7C0600B42059 /* Assets.xcassets */,
+				57A213C127FC7C0600B42059 /* LaunchScreen.storyboard */,
+				57A213C427FC7C0600B42059 /* Info.plist */,
 			);
 			path = "birthday-tracker-ios";
 			sourceTree = "<group>";
 		};
-		57E10B5627CCED98002B9749 /* Preview Content */ = {
+		57A213CC27FC7C3B00B42059 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				57E10B5727CCED98002B9749 /* Preview Assets.xcassets */,
+				57A213CD27FC7C3B00B42059 /* Networking */,
+				57A213D027FC7C3B00B42059 /* UserStories */,
+				57A213E327FC7C3B00B42059 /* AppDelegate.swift */,
+				57A213E427FC7C3B00B42059 /* Services */,
 			);
-			path = "Preview Content";
+			name = Sources;
+			path = "../../../Documents/birthday-tracker-ios/birthday-tracker-ios/Sources";
+			sourceTree = "<group>";
+		};
+		57A213CD27FC7C3B00B42059 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				57A213CE27FC7C3B00B42059 /* NetworkService.swift */,
+				57A213CF27FC7C3B00B42059 /* Settings.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		57A213D027FC7C3B00B42059 /* UserStories */ = {
+			isa = PBXGroup;
+			children = (
+				57A213D127FC7C3B00B42059 /* Present */,
+				57A213D427FC7C3B00B42059 /* Auth */,
+				57A213D727FC7C3B00B42059 /* Profile */,
+				57A213DA27FC7C3B00B42059 /* MyNotifications */,
+				57A213DD27FC7C3B00B42059 /* Employee */,
+				57A213E027FC7C3B00B42059 /* Wishlist */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		57A213D127FC7C3B00B42059 /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				57A213D227FC7C3B00B42059 /* PresentPresenter.swift */,
+				57A213D327FC7C3B00B42059 /* PresentView.swift */,
+			);
+			path = Present;
+			sourceTree = "<group>";
+		};
+		57A213D427FC7C3B00B42059 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				57A213D527FC7C3B00B42059 /* AuthPresenter.swift */,
+				57A213D627FC7C3B00B42059 /* AuthView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		57A213D727FC7C3B00B42059 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				57A213D827FC7C3B00B42059 /* ProfilePresenter.swift */,
+				57A213D927FC7C3B00B42059 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57A213DA27FC7C3B00B42059 /* MyNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				57A213DB27FC7C3B00B42059 /* MyNotificationsPresenter.swift */,
+				57A213DC27FC7C3B00B42059 /* MyNotificationsView.swift */,
+			);
+			path = MyNotifications;
+			sourceTree = "<group>";
+		};
+		57A213DD27FC7C3B00B42059 /* Employee */ = {
+			isa = PBXGroup;
+			children = (
+				57A213DE27FC7C3B00B42059 /* EmployeeView.swift */,
+				57A213DF27FC7C3B00B42059 /* EmployeePresenter.swift */,
+			);
+			path = Employee;
+			sourceTree = "<group>";
+		};
+		57A213E027FC7C3B00B42059 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				57A213E127FC7C3B00B42059 /* WishlistPresenter.swift */,
+				57A213E227FC7C3B00B42059 /* WishlistView.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		57A213E427FC7C3B00B42059 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				57A213E527FC7C3B00B42059 /* WishlistService */,
+				57A213EA27FC7C3B00B42059 /* ProjectService */,
+				57A213EF27FC7C3B00B42059 /* MyNotificationsService */,
+				57A213F427FC7C3B00B42059 /* AuthService */,
+				57A213F927FC7C3B00B42059 /* ProfileService */,
+				57A213FE27FC7C3B00B42059 /* EmployeeService */,
+				57A2140327FC7C3B00B42059 /* PresentService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		57A213E527FC7C3B00B42059 /* WishlistService */ = {
+			isa = PBXGroup;
+			children = (
+				57A213E627FC7C3B00B42059 /* WishlistServiceImpl.swift */,
+				57A213E727FC7C3B00B42059 /* WishlistService.swift */,
+				57A213E827FC7C3B00B42059 /* Model */,
+			);
+			path = WishlistService;
+			sourceTree = "<group>";
+		};
+		57A213E827FC7C3B00B42059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A213E927FC7C3B00B42059 /* Wishlist.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57A213EA27FC7C3B00B42059 /* ProjectService */ = {
+			isa = PBXGroup;
+			children = (
+				57A213EB27FC7C3B00B42059 /* ProjectService.swift */,
+				57A213EC27FC7C3B00B42059 /* ProjectServiceImpl.swift */,
+				57A213ED27FC7C3B00B42059 /* Model */,
+			);
+			path = ProjectService;
+			sourceTree = "<group>";
+		};
+		57A213ED27FC7C3B00B42059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A213EE27FC7C3B00B42059 /* Project.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57A213EF27FC7C3B00B42059 /* MyNotificationsService */ = {
+			isa = PBXGroup;
+			children = (
+				57A213F027FC7C3B00B42059 /* MyNotificationsServiceImpl.swift */,
+				57A213F127FC7C3B00B42059 /* Model */,
+				57A213F327FC7C3B00B42059 /* MyNotificationsService.swift */,
+			);
+			path = MyNotificationsService;
+			sourceTree = "<group>";
+		};
+		57A213F127FC7C3B00B42059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A213F227FC7C3B00B42059 /* MyNotifications.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57A213F427FC7C3B00B42059 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				57A213F527FC7C3B00B42059 /* AuthService.swift */,
+				57A213F627FC7C3B00B42059 /* Model */,
+				57A213F827FC7C3B00B42059 /* AuthServiceImpl.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		57A213F627FC7C3B00B42059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A213F727FC7C3B00B42059 /* Auth.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57A213F927FC7C3B00B42059 /* ProfileService */ = {
+			isa = PBXGroup;
+			children = (
+				57A213FA27FC7C3B00B42059 /* ProfileService.swift */,
+				57A213FB27FC7C3B00B42059 /* Model */,
+				57A213FD27FC7C3B00B42059 /* ProfileServiceImpl.swift */,
+			);
+			path = ProfileService;
+			sourceTree = "<group>";
+		};
+		57A213FB27FC7C3B00B42059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A213FC27FC7C3B00B42059 /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57A213FE27FC7C3B00B42059 /* EmployeeService */ = {
+			isa = PBXGroup;
+			children = (
+				57A213FF27FC7C3B00B42059 /* Model */,
+				57A2140127FC7C3B00B42059 /* EmployeeServiceImpl.swift */,
+				57A2140227FC7C3B00B42059 /* EmployeeService.swift */,
+			);
+			path = EmployeeService;
+			sourceTree = "<group>";
+		};
+		57A213FF27FC7C3B00B42059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A2140027FC7C3B00B42059 /* Employee.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57A2140327FC7C3B00B42059 /* PresentService */ = {
+			isa = PBXGroup;
+			children = (
+				57A2140427FC7C3B00B42059 /* PresentServiceImpl.swift */,
+				57A2140527FC7C3B00B42059 /* Model */,
+				57A2140727FC7C3B00B42059 /* PresentService.swift */,
+			);
+			path = PresentService;
+			sourceTree = "<group>";
+		};
+		57A2140527FC7C3B00B42059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A2140627FC7C3B00B42059 /* Present.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		57E10B4C27CCED96002B9749 /* birthday-tracker-ios */ = {
+		57A213B227FC7C0100B42059 /* birthday-tracker-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57E10B5B27CCED98002B9749 /* Build configuration list for PBXNativeTarget "birthday-tracker-ios" */;
+			buildConfigurationList = 57A213C727FC7C0600B42059 /* Build configuration list for PBXNativeTarget "birthday-tracker-ios" */;
 			buildPhases = (
-				57E10B4927CCED96002B9749 /* Sources */,
-				57E10B4A27CCED96002B9749 /* Frameworks */,
-				57E10B4B27CCED96002B9749 /* Resources */,
+				57A213AF27FC7C0100B42059 /* Sources */,
+				57A213B027FC7C0100B42059 /* Frameworks */,
+				57A213B127FC7C0100B42059 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -389,25 +382,25 @@
 			);
 			name = "birthday-tracker-ios";
 			productName = "birthday-tracker-ios";
-			productReference = 57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */;
+			productReference = 57A213B327FC7C0100B42059 /* birthday-tracker-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		57E10B4527CCED96002B9749 /* Project object */ = {
+		57A213AB27FC7C0100B42059 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					57E10B4C27CCED96002B9749 = {
+					57A213B227FC7C0100B42059 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 57E10B4827CCED96002B9749 /* Build configuration list for PBXProject "birthday-tracker-ios" */;
+			buildConfigurationList = 57A213AE27FC7C0100B42059 /* Build configuration list for PBXProject "birthday-tracker-ios" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -415,77 +408,98 @@
 				en,
 				Base,
 			);
-			mainGroup = 57E10B4427CCED96002B9749;
-			productRefGroup = 57E10B4E27CCED96002B9749 /* Products */;
+			mainGroup = 57A213AA27FC7C0100B42059;
+			productRefGroup = 57A213B427FC7C0100B42059 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57E10B4C27CCED96002B9749 /* birthday-tracker-ios */,
+				57A213B227FC7C0100B42059 /* birthday-tracker-ios */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		57E10B4B27CCED96002B9749 /* Resources */ = {
+		57A213B127FC7C0100B42059 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E10B5827CCED98002B9749 /* Preview Assets.xcassets in Resources */,
-				57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */,
+				57A213C327FC7C0600B42059 /* LaunchScreen.storyboard in Resources */,
+				57A213C027FC7C0600B42059 /* Assets.xcassets in Resources */,
+				57A213BE27FC7C0100B42059 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		57E10B4927CCED96002B9749 /* Sources */ = {
+		57A213AF27FC7C0100B42059 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5743639C27F3302700B0D9C5 /* AppDelegate.swift in Sources */,
-				574665F227E4A96A00D7B5AD /* MyNotificationsView.swift in Sources */,
-				574665F027E4A94800D7B5AD /* PresentView.swift in Sources */,
-				574665E427E4A84300D7B5AD /* WishlistPresenter.swift in Sources */,
-				574665E227E4A82E00D7B5AD /* EmployeePresenter.swift in Sources */,
-				574665DC27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift in Sources */,
-				574665E827E4A8DC00D7B5AD /* MyNotificationsPresenter.swift in Sources */,
-				574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */,
-				A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */,
-				574665E027E4A7DA00D7B5AD /* Auth.swift in Sources */,
-				5746661B27F1C18100D7B5AD /* ProfileServiceImpl.swift in Sources */,
-				57D4046027F45851001AFA49 /* Settings.swift in Sources */,
-				574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */,
-				574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */,
-				574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */,
-				5746660F27F1B57E00D7B5AD /* ProfileView.swift in Sources */,
-				57D4045C27F45505001AFA49 /* ProjectService.swift in Sources */,
-				A836EAF827E35158005A4B8F /* Present.swift in Sources */,
-				57D4045E27F4551A001AFA49 /* ProjectServiceImpl.swift in Sources */,
-				574665F627E4A99900D7B5AD /* AuthView.swift in Sources */,
-				574665D627E4A5CC00D7B5AD /* AuthService.swift in Sources */,
-				574665EE27E4A92F00D7B5AD /* WishlistView.swift in Sources */,
-				A836EAFA27E35507005A4B8F /* MyNotifications.swift in Sources */,
-				574665EA27E4A8F700D7B5AD /* AuthPresenter.swift in Sources */,
-				A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */,
-				574665EC27E4A91900D7B5AD /* EmployeeView.swift in Sources */,
-				5746661327F1B5C700D7B5AD /* ProfilePresenter.swift in Sources */,
-				574665DA27E4A73500D7B5AD /* PresentServiceImpl.swift in Sources */,
-				574665D227E4A55100D7B5AD /* PresentService.swift in Sources */,
-				5746661D27F1C19600D7B5AD /* Profile.swift in Sources */,
-				574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */,
-				A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */,
-				A836EAF627E33D86005A4B8F /* Employee.swift in Sources */,
-				574665D827E4A6EE00D7B5AD /* WishlistServiceImpl.swift in Sources */,
-				574363A027F33BF200B0D9C5 /* Project.swift in Sources */,
-				57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */,
-				5746661927F1C16600D7B5AD /* ProfileService.swift in Sources */,
+				57A2141827FC7C3B00B42059 /* WishlistService.swift in Sources */,
+				57A2142827FC7C3B00B42059 /* EmployeeService.swift in Sources */,
+				57A2140C27FC7C3B00B42059 /* AuthPresenter.swift in Sources */,
+				57A2141D27FC7C3B00B42059 /* MyNotificationsServiceImpl.swift in Sources */,
+				57A2141427FC7C3B00B42059 /* WishlistPresenter.swift in Sources */,
+				57A2141527FC7C3B00B42059 /* WishlistView.swift in Sources */,
+				57A2140A27FC7C3B00B42059 /* PresentPresenter.swift in Sources */,
+				57A2142A27FC7C3B00B42059 /* Present.swift in Sources */,
+				57A2142B27FC7C3B00B42059 /* PresentService.swift in Sources */,
+				57A2141227FC7C3B00B42059 /* EmployeeView.swift in Sources */,
+				57A2142227FC7C3B00B42059 /* AuthServiceImpl.swift in Sources */,
+				57A2142927FC7C3B00B42059 /* PresentServiceImpl.swift in Sources */,
+				57A213BB27FC7C0100B42059 /* ViewController.swift in Sources */,
+				57A2141F27FC7C3B00B42059 /* MyNotificationsService.swift in Sources */,
+				57A2141927FC7C3B00B42059 /* Wishlist.swift in Sources */,
+				57A2142627FC7C3B00B42059 /* Employee.swift in Sources */,
+				57A2142327FC7C3B00B42059 /* ProfileService.swift in Sources */,
+				57A2141E27FC7C3B00B42059 /* MyNotifications.swift in Sources */,
+				57A2142127FC7C3B00B42059 /* Auth.swift in Sources */,
+				57A2141727FC7C3B00B42059 /* WishlistServiceImpl.swift in Sources */,
+				57A2140827FC7C3B00B42059 /* NetworkService.swift in Sources */,
+				57A2141327FC7C3B00B42059 /* EmployeePresenter.swift in Sources */,
+				57A2141127FC7C3B00B42059 /* MyNotificationsView.swift in Sources */,
+				57A2141B27FC7C3B00B42059 /* ProjectServiceImpl.swift in Sources */,
+				57A2141027FC7C3B00B42059 /* MyNotificationsPresenter.swift in Sources */,
+				57A213B927FC7C0100B42059 /* SceneDelegate.swift in Sources */,
+				57A2141627FC7C3B00B42059 /* AppDelegate.swift in Sources */,
+				57A2140B27FC7C3B00B42059 /* PresentView.swift in Sources */,
+				57A2141A27FC7C3B00B42059 /* ProjectService.swift in Sources */,
+				57A2142527FC7C3B00B42059 /* ProfileServiceImpl.swift in Sources */,
+				57A2142427FC7C3B00B42059 /* Profile.swift in Sources */,
+				57A2140927FC7C3B00B42059 /* Settings.swift in Sources */,
+				57A2140E27FC7C3B00B42059 /* ProfilePresenter.swift in Sources */,
+				57A2140F27FC7C3B00B42059 /* ProfileView.swift in Sources */,
+				57A2140D27FC7C3B00B42059 /* AuthView.swift in Sources */,
+				57A2141C27FC7C3B00B42059 /* Project.swift in Sources */,
+				57A2142727FC7C3B00B42059 /* EmployeeServiceImpl.swift in Sources */,
+				57A2142027FC7C3B00B42059 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		57A213BC27FC7C0100B42059 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57A213BD27FC7C0100B42059 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		57A213C127FC7C0600B42059 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57A213C227FC7C0600B42059 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		57E10B5927CCED98002B9749 /* Debug */ = {
+		57A213C527FC7C0600B42059 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -546,7 +560,7 @@
 			};
 			name = Debug;
 		};
-		57E10B5A27CCED98002B9749 /* Release */ = {
+		57A213C627FC7C0600B42059 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -601,20 +615,18 @@
 			};
 			name = Release;
 		};
-		57E10B5C27CCED98002B9749 /* Debug */ = {
+		57A213C827FC7C0600B42059 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"birthday-tracker-ios/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "birthday-tracker-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -626,24 +638,22 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		57E10B5D27CCED98002B9749 /* Release */ = {
+		57A213C927FC7C0600B42059 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"birthday-tracker-ios/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "birthday-tracker-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -655,32 +665,32 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57E10B4827CCED96002B9749 /* Build configuration list for PBXProject "birthday-tracker-ios" */ = {
+		57A213AE27FC7C0100B42059 /* Build configuration list for PBXProject "birthday-tracker-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				57E10B5927CCED98002B9749 /* Debug */,
-				57E10B5A27CCED98002B9749 /* Release */,
+				57A213C527FC7C0600B42059 /* Debug */,
+				57A213C627FC7C0600B42059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		57E10B5B27CCED98002B9749 /* Build configuration list for PBXNativeTarget "birthday-tracker-ios" */ = {
+		57A213C727FC7C0600B42059 /* Build configuration list for PBXNativeTarget "birthday-tracker-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				57E10B5C27CCED98002B9749 /* Debug */,
-				57E10B5D27CCED98002B9749 /* Release */,
+				57A213C827FC7C0600B42059 /* Debug */,
+				57A213C927FC7C0600B42059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 57E10B4527CCED96002B9749 /* Project object */;
+	rootObject = 57A213AB27FC7C0100B42059 /* Project object */;
 }
