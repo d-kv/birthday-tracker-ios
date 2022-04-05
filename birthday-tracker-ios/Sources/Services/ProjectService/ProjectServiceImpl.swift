@@ -51,12 +51,23 @@ class ProjectServiceImpl: ProjectService {
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.getProject.rawValue)!,
                            method: NetworkService.Method.get,
                            query: NetworkService.QueryType.path,
-                           params: ["project_id": project_id],
+                           params: ["project_id": String(project_id)],
                            headers: ["Authorization": "Basic \(base64LoginString)"],
-                           success: { data in
-                               print(String(decoding: data!, as: UTF8.self))
-                               if let data = data, let project = try? JSONDecoder().decode(Project.self, from: data) {
-                                   completion(.success(project))
+                           completion: { result in
+                               switch result {
+                               case let .success(data):
+                                   do {
+                                       if let data = data {
+                                           let project = try JSONDecoder().decode(Project.self, from: data)
+                                           completion(.success(project))
+                                       } else {}
+                                   } catch {
+                                       completion(.failure(error))
+                                   }
+                                   print(String(decoding: data!, as: UTF8.self))
+
+                               case let .failure(error):
+                                   completion(.failure(error))
                                }
                            })
     }

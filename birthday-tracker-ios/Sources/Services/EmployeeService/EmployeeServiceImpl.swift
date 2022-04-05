@@ -33,19 +33,31 @@ class EmployeeServiceImpl: EmployeeService {
 //        })
     }
 
-    func load(id _: Int, completion: @escaping (Result<Employee, Error>) -> Void) {
+    func load(id: Int, completion: @escaping (Result<Employee, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
         }
         let base64LoginString = loginData.base64EncodedString()
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.getEmployee.rawValue)!,
                            method: NetworkService.Method.get,
-                           query: NetworkService.QueryType.path,
-                           params: ["employee_id": 1],
+                           query: NetworkService.QueryType.json,
+                           params: ["employee_id": String(id)],
                            headers: ["Authorization": "Basic \(base64LoginString)"],
-                           success: { data in
-                               if let data = data, let employee = try? JSONDecoder().decode(Employee.self, from: data) {
-                                   completion(.success(employee))
+                           completion: { result in
+                               switch result {
+                               case let .success(data):
+                                   do {
+                                       if let data = data {
+                                           let present = try JSONDecoder().decode(Employee.self, from: data)
+                                           completion(.success(present))
+                                       } else {}
+                                   } catch {
+                                       completion(.failure(error))
+                                   }
+                                   print(String(decoding: data!, as: UTF8.self))
+
+                               case let .failure(error):
+                                   completion(.failure(error))
                                }
                            })
     }

@@ -1,7 +1,22 @@
 import Foundation
 
+struct NetworkServiceError: CustomNSError {
+    enum Code: Int {
+        case unexpectedResonse
+        case requestFailed
+        case errorStatusCode
+    }
+
+    var code: Code
+
+    /// The error code within the given domain.
+    var errorCode: Int { code.rawValue }
+
+    /// The user-info dictionary.
+    var errorUserInfo: [String: Any]
+}
+
 class NetworkService {
-    private var task: URLSessionDataTask?
     private var successCodes: CountableRange<Int> = 200 ..< 299
     private var failureCodes: CountableRange<Int> = 400 ..< 499
 
@@ -13,80 +28,99 @@ class NetworkService {
         case json, path
     }
 
-    func makeRequest(for url: URL, method: Method, query type: QueryType,
-                     params: [String: Any]? = nil,
-                     headers: [String: String]? = nil,
-                     success: ((Data?) -> Void)? = nil,
-                     failure: ((_ data: Data?, _ error: NSError?, _ responseCode: Int) -> Void)? = nil)
+    func makeRequest<T: Codable>(for url: URL, method: Method,
+                                   params: [String: String]? = nil,
+                                   body: T,
+                                   headers: [String: String]? = nil,
+                                   completion: @escaping (Result<Data?, NetworkServiceError>) -> Void)
     {
-        var mutableRequest = makeQuery(for: url, params: params, type: type)
-
-        mutableRequest.allHTTPHeaderFields = headers
-        mutableRequest.httpMethod = method.rawValue
-
+        var mutableRequest = buildRequest(url: url, method: method, params: params, headers: headers)
+        let jsonBody = try? JSONEncoder().encode(body)
+        
+        mutableRequest.httpBody = jsonBody
         let session = URLSession.shared
 
-        task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                failure?(data, error as NSError?, 0)
-                return
-            }
+        let task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
+            do {
+                if let error = error {
+                    throw error
+                }
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw NetworkServiceError(code: .unexpectedResonse,
+                                              errorUserInfo: [NSLocalizedFailureReasonErrorKey: "unexpected reponse"])
+                }
 
-            if let error = error {
-                // Request failed, might be internet connection issue
-                failure?(data, error as NSError, httpResponse.statusCode)
-                return
-            }
+                if self.successCodes.contains(httpResponse.statusCode) {
+                    print("Request finished with success.")
+                    completion(.success(data))
+                } else if self.failureCodes.contains(httpResponse.statusCode) {
+                    throw NetworkServiceError(code: .errorStatusCode, errorUserInfo: ["statusCode": httpResponse.statusCode])
+                } else {
+                    throw NetworkServiceError(code: .requestFailed, errorUserInfo: [:])
+                }
 
-            if self.successCodes.contains(httpResponse.statusCode) {
-                print("Request finished with success.")
-                success?(data)
-            } else if self.failureCodes.contains(httpResponse.statusCode) {
-                print("Request finished with failure.")
-                failure?(data, error as NSError?, httpResponse.statusCode)
-            } else {
-                print("Request finished with serious failure.")
-                // Server returned response with status code different than
-                // expected `successCodes`.
-                let info = [
-                    NSLocalizedDescriptionKey: "Request failed with code \(httpResponse.statusCode)",
-                    NSLocalizedFailureReasonErrorKey: "Wrong handling logic, wrong endpoing mapping or backend bug.",
-                ]
-                let error = NSError(domain: "NetworkService", code: 0, userInfo: info)
-                failure?(data, error, httpResponse.statusCode)
+            } catch let error as NetworkServiceError {
+                completion(.failure(error))
+            } catch {
+                completion(.failure(NetworkServiceError(code: .requestFailed, errorUserInfo: [NSUnderlyingErrorKey: error])))
             }
         })
 
-        task?.resume()
+        task.resume()
     }
 
-    func cancel() {
-        task?.cancel()
+    func makeRequest(for url: URL, method: Method, query _: QueryType,
+                     params: [String: String]? = nil,
+                     headers: [String: String]? = nil,
+                     completion: @escaping (Result<Data?, NetworkServiceError>) -> Void)
+    {
+        let mutableRequest = buildRequest(url: url, method: method, params: params, headers: headers)
+        let session = URLSession.shared
+
+        let task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
+            do {
+                if let error = error {
+                    throw error
+                }
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw NetworkServiceError(code: .unexpectedResonse,
+                                              errorUserInfo: [NSLocalizedFailureReasonErrorKey: "unexpected reponse"])
+                }
+
+                if self.successCodes.contains(httpResponse.statusCode) {
+                    print("Request finished with success.")
+                    completion(.success(data))
+                } else if self.failureCodes.contains(httpResponse.statusCode) {
+                    throw NetworkServiceError(code: .errorStatusCode, errorUserInfo: ["statusCode": httpResponse.statusCode])
+                } else {
+                    throw NetworkServiceError(code: .requestFailed, errorUserInfo: [:])
+                }
+
+            } catch let error as NetworkServiceError {
+                completion(.failure(error))
+            } catch {
+                completion(.failure(NetworkServiceError(code: .requestFailed, errorUserInfo: [NSUnderlyingErrorKey: error])))
+            }
+        })
+
+        task.resume()
     }
 
-    // MARK: Private
+    func cancel() {}
 
-    private func makeQuery(for url: URL, params: [String: Any]?, type: QueryType) -> URLRequest {
-        switch type {
-        case .json:
-            var mutableRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-                                            timeoutInterval: 10.0)
-            if let params = params {
-                mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
-            }
-
-            return mutableRequest
-        case .path:
-            var query = ""
-
-            params?.forEach { key, value in
-                query = query + "\(key)=\(value)&"
-            }
-
-            var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-            components.query = query
-
-            return URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+    private func buildRequest(url: URL,
+                              method: Method,
+                              params: [String: String]? = nil,
+                              headers: [String: String]? = nil) -> URLRequest
+    {
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+        components.queryItems = params?.reduce(into: [URLQueryItem]()) { queryItems, param in
+            queryItems.append(URLQueryItem(name: param.key, value: param.value))
         }
+        var mutableRequest = URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+
+        mutableRequest.allHTTPHeaderFields = headers
+        mutableRequest.httpMethod = method.rawValue
+        return mutableRequest
     }
 }

@@ -13,31 +13,36 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     {
         let answer = NetworkService()
         let loginString = "\(login):\(password)"
-        let present = Present(id: 89, name: "PresentTest", link: "dota2.com", description: "very want", employeeId: 5)
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return false
         }
         let project = Project(id: 0, name: "Yeeeesergajn", projectDescription: "Yeseagkjernakl")
+        let present = Present(id: 7, name: "Yeeees", link: "nooooo", description: "NoneDescription", employeeId: 4)
         let base64LoginString = loginData.base64EncodedString()
-        answer.makeRequest(for: URL(string: "http://localhost:8080/api/project/save")!,
+        answer.makeRequest(for: URL(string: baseURL + Constans.sendPresent.rawValue)!,
                            method: NetworkService.Method.post,
-                           query: NetworkService.QueryType.json,
-                           params: ["id": project.id,
-                                    "name": project.name,
-                                    "description": project.projectDescription],
+                           params: ["employee_id": "4"],
+                           body: present,
                            headers: ["Authorization": "Basic \(base64LoginString)",
                                      "Content-Type": "application/json"],
-                           success: { data in
-                               print(String(decoding: data!, as: UTF8.self))
-                               if let data = data, let project = try?
-                                   JSONDecoder().decode(Project.self, from: data)
-                               {
-                                   print(project.name)
-                               }
-                           },
-                           failure: { data, error, responseCode in
-                               print(String(decoding: data!, as: UTF8.self), data!, "\n", error ?? "none", "\n", responseCode)
-                           })
+                           completion: { result in
+                                  switch result {
+                                  case let .success(data):
+                                      do {
+                                          if let data = data {
+                                              let present = try JSONDecoder().decode(Present.self, from: data)
+                                              print("eyeee")
+                                          } else {}
+                                      } catch {
+                                          print("lol1")
+                                      }
+                                      print(String(decoding: data!, as: UTF8.self))
+
+                                  case let .failure(error):
+                                      print("lol2")
+                                      print(error)
+                                  }
+                              })
 
         return true
     }

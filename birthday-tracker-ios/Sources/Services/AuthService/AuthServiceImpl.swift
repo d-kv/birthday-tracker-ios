@@ -10,22 +10,25 @@ import Foundation
 class AuthServiceImpl: AuthService {
     let answer = NetworkService()
 
-    func register(authentification: Auth, completion: @escaping (Result<Profile, Error>) -> Void) { // it doesn't work now
+    func register(authentification: Auth, completion: @escaping (Result<Profile, Error>) -> Void) {
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.registerAuth.rawValue)!,
                            method: NetworkService.Method.post,
-                           query: NetworkService.QueryType.json,
-                           params: ["username": authentification.username,
-                                    "password": authentification.password,
-                                    "full_name": authentification.fullName,
-                                    "phone": authentification.phone,
-                                    "birthday": authentification.birthday,
-                                    "start_work": authentification.startWork,
-                                    "city": authentification.city],
+                           body: authentification,
                            headers: ["Content-Type": "application/json"],
-                           success: { data in
-                               print(String(decoding: data!, as: UTF8.self))
-                               if let data = data, let auth = try? JSONDecoder().decode(Profile.self, from: data) {
-                                   completion(.success(auth))
+                           completion: { result in
+                               switch result {
+                               case let .success(data):
+                                   do {
+                                       if let data = data {
+                                           let profile = try JSONDecoder().decode(Profile.self, from: data)
+                                           completion(.success(profile))
+                                       } else {}
+                                   } catch {
+                                       completion(.failure(error))
+                                   }
+                                   print(String(decoding: data!, as: UTF8.self))
+                               case let .failure(error):
+                                   completion(.failure(error))
                                }
                            })
     }

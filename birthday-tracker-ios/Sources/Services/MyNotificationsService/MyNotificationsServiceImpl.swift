@@ -21,13 +21,24 @@ class MyNotificationServiceImpl: MyNotificationService {
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.getMyNotifications.rawValue)!,
                            method: NetworkService.Method.get,
                            query: NetworkService.QueryType.path,
-                           params: ["employee_id": id],
+                           params: ["employee_id": String(id)],
                            headers: ["Authorization": "Basic \(base64LoginString)"],
-                           success: { data in
-                               print(String(decoding: data!, as: UTF8.self))
-                               if let data = data, let notifications = try? JSONDecoder().decode(MyNotifications.self, from: data) {
-                                   completion(.success(notifications))
-                               }
-                           })
+                            completion: { result in
+                                  switch result {
+                                  case let .success(data):
+                                      do {
+                                          if let data = data {
+                                              let notifications = try JSONDecoder().decode(MyNotifications.self, from: data)
+                                              completion(.success(notifications))
+                                          } else {}
+                                      } catch {
+                                          completion(.failure(error))
+                                      }
+                                      print(String(decoding: data!, as: UTF8.self))
+
+                                  case let .failure(error):
+                                      completion(.failure(error))
+                                  }
+                              })
     }
 }
