@@ -29,7 +29,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                                   case let .success(data):
                                       do {
                                           if let data = data {
-                                              let present = try JSONDecoder().decode(Present.self, from: data)
+                                              _ = try JSONDecoder().decode(Present.self, from: data)
                                               print("eyeee")
                                           } else {}
                                       } catch {
