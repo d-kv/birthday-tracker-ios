@@ -11,8 +11,7 @@ class MyNotificationServiceImpl: MyNotificationService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
 
-    func edit(employee _: Employee, completion _: () -> Void) {}
-
+    // It's a woooork (Yep, Dr F. can proud of me)
     func load(id: Int, completion: @escaping (Result<MyNotifications, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -23,22 +22,22 @@ class MyNotificationServiceImpl: MyNotificationService {
                            query: NetworkService.QueryType.path,
                            params: ["employee_id": String(id)],
                            headers: ["Authorization": "Basic \(base64LoginString)"],
-                            completion: { result in
-                                  switch result {
-                                  case let .success(data):
-                                      do {
-                                          if let data = data {
-                                              let notifications = try JSONDecoder().decode(MyNotifications.self, from: data)
-                                              completion(.success(notifications))
-                                          } else {}
-                                      } catch {
-                                          completion(.failure(error))
-                                      }
-                                      print(String(decoding: data!, as: UTF8.self))
+                           completion: { result in
+                               switch result {
+                               case let .success(data):
+                                   do {
+                                       if let data = data {
+                                           let notifications = try JSONDecoder().decode(MyNotifications.self, from: data)
+                                           completion(.success(notifications))
+                                       } else {}
+                                   } catch {
+                                       completion(.failure(error))
+                                   }
+                                   print(String(decoding: data!, as: UTF8.self))
 
-                                  case let .failure(error):
-                                      completion(.failure(error))
-                                  }
-                              })
+                               case let .failure(error):
+                                   completion(.failure(error))
+                               }
+                           })
     }
 }

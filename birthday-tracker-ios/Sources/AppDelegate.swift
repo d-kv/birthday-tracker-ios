@@ -16,32 +16,35 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return false
         }
-        let present = Present(id: 7, name: "Yeeees", link: "nooooo", description: "NoneDescription", employeeId: 4)
+        let present = Present(id: 7, name: "Ye6ee69es", link: "http://www.vk.com/alexey.dogopolov", description: "NoneDescription", employeeId: 4)
+        let project = Project(id: 1, name: "test231", projectDescription: "JustTest")
         let base64LoginString = loginData.base64EncodedString()
-        answer.makeRequest(for: URL(string: baseURL + Constans.sendPresent.rawValue)!,
-                           method: NetworkService.Method.post,
-                           params: ["employee_id": "4"],
-                           body: present,
-                           headers: ["Authorization": "Basic \(base64LoginString)",
-                                     "Content-Type": "application/json"],
+        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.sendProject.rawValue)!,
+                           method: NetworkService.Method.patch,
+                           body: project,
+                           headers: ["Authorization": "Basic \(base64LoginString)"],
                            completion: { result in
-                                  switch result {
-                                  case let .success(data):
-                                      do {
-                                          if let data = data {
-                                              _ = try JSONDecoder().decode(Present.self, from: data)
-                                              print("eyeee")
-                                          } else {}
-                                      } catch {
-                                          print("lol1")
-                                      }
-                                      print(String(decoding: data!, as: UTF8.self))
+                               switch result {
+                               case let .success(data):
+                                   do {
+                                       if let data = data {
+                                           _ = try JSONDecoder().decode(Profile.self, from: data)
+                                           print("eyeee")
+                                       } else {}
+                                   } catch {
+                                       print("lol1")
+                                   }
+                                   print(String(decoding: data!, as: UTF8.self))
 
-                                  case let .failure(error):
-                                      print("lol2")
-                                      print(error)
-                                  }
-                              })
+                               case let .failure(error):
+                                   print("lol2")
+                                   print(error)
+                                   print(error.code)
+                                   print(error.errorCode)
+                                   print(error.errorUserInfo)
+                                   print(error.localizedDescription)
+                               }
+                           })
 
         return true
     }

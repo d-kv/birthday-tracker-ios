@@ -13,6 +13,14 @@ class PresentServiceImpl: PresentService {
     let loginString = "\(login):\(password)"
 
     public
+    // can't work, why - idk, this problem accompany all "patch" requests
+//    Response:
+//    NetworkServiceError(code: birthday_tracker_ios.NetworkServiceError.Code.requestFailed, errorUserInfo: [:])
+//    requestFailed
+//     1
+//    [:]
+//    The operation couldn’t be completed. (birthday_tracker_ios.NetworkServiceError error 1.)
+
     func edit(present: Present, completion: @escaping (Result<Present, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -42,6 +50,7 @@ class PresentServiceImpl: PresentService {
                            })
     }
 
+    // work only with auth
     func load(id: Int, completion: @escaping (Result<Present, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -71,6 +80,7 @@ class PresentServiceImpl: PresentService {
                            })
     }
 
+    // work only with admin auth
     func send(present: Present, completion: @escaping (Result<Present, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return

@@ -7,7 +7,4 @@
 
 import Foundation
 
-protocol WishlistService {
-    func edit(employee: Employee, completion: () -> Void)
-    func load(id: Int, completion: @escaping (Result<Wishlist, Error>) -> Void)
-}
+protocol WishlistService {}

@@ -29,14 +29,14 @@ class NetworkService {
     }
 
     func makeRequest<T: Codable>(for url: URL, method: Method,
-                                   params: [String: String]? = nil,
-                                   body: T,
-                                   headers: [String: String]? = nil,
-                                   completion: @escaping (Result<Data?, NetworkServiceError>) -> Void)
+                                 params: [String: String]? = nil,
+                                 body: T,
+                                 headers: [String: String]? = nil,
+                                 completion: @escaping (Result<Data?, NetworkServiceError>) -> Void)
     {
         var mutableRequest = buildRequest(url: url, method: method, params: params, headers: headers)
         let jsonBody = try? JSONEncoder().encode(body)
-        
+
         mutableRequest.httpBody = jsonBody
         let session = URLSession.shared
 

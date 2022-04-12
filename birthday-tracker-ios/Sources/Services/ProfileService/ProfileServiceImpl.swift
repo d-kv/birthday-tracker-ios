@@ -10,8 +10,34 @@ import Foundation
 class ProfileServiceImpl: ProfileService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
+    // Надо придумать каким образом необходимо отправить эмплоя, чтобы можно было указывать не все параметры
+    func edit(employee: Employee, completion: @escaping (Result<Profile, Error>) -> Void) {
+        guard let loginData = loginString.data(using: String.Encoding.utf8) else {
+            return
+        }
+        let base64LoginString = loginData.base64EncodedString()
+        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.updateEmployee.rawValue)!,
+                           method: NetworkService.Method.patch,
+                           body: employee,
+                           headers: ["Authorization": "Basic \(base64LoginString)"],
+                           completion: { result in
+                               switch result {
+                               case let .success(data):
+                                   do {
+                                       if let data = data { // здесь не вернется эмплой, и что тогда?
+                                           let profile = try JSONDecoder().decode(Profile.self, from: data)
+                                           completion(.success(profile))
+                                       } else {}
+                                   } catch {
+                                       completion(.failure(error))
+                                   }
+                                   print(String(decoding: data!, as: UTF8.self))
 
-    func edit(employee _: Employee, completion _: () -> Void) {} // как отправить эмплоя
+                               case let .failure(error):
+                                   completion(.failure(error))
+                               }
+                           })
+    }
 
     func load(id: Int, completion: @escaping (Result<Profile, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
@@ -41,6 +67,4 @@ class ProfileServiceImpl: ProfileService {
                                }
                            })
     }
-
-    func send(request _: URLRequest, completion _: () -> Void) {}
 }
