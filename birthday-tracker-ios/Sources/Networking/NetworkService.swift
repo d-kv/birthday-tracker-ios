@@ -21,7 +21,12 @@ class NetworkService {
     private var failureCodes: CountableRange<Int> = 400 ..< 599
 
     enum Method: String {
-        case get, post, put, delete, update, patch
+        case get = "GET"
+        case patch = "PATCH"
+        case post = "POST"
+        case put = "PUT"
+        case delete = "DELETE"
+        case update = "UPDATE"
     }
 
     enum QueryType {
@@ -35,9 +40,9 @@ class NetworkService {
                                  completion: @escaping (Result<Data?, NetworkServiceError>) -> Void)
     {
         var mutableRequest = buildRequest(url: url, method: method, params: params, headers: headers)
-        let jsonBody = try? JSONEncoder().encode(body)
-
+        let jsonBody = try! JSONEncoder().encode(body)
         mutableRequest.httpBody = jsonBody
+        print(String(decoding:mutableRequest.httpBody!, as: UTF8.self))
         let session = URLSession.shared
 
         let task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
@@ -49,9 +54,8 @@ class NetworkService {
                     throw NetworkServiceError(code: .unexpectedResonse,
                                               errorUserInfo: [NSLocalizedFailureReasonErrorKey: "unexpected reponse"])
                 }
-
+                print(String(decoding: data!, as: UTF8.self))
                 if self.successCodes.contains(httpResponse.statusCode) {
-                    print("Request finished with success.")
                     completion(.success(data))
                 } else if self.failureCodes.contains(httpResponse.statusCode) {
                     throw NetworkServiceError(code: .errorStatusCode, errorUserInfo: ["statusCode": httpResponse.statusCode])
@@ -76,7 +80,7 @@ class NetworkService {
     {
         let mutableRequest = buildRequest(url: url, method: method, params: params, headers: headers)
         let session = URLSession.shared
-
+        
         let task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
             do {
                 if let error = error {
@@ -86,7 +90,7 @@ class NetworkService {
                     throw NetworkServiceError(code: .unexpectedResonse,
                                               errorUserInfo: [NSLocalizedFailureReasonErrorKey: "unexpected reponse"])
                 }
-
+                print(String(decoding: data!, as: UTF8.self))
                 if self.successCodes.contains(httpResponse.statusCode) {
                     print("Request finished with success.")
                     completion(.success(data))

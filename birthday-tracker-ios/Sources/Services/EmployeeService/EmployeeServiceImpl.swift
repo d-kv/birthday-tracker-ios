@@ -11,22 +11,22 @@ class EmployeeServiceImpl: EmployeeService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
 
-    // как передать правильно Эмплоя сюда? может есть способ вместо тупого вписывания просто вставить сразу экземпляр?
-    func edit(employee: Employee, completion: @escaping (Result<Employee, Error>) -> Void) { guard let loginData = loginString.data(using: String.Encoding.utf8) else {
+
+    func edit(employee: Employee, completion: @escaping (Result<Void, Error>) -> Void) { guard let loginData = loginString.data(using: String.Encoding.utf8) else {
         return
     }
     let base64LoginString = loginData.base64EncodedString()
     answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.updateEmployee.rawValue)!,
                        method: NetworkService.Method.patch,
                        body: employee,
-                       headers: ["Authorization": "Basic \(base64LoginString)"],
+                       headers: ["Authorization": "Basic \(base64LoginString)",
+                                 "Content-Type": "application/json"],
                        completion: { result in
                            switch result {
                            case let .success(data):
                                do {
-                                   if let data = data { // здесь не вернется эмплой, и что тогда?
-                                       let employee = try JSONDecoder().decode(Employee.self, from: data)
-                                       completion(.success(employee))
+                                   if let data = data { // здесь не вернется эмплой, и
+                                       completion(.success(()))
                                    } else {}
                                } catch {
                                    completion(.failure(error))

@@ -16,9 +16,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return false
         }
-        let present = Present(id: 1, name: "Ye6eees", link: "httpwww.vk.com/alexey.dogopolov", description: "NoneDescription", employeeId: 4)
+        let present = Present(id: 1, name: "Ye6eeesДААААААА", link: "http://www.vk.com/alexey.dogopolov", description: "NoneDescription", employeeId: 1)
         let project = Project(id: 3, name: "test231", projectDescription: "JustTest")
+        
         let base64LoginString = loginData.base64EncodedString()
+        print(base64LoginString)
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.editPresent.rawValue)!,
                            method: NetworkService.Method.patch,
                            body: present,

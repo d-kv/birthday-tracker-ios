@@ -13,15 +13,8 @@ class PresentServiceImpl: PresentService {
     let loginString = "\(login):\(password)"
 
     public
-    // can't work, why - idk, this problem accompany all "patch" requests
-//    Response:
-//    NetworkServiceError(code: birthday_tracker_ios.NetworkServiceError.Code.requestFailed, errorUserInfo: [:])
-//    requestFailed
-//     1
-//    [:]
-//    The operation couldn’t be completed. (birthday_tracker_ios.NetworkServiceError error 1.)
-
-    func edit(present: Present, completion: @escaping (Result<Present, Error>) -> Void) {
+//it's work
+    func edit(present: Present, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
         }
@@ -32,21 +25,14 @@ class PresentServiceImpl: PresentService {
                            headers: ["Authorization": "Basic \(base64LoginString)",
                                      "Content-Type": "application/json"],
                            completion: { result in
-                               switch result {
-                               case let .success(data):
-                                   do {
-                                       if let data = data {
-                                           let present = try JSONDecoder().decode(Present.self, from: data)
-                                           completion(.success(present))
-                                       } else {}
-                                   } catch {
-                                       completion(.failure(error))
-                                   }
-                                   print(String(decoding: data!, as: UTF8.self))
-
-                               case let .failure(error):
-                                   completion(.failure(error))
-                               }
+            switch result {
+            case let .success(data):
+                if data != nil {
+                    completion(.success(()))
+                } else {}
+            case let .failure(error):
+                completion(.failure(error))
+            }
                            })
     }
 
