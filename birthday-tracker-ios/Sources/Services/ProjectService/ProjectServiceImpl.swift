@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// `недостаток прав на проект
+// достаток прав на проект
 class ProjectServiceImpl: ProjectService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
@@ -19,7 +19,8 @@ class ProjectServiceImpl: ProjectService {
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.sendProject.rawValue)!,
                            method: NetworkService.Method.post,
                            body: project,
-                           headers: ["Authorization": "Basic \(base64LoginString)"],
+                           headers: ["Authorization": "Basic \(base64LoginString)",
+                                     "Content-Type": "application/json"],
                            completion: { result in
                                switch result {
                                case let .success(data):
@@ -40,28 +41,20 @@ class ProjectServiceImpl: ProjectService {
     }
 
     // тут ничего не возвращается, а ну впринципе и не работает)
-    func update(project: Project, completion: @escaping (Result<Project, Error>) -> Void) {
+    func update(project: Project, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
         }
         let base64LoginString = loginData.base64EncodedString()
-        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.sendProject.rawValue)!,
+        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.updateProject.rawValue)!,
                            method: NetworkService.Method.patch,
                            body: project,
                            headers: ["Authorization": "Basic \(base64LoginString)"],
                            completion: { result in
                                switch result {
                                case let .success(data):
-                                   do {
-                                       if let data = data {
-                                           let project = try JSONDecoder().decode(Project.self, from: data)
-                                           completion(.success(project))
-                                       } else {}
-                                   } catch {
-                                       completion(.failure(error))
-                                   }
+                                   completion(.success(()))
                                    print(String(decoding: data!, as: UTF8.self))
-
                                case let .failure(error):
                                    completion(.failure(error))
                                }
@@ -129,5 +122,26 @@ class ProjectServiceImpl: ProjectService {
                                }
                            })
     }
-//
+    //It's work
+    func deleteProject(project: Project, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let loginData = loginString.data(using: String.Encoding.utf8) else {
+            return
+        }
+        let base64LoginString = loginData.base64EncodedString()
+        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.deleteProject.rawValue)!,
+                           method: NetworkService.Method.delete,
+                           body: project,
+                           headers: ["Authorization": "Basic \(base64LoginString)",
+                                     "Content-Type": "application/json"],
+                           completion: { result in
+                               switch result {
+                               case let .success(data):
+                                   if data != nil {
+                                       completion(.success(()))
+                                   } else {}
+                               case let .failure(error):
+                                   completion(.failure(error))
+                               }
+                           })
+    }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 protocol AuthService {
     func register(authentification: Auth, completion: @escaping (Result<Profile, Error>) -> Void)
+    func deleteRegister(username: String, completion: @escaping (Result<Void, Error>) -> Void)
 }

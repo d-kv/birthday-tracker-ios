@@ -86,7 +86,7 @@ class PresentServiceImpl: PresentService {
             return
         }
         let base64LoginString = loginData.base64EncodedString()
-        answer.makeRequest(for: URL(string: baseURL + Constans.sendPresent.rawValue)!,
+        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.sendPresent.rawValue)!,
                            method: NetworkService.Method.post,
                            params: ["employee_id": String(present.employeeId)],
                            body: present,
@@ -105,6 +105,28 @@ class PresentServiceImpl: PresentService {
                                    }
                                    print(String(decoding: data!, as: UTF8.self))
 
+                               case let .failure(error):
+                                   completion(.failure(error))
+                               }
+                           })
+    }
+
+    // it's work
+    func deletePresent(present: Present, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let loginData = loginString.data(using: String.Encoding.utf8) else {
+            return
+        }
+        let base64LoginString = loginData.base64EncodedString()
+        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.deletePresent.rawValue)!,
+                           method: NetworkService.Method.delete,
+                           body: present,
+                           headers: ["Authorization": "Basic \(base64LoginString)", "Content-Type": "application/json"],
+                           completion: { result in
+                               switch result {
+                               case let .success(data):
+                                   if data != nil {
+                                       completion(.success(()))
+                                   } else {}
                                case let .failure(error):
                                    completion(.failure(error))
                                }

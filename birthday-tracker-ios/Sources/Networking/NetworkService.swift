@@ -18,7 +18,7 @@ struct NetworkServiceError: CustomNSError {
 
 class NetworkService {
     private var successCodes: CountableRange<Int> = 200 ..< 299
-    private var failureCodes: CountableRange<Int> = 400 ..< 499
+    private var failureCodes: CountableRange<Int> = 400 ..< 599
 
     enum Method: String {
         case get, post, put, delete, update, patch
@@ -56,7 +56,7 @@ class NetworkService {
                 } else if self.failureCodes.contains(httpResponse.statusCode) {
                     throw NetworkServiceError(code: .errorStatusCode, errorUserInfo: ["statusCode": httpResponse.statusCode])
                 } else {
-                    throw NetworkServiceError(code: .requestFailed, errorUserInfo: [:])
+                    throw NetworkServiceError(code: .requestFailed, errorUserInfo: ["statusCode": httpResponse.statusCode])
                 }
 
             } catch let error as NetworkServiceError {
@@ -93,7 +93,7 @@ class NetworkService {
                 } else if self.failureCodes.contains(httpResponse.statusCode) {
                     throw NetworkServiceError(code: .errorStatusCode, errorUserInfo: ["statusCode": httpResponse.statusCode])
                 } else {
-                    throw NetworkServiceError(code: .requestFailed, errorUserInfo: [:])
+                    throw NetworkServiceError(code: .requestFailed, errorUserInfo: ["statusCode": httpResponse.statusCode])
                 }
 
             } catch let error as NetworkServiceError {
