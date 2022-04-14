@@ -19,39 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return false
         }
-        let present = Present(id: 1, name: "Ye6eeesДААААААА", link: "http://www.vk.com/alexey.dogopolov", description: "NoneDescription", employeeId: 1)
         // let project = Project(id: 3, name: "test231", projectDescription: "JustTest")
 
         let base64LoginString = loginData.base64EncodedString()
-        print(base64LoginString)
-        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.editPresent.rawValue)!,
-                           method: NetworkService.Method.patch,
-                           body: present,
-                           headers: ["Authorization": "Basic \(base64LoginString)",
-                                     "Content-Type": "application/json"],
-                           completion: { result in
-                               switch result {
-                               case let .success(data):
-                                   do {
-                                       if let data = data {
-                                           _ = try JSONDecoder().decode(Employee.self, from: data)
-                                           print("eyeee")
-                                       } else {}
-                                   } catch {
-                                       print("lol1")
-                                   }
-                                   print(String(decoding: data!, as: UTF8.self))
-
-                               case let .failure(error):
-                                   print("lol2")
-                                   print(error)
-                                   print(error.code)
-                                   print(error.errorCode)
-                                   print(error.errorUserInfo)
-                                   print(error.localizedDescription)
-                               }
-                           })
-        //Create a window that is the same size as the screen
+        print(base64LoginString)        //Create a window that is the same size as the screen
         window = UIWindow(frame: UIScreen.main.bounds)
         // Create a view controller
         let viewController = AuthView()

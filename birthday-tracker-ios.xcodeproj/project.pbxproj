@@ -29,10 +29,10 @@
 		574665F627E4A99900D7B5AD /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F527E4A99900D7B5AD /* AuthView.swift */; };
 		5746660F27F1B57E00D7B5AD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746660E27F1B57E00D7B5AD /* ProfileView.swift */; };
 		5746661327F1B5C700D7B5AD /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */; };
+		574DC87228080EFA00F24845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574DC87128080EFA00F24845 /* SceneDelegate.swift */; };
 		57D4045C27F45505001AFA49 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045B27F45505001AFA49 /* ProjectService.swift */; };
 		57D4045E27F4551A001AFA49 /* ProjectServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */; };
 		57D4046027F45851001AFA49 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045F27F45851001AFA49 /* Settings.swift */; };
-		57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */; };
 		57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5427CCED98002B9749 /* Assets.xcassets */; };
 		57E10B5827CCED98002B9749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5727CCED98002B9749 /* Preview Assets.xcassets */; };
 		A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */; };
@@ -66,11 +66,12 @@
 		574665F527E4A99900D7B5AD /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		5746660E27F1B57E00D7B5AD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		574DC87128080EFA00F24845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		574DC8732808131900F24845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		57D4045B27F45505001AFA49 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectServiceImpl.swift; sourceTree = "<group>"; };
 		57D4045F27F45851001AFA49 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "birthday-tracker-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birthday_tracker_iosApp.swift; sourceTree = "<group>"; };
 		57E10B5427CCED98002B9749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57E10B5727CCED98002B9749 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeServiceImpl.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 				574665FC27F1B0F500D7B5AD /* Services */,
 				574665FB27F1B0EC00D7B5AD /* Networking */,
 				5743639B27F3302700B0D9C5 /* AppDelegate.swift */,
+				574DC87128080EFA00F24845 /* SceneDelegate.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -325,9 +327,9 @@
 		57E10B4F27CCED96002B9749 /* birthday-tracker-ios */ = {
 			isa = PBXGroup;
 			children = (
+				574DC8732808131900F24845 /* Info.plist */,
 				574665F927F1B0CB00D7B5AD /* Resources */,
 				574665FA27F1B0D600D7B5AD /* Sources */,
-				57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */,
 				57E10B5627CCED98002B9749 /* Preview Content */,
 			);
 			path = "birthday-tracker-ios";
@@ -440,9 +442,9 @@
 				574665D227E4A55100D7B5AD /* PresentService.swift in Sources */,
 				574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */,
 				A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */,
+				574DC87228080EFA00F24845 /* SceneDelegate.swift in Sources */,
 				A836EAF627E33D86005A4B8F /* Employee.swift in Sources */,
 				574363A027F33BF200B0D9C5 /* Project.swift in Sources */,
-				57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,7 +577,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"birthday-tracker-ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "birthday-tracker-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -604,7 +606,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"birthday-tracker-ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "birthday-tracker-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

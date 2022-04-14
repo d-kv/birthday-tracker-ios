@@ -7,8 +7,8 @@
 
 import Foundation
 
-let password = "admin"
-let login = "admin"
+var password = "admin"
+var login = "admin"
 let baseURL = "http://localhost:8080"
 
 enum Constans: String {

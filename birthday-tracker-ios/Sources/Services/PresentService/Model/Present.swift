@@ -1,17 +1,16 @@
 import Foundation
 
+// MARK: - Present
 struct Present: Codable {
     let id: Int
     let name: String
     let link: String
-    let description: String
-    let employeeId: Int
+    let presentDescription: String
+    let employeeID: Int
 
-    init(id: Int, name: String, link: String, description: String, employeeId: Int) {
-        self.id = id
-        self.name = name
-        self.link = link
-        self.description = description
-        self.employeeId = employeeId
+    enum CodingKeys: String, CodingKey {
+        case id, name, link
+        case presentDescription = "description"
+        case employeeID = "employee_id"
     }
 }

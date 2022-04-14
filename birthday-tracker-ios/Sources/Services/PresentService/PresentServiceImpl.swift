@@ -71,7 +71,7 @@ class PresentServiceImpl: PresentService {
         let base64LoginString = loginData.base64EncodedString()
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.sendPresent.rawValue)!,
                            method: NetworkService.Method.post,
-                           params: ["employee_id": String(present.employeeId)],
+                           params: ["employee_id": String(present.employeeID)],
                            body: present,
                            headers: ["Authorization": "Basic \(base64LoginString)",
                                      "Content-Type": "application/json"],
