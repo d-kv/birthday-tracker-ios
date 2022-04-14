@@ -5,6 +5,7 @@ struct NetworkServiceError: CustomNSError {
         case unexpectedResonse
         case requestFailed
         case errorStatusCode
+        case emptyData
     }
 
     var code: Code
@@ -14,6 +15,11 @@ struct NetworkServiceError: CustomNSError {
 
     /// The user-info dictionary.
     var errorUserInfo: [String: Any]
+     
+    init (code: Code, errorCode: Int = 0, errorUserInfo: [String:Any] = ["":""]) {
+        self.code = code
+        self.errorUserInfo = errorUserInfo
+    }
 }
 
 class NetworkService {
@@ -42,7 +48,6 @@ class NetworkService {
         var mutableRequest = buildRequest(url: url, method: method, params: params, headers: headers)
         let jsonBody = try! JSONEncoder().encode(body)
         mutableRequest.httpBody = jsonBody
-        print(String(decoding:mutableRequest.httpBody!, as: UTF8.self))
         let session = URLSession.shared
 
         let task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
@@ -54,7 +59,6 @@ class NetworkService {
                     throw NetworkServiceError(code: .unexpectedResonse,
                                               errorUserInfo: [NSLocalizedFailureReasonErrorKey: "unexpected reponse"])
                 }
-                print(String(decoding: data!, as: UTF8.self))
                 if self.successCodes.contains(httpResponse.statusCode) {
                     completion(.success(data))
                 } else if self.failureCodes.contains(httpResponse.statusCode) {
@@ -80,7 +84,7 @@ class NetworkService {
     {
         let mutableRequest = buildRequest(url: url, method: method, params: params, headers: headers)
         let session = URLSession.shared
-        
+
         let task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { data, response, error in
             do {
                 if let error = error {
@@ -90,9 +94,7 @@ class NetworkService {
                     throw NetworkServiceError(code: .unexpectedResonse,
                                               errorUserInfo: [NSLocalizedFailureReasonErrorKey: "unexpected reponse"])
                 }
-                print(String(decoding: data!, as: UTF8.self))
                 if self.successCodes.contains(httpResponse.statusCode) {
-                    print("Request finished with success.")
                     completion(.success(data))
                 } else if self.failureCodes.contains(httpResponse.statusCode) {
                     throw NetworkServiceError(code: .errorStatusCode, errorUserInfo: ["statusCode": httpResponse.statusCode])

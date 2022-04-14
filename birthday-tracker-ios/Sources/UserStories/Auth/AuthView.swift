@@ -5,16 +5,16 @@
 //  Created by Darvin on 18.03.2022.
 //
 
-import SwiftUI
+import UIKit
 
-struct AuthUIView: View {
-    var body: some View {
-        Text("Hello, Auth!")
+class AuthView: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
     }
+
+
 }
 
-struct AuthUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        AuthUIView()
-    }
-}

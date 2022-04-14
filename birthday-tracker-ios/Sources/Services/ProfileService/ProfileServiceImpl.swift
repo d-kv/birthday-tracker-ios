@@ -10,7 +10,7 @@ import Foundation
 class ProfileServiceImpl: ProfileService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
-    // Надо придумать каким образом необходимо отправить эмплоя, чтобы можно было указывать не все параметры
+
     func edit(employee: Employee, completion: @escaping (Result<Profile, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -31,7 +31,6 @@ class ProfileServiceImpl: ProfileService {
                                    } catch {
                                        completion(.failure(error))
                                    }
-                                   print(String(decoding: data!, as: UTF8.self))
 
                                case let .failure(error):
                                    completion(.failure(error))
@@ -60,7 +59,6 @@ class ProfileServiceImpl: ProfileService {
                                    } catch {
                                        completion(.failure(error))
                                    }
-                                   print(String(decoding: data!, as: UTF8.self))
 
                                case let .failure(error):
                                    completion(.failure(error))

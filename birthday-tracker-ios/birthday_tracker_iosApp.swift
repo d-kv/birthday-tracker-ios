@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-
-@main
-struct birthday_tracker_iosApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
-    var body: some Scene {
-        WindowGroup {
-            AuthUIView()
-        }
-    }
-}
+//
+//@main
+//struct birthday_tracker_iosApp: App {
+//    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+//
+//    var body: some Scene {
+//        WindowGroup {
+//            //AuthUIView()
+//        }
+//    }
+//}

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// достаток прав на проект
+
 class ProjectServiceImpl: ProjectService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
@@ -28,11 +28,12 @@ class ProjectServiceImpl: ProjectService {
                                        if let data = data {
                                            let project = try JSONDecoder().decode(Project.self, from: data)
                                            completion(.success(project))
-                                       } else {}
+                                       } else {
+                                           completion(.failure(NetworkServiceError(code: .emptyData, errorUserInfo: ["data": "None"])))
+                                       }
                                    } catch {
                                        completion(.failure(error))
                                    }
-                                   print(String(decoding: data!, as: UTF8.self))
 
                                case let .failure(error):
                                    completion(.failure(error))
@@ -40,7 +41,6 @@ class ProjectServiceImpl: ProjectService {
                            })
     }
 
-    // тут ничего не возвращается, а ну впринципе и не работает)
     func update(project: Project, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -52,16 +52,16 @@ class ProjectServiceImpl: ProjectService {
                            headers: ["Authorization": "Basic \(base64LoginString)"],
                            completion: { result in
                                switch result {
-                               case let .success(data):
+                               case .success:
                                    completion(.success(()))
-                                   print(String(decoding: data!, as: UTF8.self))
                                case let .failure(error):
                                    completion(.failure(error))
                                }
                            })
     }
 
-    func addEmployee(project_id: Int, employee_Id: Int, completion: @escaping (Result<Project, Error>) -> Void) {
+    
+    func addEmployee(project_id: Int, employee_Id: Int, completion: @escaping (Result<Void, Error>) -> Void) {
         let answer = NetworkService()
         let loginString = "\(login):\(password)"
 
@@ -77,17 +77,8 @@ class ProjectServiceImpl: ProjectService {
                            headers: ["Authorization": "Basic \(base64LoginString)"],
                            completion: { result in
                                switch result {
-                               case let .success(data):
-                                   do {
-                                       if let data = data {
-                                           let project = try JSONDecoder().decode(Project.self, from: data)
-                                           completion(.success(project))
-                                       } else {}
-                                   } catch {
-                                       completion(.failure(error))
-                                   }
-                                   print(String(decoding: data!, as: UTF8.self))
-
+                               case .success:
+                                   completion(.success(()))
                                case let .failure(error):
                                    completion(.failure(error))
                                }
@@ -111,18 +102,19 @@ class ProjectServiceImpl: ProjectService {
                                        if let data = data {
                                            let project = try JSONDecoder().decode(Project.self, from: data)
                                            completion(.success(project))
-                                       } else {}
+                                       } else {
+                                           completion(.failure(NetworkServiceError(code: .emptyData)))
+                                       }
                                    } catch {
                                        completion(.failure(error))
                                    }
-                                   print(String(decoding: data!, as: UTF8.self))
 
                                case let .failure(error):
                                    completion(.failure(error))
                                }
                            })
     }
-    //It's work
+
     func deleteProject(project: Project, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -135,10 +127,8 @@ class ProjectServiceImpl: ProjectService {
                                      "Content-Type": "application/json"],
                            completion: { result in
                                switch result {
-                               case let .success(data):
-                                   if data != nil {
-                                       completion(.success(()))
-                                   } else {}
+                               case .success:
+                                   completion(.success(()))
                                case let .failure(error):
                                    completion(.failure(error))
                                }

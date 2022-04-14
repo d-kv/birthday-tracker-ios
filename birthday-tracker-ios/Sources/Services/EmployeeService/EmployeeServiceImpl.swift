@@ -11,7 +11,6 @@ class EmployeeServiceImpl: EmployeeService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
 
-
     func edit(employee: Employee, completion: @escaping (Result<Void, Error>) -> Void) { guard let loginData = loginString.data(using: String.Encoding.utf8) else {
         return
     }
@@ -23,16 +22,8 @@ class EmployeeServiceImpl: EmployeeService {
                                  "Content-Type": "application/json"],
                        completion: { result in
                            switch result {
-                           case let .success(data):
-                               do {
-                                   if let data = data { // здесь не вернется эмплой, и
-                                       completion(.success(()))
-                                   } else {}
-                               } catch {
-                                   completion(.failure(error))
-                               }
-                               print(String(decoding: data!, as: UTF8.self))
-
+                           case .success:
+                               completion(.success(()))
                            case let .failure(error):
                                completion(.failure(error))
                            }
@@ -56,12 +47,12 @@ class EmployeeServiceImpl: EmployeeService {
                                        if let data = data {
                                            let present = try JSONDecoder().decode(Employee.self, from: data)
                                            completion(.success(present))
-                                       } else {}
+                                       } else {
+                                           completion(.failure(NetworkServiceError(code: .emptyData)))
+                                       }
                                    } catch {
                                        completion(.failure(error))
                                    }
-                                   print(String(decoding: data!, as: UTF8.self))
-
                                case let .failure(error):
                                    completion(.failure(error))
                                }
