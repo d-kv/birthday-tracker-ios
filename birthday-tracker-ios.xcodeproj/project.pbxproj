@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B10BEA52809B70300D3E901 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10BEA42809B70300D3E901 /* MainAssembly.swift */; };
 		5743639C27F3302700B0D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639B27F3302700B0D9C5 /* AppDelegate.swift */; };
 		574363A027F33BF200B0D9C5 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639F27F33BF200B0D9C5 /* Project.swift */; };
 		574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CD27E4A49500D7B5AD /* EmployeeService.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B10BEA42809B70300D3E901 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		5743639B27F3302700B0D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5743639F27F33BF200B0D9C5 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		574665CD27E4A49500D7B5AD /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B10BEA32809B6E500D3E901 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				1B10BEA42809B70300D3E901 /* MainAssembly.swift */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
 		5743639D27F33BC700B0D9C5 /* ProjectService */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		574665FD27F1B11700D7B5AD /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				1B10BEA32809B6E500D3E901 /* Assemblies */,
 				5746660D27F1B50400D7B5AD /* Auth */,
 				5746660627F1B32500D7B5AD /* MyNotifications */,
 				5746660527F1B31100D7B5AD /* Wishlist */,
@@ -456,6 +467,7 @@
 				57D4046027F45851001AFA49 /* Settings.swift in Sources */,
 				574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */,
 				574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */,
+				1B10BEA52809B70300D3E901 /* MainAssembly.swift in Sources */,
 				574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */,
 				5746660F27F1B57E00D7B5AD /* ProfileView.swift in Sources */,
 				57D4045C27F45505001AFA49 /* ProjectService.swift in Sources */,
