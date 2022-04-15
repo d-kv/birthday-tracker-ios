@@ -7,7 +7,20 @@
 
 import SwiftUI
 
-struct AuthUIView: View {
+struct AuthUIViewImpl: View, AuthView {
+    
+    let assembly: MainAssembly
+    let presenter: AuthPresenter
+    
+    func showError(_ error: Error) {
+        // TODO
+    }
+    
+    func handleSuccess() {
+        let vc = assembly.createMainViewController()
+        self.present(vc, animated: true)
+    }
+    
     var body: some View {
         Text("Hello, Auth!")
     }
@@ -15,6 +28,7 @@ struct AuthUIView: View {
 
 struct AuthUIView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthUIView()
+        AuthUIViewImpl(assembly: MainAssembly(),
+                       presenter: AuthPresenterImpl())
     }
 }
