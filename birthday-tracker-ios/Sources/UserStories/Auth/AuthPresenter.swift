@@ -11,18 +11,17 @@ protocol AuthPresenter: AnyObject {
     func auth(login: String, password: String)
 }
 
-class AuthPresenterImpl: AuthPresenter{
-    
+class AuthPresenterImpl: AuthPresenter {
     private let service: EmployeeService
     weak var view: AuthViewController?
-    
+
     init(service: EmployeeService) {
         self.service = service
     }
-    
+
     func viewWillAppear() {}
-    
-    func auth(login: String, password: String) {
+
+    func auth(login _: String, password _: String) {
         service.load(id: 1) { [weak self] result in
             switch result {
             case let .failure(error):
@@ -33,5 +32,4 @@ class AuthPresenterImpl: AuthPresenter{
             }
         }
     }
-    
 }

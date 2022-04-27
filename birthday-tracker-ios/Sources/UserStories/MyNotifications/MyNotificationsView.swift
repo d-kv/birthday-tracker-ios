@@ -5,16 +5,24 @@
 //  Created by Darvin on 18.03.2022.
 //
 
-import SwiftUI
+import UIKit
 
-struct MyNotificationsUIView: View {
-    var body: some View {
-        Text("Hello, MyNotifications!")
-    }
+protocol MyNotificationsView {
+    func showError(_ error: Error)
+    func handleSuccess()
 }
 
-struct MyNotificationsUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyNotificationsUIView()
+class MyNotificationsViewController: UIViewController, MyNotificationsView {
+    func showError(_ error: Error) {
+        
+    }
+    
+    func handleSuccess() {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .lightGray
     }
 }

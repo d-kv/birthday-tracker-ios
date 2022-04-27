@@ -5,16 +5,26 @@
 //  Created by Darvin on 28.03.2022.
 //
 
-import SwiftUI
+import UIKit
 
-struct ProfileUIView: View {
-    var body: some View {
-        Text("Hello, Profile!")
-    }
+protocol ProfileView {
+    func showError(_ error: Error)
+    func handleSuccess()
 }
 
-struct ProfileUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileUIView()
+class ProfileViewController: UIViewController, ProfileView {
+    func showError(_ error: Error) {
+        
     }
+    
+    func handleSuccess() {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .blue
+    }
+    
 }

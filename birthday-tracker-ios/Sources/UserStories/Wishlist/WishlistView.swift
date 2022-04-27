@@ -12,6 +12,19 @@ protocol WishlistView {
     func handleSuccess()
 }
 
-class WishlistViewController: UIViewController{
+class WishlistViewController: UIViewController, WishlistView {
+    func showError(_ error: Error) {
+        
+    }
+    
+    func handleSuccess() {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .blue
+    }
     
 }

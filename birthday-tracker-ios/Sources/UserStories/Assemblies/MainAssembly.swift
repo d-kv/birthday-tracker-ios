@@ -13,11 +13,10 @@ protocol MainAssembly {
 }
 
 final class MainAssemblyImpl {
-    
-    init(){}
-    
+    init() {}
+
     func createMainViewController() -> UIViewController {
         // TODO: вернуть здесь главный экран приложения
-        UIViewController()
+        return TabBarController()
     }
 }

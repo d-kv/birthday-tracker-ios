@@ -15,8 +15,8 @@ struct NetworkServiceError: CustomNSError {
 
     /// The user-info dictionary.
     var errorUserInfo: [String: Any]
-     
-    init (code: Code, errorCode: Int = 0, errorUserInfo: [String:Any] = ["":""]) {
+
+    init(code: Code, errorCode _: Int = 0, errorUserInfo: [String: Any] = ["": ""]) {
         self.code = code
         self.errorUserInfo = errorUserInfo
     }

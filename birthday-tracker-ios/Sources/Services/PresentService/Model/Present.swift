@@ -1,6 +1,7 @@
 import Foundation
 
 // MARK: - Present
+
 struct Present: Codable {
     let id: Int
     let name: String

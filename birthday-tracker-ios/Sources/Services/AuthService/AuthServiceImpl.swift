@@ -35,7 +35,6 @@ class AuthServiceImpl: AuthService {
                            })
     }
 
-    
     func deleteRegister(username: String, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
