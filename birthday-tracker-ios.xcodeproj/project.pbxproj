@@ -35,6 +35,7 @@
 		57D4046027F45851001AFA49 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045F27F45851001AFA49 /* Settings.swift */; };
 		57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5427CCED98002B9749 /* Assets.xcassets */; };
 		57E10B5827CCED98002B9749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5727CCED98002B9749 /* Preview Assets.xcassets */; };
+		57F2551428193F7A00F28B55 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F2551328193F7A00F28B55 /* MainAssembly.swift */; };
 		A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */; };
 		A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF327E33CA8005A4B8F /* NetworkService.swift */; };
 		A836EAF627E33D86005A4B8F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF527E33D86005A4B8F /* Employee.swift */; };
@@ -74,6 +75,7 @@
 		57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "birthday-tracker-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E10B5427CCED98002B9749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57E10B5727CCED98002B9749 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57F2551328193F7A00F28B55 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeServiceImpl.swift; sourceTree = "<group>"; };
 		A836EAF327E33CA8005A4B8F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A836EAF527E33D86005A4B8F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		574665FD27F1B11700D7B5AD /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				57F2551228193F4700F28B55 /* Assemblies */,
 				5746660D27F1B50400D7B5AD /* Auth */,
 				5746660627F1B32500D7B5AD /* MyNotifications */,
 				5746660527F1B31100D7B5AD /* Wishlist */,
@@ -343,6 +346,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		57F2551228193F4700F28B55 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				57F2551328193F7A00F28B55 /* MainAssembly.swift */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,6 +446,7 @@
 				574665EE27E4A92F00D7B5AD /* WishlistView.swift in Sources */,
 				A836EAFA27E35507005A4B8F /* MyNotifications.swift in Sources */,
 				574665EA27E4A8F700D7B5AD /* AuthPresenter.swift in Sources */,
+				57F2551428193F7A00F28B55 /* MainAssembly.swift in Sources */,
 				A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */,
 				574665EC27E4A91900D7B5AD /* EmployeeView.swift in Sources */,
 				5746661327F1B5C700D7B5AD /* ProfilePresenter.swift in Sources */,

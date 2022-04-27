@@ -5,16 +5,13 @@
 //  Created by Darvin on 18.03.2022.
 //
 
-import SwiftUI
+import UIKit
 
-struct WishlistUIView: View {
-    var body: some View {
-        Text("Hello, Wishlist!")
-    }
+protocol WishlistView {
+    func showError(_ error: Error)
+    func handleSuccess()
 }
 
-struct WishlistUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        WishlistUIView()
-    }
+class WishlistViewController: UIViewController{
+    
 }

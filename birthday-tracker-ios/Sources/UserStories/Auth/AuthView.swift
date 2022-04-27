@@ -6,9 +6,26 @@
 //
 
 import UIKit
-import SwiftUI
 
-class AuthView: UIViewController {
+protocol AuthView {
+    func showError(_ error: Error)
+    func handleSuccess()
+}
+
+class AuthViewController: UIViewController, AuthView{
+    
+    let assembly = MainAssemblyImpl()
+    let presenter = AuthPresenterImpl(service: EmployeeServiceImpl())
+    
+    func showError(_ error: Error) {
+        print(error)
+    }
+    
+    func handleSuccess() {
+        let vc = assembly.createMainViewController()
+        self.present(vc, animated: true)
+    }
+    
     var loginButton: UIButton!
     var nameTextField: UITextField!
     var passwordTextField: UITextField!
@@ -61,9 +78,6 @@ class AuthView: UIViewController {
         print("Login has been tapped")
         login = nameTextField.text!
         password = passwordTextField.text!
-        let test = PresentServiceImpl()
-        test.load(id: 1,
-                  completion: { print($0)}
-        )
+        presenter.auth(login: login, password: password)
     }}
 

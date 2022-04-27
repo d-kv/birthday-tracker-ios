@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(base64LoginString)        //Create a window that is the same size as the screen
         window = UIWindow(frame: UIScreen.main.bounds)
         // Create a view controller
-        let viewController = AuthView()
+        let viewController = AuthViewController()
         // Assign the view controller as `window`'s root view controller
         window?.rootViewController = viewController
         // Show the window
