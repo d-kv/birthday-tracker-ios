@@ -28,10 +28,14 @@ class AuthViewController: UIViewController, AuthView {
     var loginButton: UIButton!
     var nameTextField: UITextField!
     var passwordTextField: UITextField!
+    var viewLogo = UIImageView(image: UIImage(named: "tink"))
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .black
+        
+        viewLogo.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(viewLogo)
 
         loginButton = UIButton(type: .system)
         loginButton.frame.size = CGSize(width: 200, height: 20)
@@ -39,8 +43,15 @@ class AuthViewController: UIViewController, AuthView {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.tintColor = .black
         loginButton.backgroundColor = .yellow
+        loginButton.layer.cornerRadius = 10
         view.addSubview(loginButton)
         loginButton.addTarget(self, action: #selector(handleLoginTouchUpInside), for: .touchUpInside)
+        /*let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        button.backgroundColor = .green
+        button.setTitle("Test Button", for: .normal)
+        button.addTarget(self, action: #selector(handleLoginTouchUpInside), for: .touchUpInside)
+
+        self.view.addSubview(button)*/
 
         nameTextField = UITextField(frame: .zero)
         nameTextField.placeholder = "Логин"
@@ -60,8 +71,14 @@ class AuthViewController: UIViewController, AuthView {
 
     func limitedsInit() {
         NSLayoutConstraint.activate([
+            
+            viewLogo.widthAnchor.constraint(equalTo: view.widthAnchor),
+            viewLogo.heightAnchor.constraint(equalTo: view.widthAnchor, constant: -viewLogo.frame.size.width/8),
+            viewLogo.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -viewLogo.frame.height/3.5),
+            
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 60),
+            loginButton.widthAnchor.constraint(equalToConstant: CGFloat(200)),
 
             passwordTextField.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
             passwordTextField.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor, constant: 20),
