@@ -43,6 +43,8 @@
 		A836EAF827E35158005A4B8F /* Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF727E35158005A4B8F /* Present.swift */; };
 		A836EAFA27E35507005A4B8F /* MyNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF927E35507005A4B8F /* MyNotifications.swift */; };
 		A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAFB27E35695005A4B8F /* Wishlist.swift */; };
+		FA4D7B53281DE44B00E8C980 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D7B52281DE44B00E8C980 /* ProfileAssembly.swift */; };
+		FA4D7B55282128ED00E8C980 /* DrawFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D7B54282128ED00E8C980 /* DrawFeatures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		A836EAF727E35158005A4B8F /* Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Present.swift; sourceTree = "<group>"; };
 		A836EAF927E35507005A4B8F /* MyNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotifications.swift; sourceTree = "<group>"; };
 		A836EAFB27E35695005A4B8F /* Wishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
+		FA4D7B52281DE44B00E8C980 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		FA4D7B54282128ED00E8C980 /* DrawFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawFeatures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 				5746660427F1B30700D7B5AD /* Present */,
 				5746660127F1B21500D7B5AD /* Employee */,
 				574665FE27F1B12900D7B5AD /* Profile */,
+				FA4D7B54282128ED00E8C980 /* DrawFeatures.swift */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				57F2551328193F7A00F28B55 /* MainAssembly.swift */,
+				FA4D7B52281DE44B00E8C980 /* ProfileAssembly.swift */,
 			);
 			path = Assemblies;
 			sourceTree = "<group>";
@@ -445,6 +451,8 @@
 				A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */,
 				574665E027E4A7DA00D7B5AD /* Auth.swift in Sources */,
 				57D4046027F45851001AFA49 /* Settings.swift in Sources */,
+				FA4D7B55282128ED00E8C980 /* DrawFeatures.swift in Sources */,
+				FA4D7B53281DE44B00E8C980 /* ProfileAssembly.swift in Sources */,
 				574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */,
 				574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */,
 				574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */,

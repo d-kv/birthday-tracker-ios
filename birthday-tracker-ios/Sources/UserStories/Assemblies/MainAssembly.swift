@@ -16,7 +16,7 @@ final class MainAssemblyImpl {
     init() {}
 
     func createMainViewController() -> UIViewController {
-        // TODO: вернуть здесь главный экран приложения
-        return TabBarController()
+        let vc = TabBarController()
+        return vc
     }
 }

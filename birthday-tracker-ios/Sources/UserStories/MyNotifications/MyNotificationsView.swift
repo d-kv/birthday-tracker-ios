@@ -13,6 +13,9 @@ protocol MyNotificationsView {
 }
 
 class MyNotificationsViewController: UIViewController, MyNotificationsView {
+    let table = UITableView()
+    let presenter = MyNotificationPresenterImpl(service: MyNotificationServiceImpl())
+    
     func showError(_ error: Error) {
         
     }
@@ -23,6 +26,12 @@ class MyNotificationsViewController: UIViewController, MyNotificationsView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        presenter.view = self
+        view.backgroundColor = .darkGray
+        navigationItem.title = "Ближайшие дни рождения"
+        navigationController?.navigationBar.tintColor = .white
+        
+        view.addSubview(table)
+        
     }
 }

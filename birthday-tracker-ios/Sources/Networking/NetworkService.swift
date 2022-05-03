@@ -60,7 +60,9 @@ class NetworkService {
                                               errorUserInfo: [NSLocalizedFailureReasonErrorKey: "unexpected reponse"])
                 }
                 if self.successCodes.contains(httpResponse.statusCode) {
-                    completion(.success(data))
+                    DispatchQueue.main.async {
+                        completion(.success(data))
+                    }
                 } else if self.failureCodes.contains(httpResponse.statusCode) {
                     throw NetworkServiceError(code: .errorStatusCode, errorUserInfo: ["statusCode": httpResponse.statusCode])
                 } else {
@@ -68,9 +70,14 @@ class NetworkService {
                 }
 
             } catch let error as NetworkServiceError {
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             } catch {
-                completion(.failure(NetworkServiceError(code: .requestFailed, errorUserInfo: [NSUnderlyingErrorKey: error])))
+                DispatchQueue.main.async {
+                    
+                    completion(.failure(NetworkServiceError(code: .requestFailed, errorUserInfo: [NSUnderlyingErrorKey: error])))
+                }
             }
         })
 
@@ -95,7 +102,10 @@ class NetworkService {
                                               errorUserInfo: [NSLocalizedFailureReasonErrorKey: "unexpected reponse"])
                 }
                 if self.successCodes.contains(httpResponse.statusCode) {
+                    DispatchQueue.main.async {
+                    
                     completion(.success(data))
+                    }
                 } else if self.failureCodes.contains(httpResponse.statusCode) {
                     throw NetworkServiceError(code: .errorStatusCode, errorUserInfo: ["statusCode": httpResponse.statusCode])
                 } else {
@@ -103,9 +113,16 @@ class NetworkService {
                 }
 
             } catch let error as NetworkServiceError {
+                DispatchQueue.main.async {
+                    
                 completion(.failure(error))
+                }
             } catch {
+                DispatchQueue.main.async {
+                    
+                
                 completion(.failure(NetworkServiceError(code: .requestFailed, errorUserInfo: [NSUnderlyingErrorKey: error])))
+                }
             }
         })
 

@@ -7,4 +7,16 @@
 
 import Foundation
 
-class WishlistPresenter {}
+protocol WishlistPresenter: AnyObject {
+}
+
+class WishlistPresenterImpl: WishlistPresenter {
+    private let service: EmployeeService
+    weak var view: MyNotificationsViewController?
+
+    init(service: EmployeeService) {
+        self.service = service
+    }
+
+    func viewWillAppear() {}
+}

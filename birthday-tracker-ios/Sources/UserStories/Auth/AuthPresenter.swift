@@ -27,7 +27,6 @@ class AuthPresenterImpl: AuthPresenter {
             case let .failure(error):
                 self?.view?.showError(error)
             case .success:
-                print("LOL")
                 self?.view?.handleSuccess()
             }
         }

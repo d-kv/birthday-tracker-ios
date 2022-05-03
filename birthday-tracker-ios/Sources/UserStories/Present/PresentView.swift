@@ -7,14 +7,24 @@
 
 import SwiftUI
 
-struct PresentUIView: View {
-    var body: some View {
-        Text("Hello, Present!")
-    }
+protocol PresentView {
+    func showError(_ error: Error)
+    func handleSuccess()
 }
 
-struct PresentUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        PresentUIView()
+class PresentViewController: UIViewController, PresentView {
+    func showError(_ error: Error) {
+        
     }
+    
+    func handleSuccess() {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .black
+    }
+    
 }

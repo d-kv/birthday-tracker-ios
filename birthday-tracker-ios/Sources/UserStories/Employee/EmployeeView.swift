@@ -5,17 +5,26 @@
 //  Created by Darvin on 18.03.2022.
 //
 
-import Foundation
-import SwiftUI
+import UIKit
 
-struct EmployeeUIView: View {
-    var body: some View {
-        Text("Hello, Employee!")
-    }
+protocol EmployeeView {
+    func showError(_ error: Error)
+    func handleSuccess()
 }
 
-struct EmployeeUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmployeeUIView()
+class EmployeeViewController: UIViewController, ProfileView {
+    func handleSuccess(profile: Employee) {
+        
     }
+    
+    func showError(_ error: Error) {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .black
+    }
+    
 }

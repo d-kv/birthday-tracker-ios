@@ -7,6 +7,16 @@
 
 import Foundation
 
-class PresentPresenter {
+protocol PresentPresenter: AnyObject {
+}
+
+class PresentPresenterImpl: PresentPresenter {
+    private let service: EmployeeService
+    weak var view: PresentViewController?
+
+    init(service: EmployeeService) {
+        self.service = service
+    }
+
     func viewWillAppear() {}
 }

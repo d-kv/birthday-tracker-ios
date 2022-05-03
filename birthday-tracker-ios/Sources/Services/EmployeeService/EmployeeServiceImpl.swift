@@ -45,8 +45,8 @@ class EmployeeServiceImpl: EmployeeService {
                                case let .success(data):
                                    do {
                                        if let data = data {
-                                           let present = try JSONDecoder().decode(Employee.self, from: data)
-                                           completion(.success(present))
+                                           let employee = try JSONDecoder().decode(Employee.self, from: data)
+                                           completion(.success(employee))
                                        } else {
                                            completion(.failure(NetworkServiceError(code: .emptyData)))
                                        }
