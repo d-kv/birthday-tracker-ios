@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController, ColorShifter{
     private enum TabBarItem: Int {
         case myNotifications
         case profile
@@ -42,18 +42,17 @@ final class TabBarController: UITabBarController {
 
     private func setupTabBar() {
         let dataSource: [TabBarItem] = [.myNotifications, .profile]
-        tabBar.backgroundColor = .lightGray
-        tabBar.tintColor = .black
-        tabBar.barTintColor = .black
+        tabBar.backgroundColor = ColorSkin.default.strategy.tapBarBackgroundColor()
+        tabBar.tintColor = ColorSkin.default.strategy.fontColor()
+        tabBar.barTintColor = ColorSkin.default.strategy.fontColor()
         viewControllers = dataSource.map {
             switch $0 {
             case .myNotifications:
-                print("feed")
                 let feedViewController = MyNotificationsViewController()
                 return self.wrappedInNavigationController(with: feedViewController, title: $0.title)
             case .profile:
-                let profileViewController = ProfileViewController()
-                return self.wrappedInNavigationController(with: profileViewController, title: $0.title)
+                let profile = ProfileAssemblyImpl()
+                return self.wrappedInNavigationController(with: profile.createProfileViewController(), title: $0.title)
             }
         }
 
@@ -66,4 +65,10 @@ final class TabBarController: UITabBarController {
     }
     
     private func wrappedInNavigationController(with: UIViewController, title: Any?) -> UINavigationController {return UINavigationController(rootViewController: with)}
+    
+    func changeColorView() {
+        tabBar.backgroundColor = ColorSkin.default.strategy.tapBarBackgroundColor()
+        tabBar.tintColor = ColorSkin.default.strategy.fontColor()
+        tabBar.barTintColor = ColorSkin.default.strategy.fontColor()
+    }
 }

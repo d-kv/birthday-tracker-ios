@@ -14,15 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication,
                      didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool
     {
-        let answer = NetworkService()
-        let loginString = "\(login):\(password)"
-        guard let loginData = loginString.data(using: String.Encoding.utf8) else {
-            return false
-        }
-        // let project = Project(id: 3, name: "test231", projectDescription: "JustTest")
-
-        let base64LoginString = loginData.base64EncodedString()
-        print(base64LoginString) // Create a window that is the same size as the screen
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         // Create a view controller
         let viewController = AuthViewController()

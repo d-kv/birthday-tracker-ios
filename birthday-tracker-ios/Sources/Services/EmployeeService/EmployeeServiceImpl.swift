@@ -11,22 +11,23 @@ class EmployeeServiceImpl: EmployeeService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
 
-    func edit(employee: Employee, completion: @escaping (Result<Void, Error>) -> Void) { guard let loginData = loginString.data(using: String.Encoding.utf8) else {
-        return
-    }
-    let base64LoginString = loginData.base64EncodedString()
-    answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.updateEmployee.rawValue)!,
-                       method: NetworkService.Method.patch,
-                       body: employee,
-                       headers: ["Authorization": "Basic \(base64LoginString)",
-                                 "Content-Type": "application/json"],
-                       completion: { result in
-                           switch result {
-                           case .success:
-                               completion(.success(()))
-                           case let .failure(error):
-                               completion(.failure(error))
-                           }
+    func edit(employee: Employee, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let loginData = loginString.data(using: String.Encoding.utf8) else {
+            return
+        }
+        let base64LoginString = loginData.base64EncodedString()
+        answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.updateEmployee.rawValue)!,
+                           method: NetworkService.Method.patch,
+                           body: employee,
+                           headers: ["Authorization": "Basic \(base64LoginString)",
+                                     "Content-Type": "application/json"],
+                           completion: { result in
+                               switch result {
+                               case .success:
+                                   completion(.success(()))
+                               case let .failure(error):
+                                   completion(.failure(error))
+                               }
                        })
     }
 

@@ -5,7 +5,7 @@ struct Employee: Codable {
     let fullName, phone: String
     let projects: [Project]
     let birthday, startWork: String
-    let wishlist: [Wishlist]
+    let wishlist: [Present]
     let city, username: String
 
     enum CodingKeys: String, CodingKey {

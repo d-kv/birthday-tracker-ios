@@ -12,7 +12,7 @@ protocol ProfileAssembly {
     func createProfileViewController() -> UIViewController
 }
 
-final class ProfileAssemblyImpl {
+final class ProfileAssemblyImpl:  ProfileAssembly{
     init() {}
 
     func createProfileViewController() -> UIViewController {

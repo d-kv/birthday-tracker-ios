@@ -12,7 +12,7 @@ protocol MainAssembly {
     func createMainViewController() -> UIViewController
 }
 
-final class MainAssemblyImpl {
+final class MainAssemblyImpl:  MainAssembly{
     init() {}
 
     func createMainViewController() -> UIViewController {

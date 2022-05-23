@@ -18,6 +18,19 @@ class MyNotificationPresenterImpl: MyNotificationPresenter {
     init(service: MyNotificationServiceImpl) {
         self.service = service
     }
+    
+    func getNotifications(id: Int){
+        service.load(id: id, completion: {[weak self] result in
+            switch result {
+            case let .failure(error):
+                print(error.localizedDescription)
+                print(error)
+                self?.view?.showError(error)
+            case .success(let notifications):
+                self?.view?.handleSuccess(notifications: notifications)
+            }
+})
+    }
 
     func viewWillAppear() {}
 }
