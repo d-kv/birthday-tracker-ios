@@ -45,14 +45,16 @@ final class TabBarController: UITabBarController, ColorShifter{
         tabBar.backgroundColor = ColorSkin.default.strategy.tapBarBackgroundColor()
         tabBar.tintColor = ColorSkin.default.strategy.fontColor()
         tabBar.barTintColor = ColorSkin.default.strategy.fontColor()
+        let profile = ProfileAssemblyImpl().createProfileViewController()
+        let feedViewController = MyNotificationsViewController()
+        profile.delegateTabBar = self
+        profile.delegateNotification = feedViewController
         viewControllers = dataSource.map {
             switch $0 {
             case .myNotifications:
-                let feedViewController = MyNotificationsViewController()
                 return self.wrappedInNavigationController(with: feedViewController, title: $0.title)
             case .profile:
-                let profile = ProfileAssemblyImpl()
-                return self.wrappedInNavigationController(with: profile.createProfileViewController(), title: $0.title)
+                return self.wrappedInNavigationController(with:profile, title: $0.title)
             }
         }
 

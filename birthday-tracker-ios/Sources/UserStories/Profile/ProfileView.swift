@@ -19,6 +19,8 @@ protocol ColorShifter{
 
 class ProfileViewController: UIViewController, ColorShifter {
     var delegate: ColorShifter?
+    var delegateTabBar: ColorShifter?
+    var delegateNotification: ColorShifter?
     let assembly = WishlistAssemblyImpl()
     let header = UILabel()
     var picture = UIImageView(image: UIImage(named: "Trollface"))
@@ -201,13 +203,16 @@ extension ProfileViewController{
                 delegateVC.delegate = self
                 ColorSkin.default.switchStrategy()
                 delegateVC.changeColorView()
+                delegateNotification?.changeColorView()
+                delegateTabBar?.changeColorView()
             }
             else{
                 let delegateVC = self
                 delegateVC.delegate = self
                 ColorSkin.default.switchStrategy()
                 delegateVC.changeColorView()
-                
+                delegateNotification?.changeColorView()
+                delegateTabBar?.changeColorView()
             }
         }
     

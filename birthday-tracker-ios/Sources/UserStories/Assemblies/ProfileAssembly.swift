@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 protocol ProfileAssembly {
-    func createProfileViewController() -> UIViewController
+    func createProfileViewController() -> ProfileViewController
 }
 
 final class ProfileAssemblyImpl:  ProfileAssembly{
     init() {}
 
-    func createProfileViewController() -> UIViewController {
+    func createProfileViewController() -> ProfileViewController {
         let vc = ProfileViewController()
         return vc
     }
