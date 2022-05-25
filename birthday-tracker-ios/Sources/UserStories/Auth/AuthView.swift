@@ -105,7 +105,6 @@ class AuthViewController: UIViewController, AuthView {
     }
 
     @objc func handleLoginTouchUpInside() {
-        print("Login has been tapped")
         login = nameTextField.text!
         password = passwordTextField.text!
         presenter.auth(login: nameTextField.text!, password: nameTextField.text!)

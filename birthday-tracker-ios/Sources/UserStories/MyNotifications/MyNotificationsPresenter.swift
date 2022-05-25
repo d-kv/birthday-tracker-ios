@@ -24,7 +24,7 @@ class MyNotificationPresenterImpl: MyNotificationPresenter {
             switch result {
             case let .failure(error):
                 print(error.localizedDescription)
-                print(error)
+                print(result)
                 self?.view?.showError(error)
             case .success(let notifications):
                 self?.view?.handleSuccess(notifications: notifications)

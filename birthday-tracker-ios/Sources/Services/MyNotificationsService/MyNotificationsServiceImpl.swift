@@ -11,14 +11,14 @@ class MyNotificationServiceImpl: MyNotificationService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
 
-    func load(id: Int, completion: @escaping (Result<MyNotifications, Error>) -> Void) {
+    func load(id: Int, completion: @escaping (Result<[MyNotifications], Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
         }
         let base64LoginString = loginData.base64EncodedString()
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.getMyNotifications.rawValue)!,
                            method: NetworkService.Method.get,
-                           query: NetworkService.QueryType.path,
+                              query: NetworkService.QueryType.json,
                            params: ["employee_id": String(id)],
                            headers: ["Authorization": "Basic \(base64LoginString)"],
                            completion: { result in
@@ -26,7 +26,7 @@ class MyNotificationServiceImpl: MyNotificationService {
                                case let .success(data):
                                    do {
                                        if let data = data {
-                                           let notifications = try JSONDecoder().decode(MyNotifications.self, from: data)
+                                           let notifications = try JSONDecoder().decode([MyNotifications].self, from: data)
                                            completion(.success(notifications))
                                        } else {
                                            completion(.failure(NetworkServiceError(code: .emptyData)))

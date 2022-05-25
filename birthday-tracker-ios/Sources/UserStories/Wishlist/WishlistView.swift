@@ -13,68 +13,109 @@ protocol WishlistView {
 }
 
 class WishlistViewController: UIViewController, WishlistView {
-    let labelTitle = UILabel()
     let presenter = WishlistPresenterImpl(service: EmployeeServiceImpl())
     var wishlist = [Present(id: 0, name: "", link: "", presentDescription: "", employeeID: 0)]
     let simpleTableIdentifier = "SimpleTableIdentifier"
     let wishlistTable = UITableView()
+    let addPresentButton = UIButton()
+    var employeeID: Int!
+    var navBar: UINavigationBar!
+    var navItem: UINavigationItem!
+    var backButton: UIBarButtonItem!
+    
+    init(employeeId: Int){
+        super.init(nibName: nil, bundle: nil)
+        modalTransitionStyle = .crossDissolve
+        modalPresentationStyle = .overFullScreen
+        employeeID = employeeId
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func showError(_ error: Error) {
-        addSubviewsTurnOnConstraints(view: view, elements: [labelTitle])
+        addSubviewsTurnOnConstraints(view: view, elements: [])
         doConstraintMagicBad()
     }
     
     func handleSuccess(employee: Employee) {
         wishlistTable.backgroundColor = ColorSkin.default.strategy.backgroundColor()
         wishlist = employee.wishlist
-        addSubviewsTurnOnConstraints(view: view, elements: [labelTitle, wishlistTable])
+        addSubviewsTurnOnConstraints(view: view, elements: [wishlistTable, navBar])
         doConstraintMagicGood()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ColorSkin.default.strategy.backgroundColor()
-        
-        labelTitle.settingsUI(textAlignment: .center,
-                              text: "Список пожеланий",
-                              backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
-                              tintColor: ColorSkin.default.strategy.fontColor(),
-                              masksToBounds: true,
-                              cornerRadius: 10,
-                              borderWidth: 2,
-                              borderColor: CGColor(red: 0, green: 0, blue: 0, alpha: 1))
-        
-        
-        wishlistTable.register(UITableViewCell.self, forCellReuseIdentifier: "SimpleTableIdentifier")
-        wishlistTable.dataSource = self
-        wishlistTable.delegate = self
+        navBar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: view.frame.size.width, height: 44))
+        navItem = UINavigationItem(title: "Список пожеланий")
+        navItem.titleView?.tintColor = ColorSkin.default.strategy.fontColor()
+        backButton = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                         target: self,
+                                       action: #selector(back))
+        navItem.leftBarButtonItem = backButton
+        navBar.setItems([navItem], animated: false)
         
         presenter.view = self
-        presenter.getProfile(myEmployee: meId)
+        presenter.getProfile(myEmployee: employeeID)
+        
+        if employeeID == meId{
+            addPresentButton.settingsUI(backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
+                                        title: "Добавить подарок",
+                                        titleColor: ColorSkin.default.strategy.fontColor(),
+                                        cornerRadius: 10,
+                                        borderWidth: 2,
+                                        borderColor: ColorSkin.default.strategy.buttonBorderColor())
+            addPresentButton.addTarget(self, action: #selector(touchAddButton(sender:)),
+                                       for: .touchUpInside)
+            addSubviewsTurnOnConstraints(view: view, elements: [addPresentButton])
+            NSLayoutConstraint.activate([
+                    addPresentButton.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                                             constant: -view.frame.width/2),
+                    addPresentButton.heightAnchor.constraint(equalToConstant: view.frame.height*1/20),
+                    addPresentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    addPresentButton.topAnchor.constraint(equalTo: view.topAnchor,
+                                                          constant: view.frame.width*5/3),
+                ])
+        }
+        wishlistTable.register(UITableViewCell.self,
+                               forCellReuseIdentifier: "SimpleTableIdentifier")
+        wishlistTable.dataSource = self
+        wishlistTable.delegate = self
     }
     
+    @objc func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func touchAddButton(sender:UIButton){
+        var popUpWindow: AddPresentViewController!
+        popUpWindow = AddPresentViewController()
+        popUpWindow.modalPresentationStyle = .overCurrentContext
+
+        self.present(popUpWindow, animated: true, completion: nil)
+    }
     
     func doConstraintMagicGood(){
         NSLayoutConstraint.activate([
-            labelTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            labelTitle.topAnchor.constraint(equalTo: view.topAnchor),
-            labelTitle.widthAnchor.constraint(equalTo: view.widthAnchor),
-            labelTitle.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -view.frame.height*19/20),
+            navBar.heightAnchor.constraint(equalToConstant: 44),
+            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
+            navBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+            navBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-        
-            wishlistTable.topAnchor.constraint(equalTo: labelTitle.bottomAnchor, constant: view.frame.height/40),
+            
+            wishlistTable.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: view.frame.height/40),
             wishlistTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            wishlistTable.widthAnchor.constraint(equalTo: view.widthAnchor),
-            wishlistTable.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -view.frame.height*1/20),
+            wishlistTable.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
+            wishlistTable.heightAnchor.constraint(equalTo: view.widthAnchor,
+                                                  constant: view.frame.width/5)
         ])
     }
     
     func doConstraintMagicBad(){
         NSLayoutConstraint.activate([
-            labelTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            labelTitle.topAnchor.constraint(equalTo: view.topAnchor),
-            labelTitle.widthAnchor.constraint(equalTo: view.widthAnchor),
-            labelTitle.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -view.frame.height*19/20)
         ])
 
     }

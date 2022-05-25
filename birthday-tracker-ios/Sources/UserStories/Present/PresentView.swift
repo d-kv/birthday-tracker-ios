@@ -71,12 +71,12 @@ private class PopUpWindowView: UIView {
                               borderColor: ColorSkin.default.strategy.buttonBorderColor())
         
         
-        descriptionText.textColor = UIColor.white
+        descriptionText.textColor = ColorSkin.default.strategy.fontColor()
         descriptionText.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         descriptionText.numberOfLines = 0
         descriptionText.textAlignment = .center
         
-        linkText.textColor = UIColor.white
+        linkText.textColor = ColorSkin.default.strategy.fontColor()
         linkText.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         linkText.numberOfLines = 0
         linkText.textAlignment = .center
@@ -139,4 +139,78 @@ private class PopUpWindowView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+
+class AddPresentViewController: UIViewController{
+    var navBar: UINavigationBar!
+    var navItem: UINavigationItem!
+    var backButton: UIBarButtonItem!
+    var presentName = UITextField(frame: .zero)
+    var presentDescription = UITextField(frame: .zero)
+    var presentLink = UITextField(frame: .zero)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = ColorSkin.default.strategy.backgroundColor()
+        drawView()
+        addSubviewsTurnOnConstraints(view: view, elements: [presentName,
+                                                           presentDescription,
+                                                           presentLink,
+                                                           navBar])
+        doConstraintMagic()
+    }
+    
+    func drawView(){
+        navBar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: view.frame.size.width, height: 44))
+        navItem = UINavigationItem(title: "Добавить Подарок")
+        navItem.titleView?.tintColor = ColorSkin.default.strategy.fontColor()
+        backButton = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                         target: self,
+                                       action: #selector(back))
+        navItem.leftBarButtonItem = backButton
+        navBar.setItems([navItem], animated: false)
+        
+        presentName.placeholder = "Введите название подарка"
+        drawTextField(text: presentName)
+        
+        presentLink.placeholder = "Вставьте ссылку на подарок"
+        drawTextField(text: presentLink)
+        
+        presentDescription.placeholder = "Введите описание подарка"
+        drawTextField(text: presentDescription)
+    }
+    
+    func drawTextField(text: UITextField){
+        text.layer.masksToBounds = true
+        text.layer.cornerRadius = 10
+        text.layer.borderColor = ColorSkin.default.strategy.buttonBorderColor()
+        text.layer.borderWidth = 2
+        text.borderStyle = .roundedRect
+    }
+    
+    func doConstraintMagic(){
+        NSLayoutConstraint.activate([
+            navBar.heightAnchor.constraint(equalToConstant: 44),
+            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
+            navBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+            navBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            presentName.topAnchor.constraint(equalTo: navBar.bottomAnchor,
+                                             constant: navBar.frame.height*2),
+            presentName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            presentName.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                               constant: -view.frame.width/3),
+            
+            presentDescription.topAnchor.constraint(equalTo: presentName.bottomAnchor,
+                                                    constant: presentName.frame.height*3),
+            presentDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            presentDescription.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                                      constant: -view.frame.width/3),
+        ])
+    }
+    
+    @objc func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
 }

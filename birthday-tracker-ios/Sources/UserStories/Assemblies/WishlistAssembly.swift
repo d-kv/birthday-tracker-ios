@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 
 protocol WishlistAssembly {
-    func createWishlistViewController() -> UIViewController
+    func createWishlistViewController(id: Int) -> UIViewController
 }
 
 final class WishlistAssemblyImpl: WishlistAssembly {
     init() {}
 
-    func createWishlistViewController() -> UIViewController {
-        let vc = WishlistViewController()
+    func createWishlistViewController(id: Int) -> UIViewController {
+        let vc = WishlistViewController(employeeId: id)
         return vc
     }
 }

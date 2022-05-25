@@ -19,20 +19,21 @@ protocol ColorStrategy{
 }
 
 class ColorStrategyLight: ColorStrategy{
+    
     func whishlistCellBackroundColor() -> UIColor {
-        .darkGray
+        .lightGray
     }
     
     func tapBarBackgroundColor() -> UIColor {
-        return .darkGray
+        return .yellow
     }
     
     func messageBackgroundColor() -> UIColor {
-        return .blue
+        return .systemPink
     }
     
     func backgroundColor() -> UIColor {
-        .lightGray
+        .white
     }
     
     func buttonBackgroundColor() -> UIColor {
@@ -49,6 +50,7 @@ class ColorStrategyLight: ColorStrategy{
 }
 
 class ColorStrategyDark: ColorStrategy{
+    
     func whishlistCellBackroundColor() -> UIColor {
         .lightGray
     }
@@ -74,7 +76,7 @@ class ColorStrategyDark: ColorStrategy{
     }
     
     func tapBarBackgroundColor() -> UIColor {
-        .lightGray
+        UIColor(red: 1, green: 0.867, blue: 0.176, alpha: 1)
     }
     
     
@@ -84,7 +86,7 @@ class ColorSkin{
     static let `default` = ColorSkin()
     var strategy: ColorStrategy
     private init(){
-        strategy = ColorStrategyDark()
+        strategy = ColorStrategyLight()
     }
     func switchStrategy(){
         if strategy is ColorStrategyDark {

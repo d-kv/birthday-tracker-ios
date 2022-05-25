@@ -45,6 +45,7 @@ class ProfileViewController: UIViewController, ColorShifter {
     
     
     func drawProfile(profile: Employee){
+        navigationItem.title = "Профиль"
         profileInfo = [profile.phone, profile.city, profile.birthday, profile.startWork,   "\(profile.projects.count)"]
         profileInfoTitle = ["Связаться:", "Город:", "ДР:", "Начало работы:", "Кол-во проектов:"]
                             
@@ -176,44 +177,33 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
 
 extension ProfileViewController: ProfileView{
     func showError(_ error: Error) {
-        print("ViewProfileError")
     }
     
     func handleSuccess(profile: Employee) {
-        print("successProfile")
         drawProfile(profile: profile)
     }
 }
 
 extension ProfileViewController{
     @objc func handleUpdateTouchUpInside() {
-//        print("Login has been tapped")
-//        login = nameTextField.text!
-//        password = passwordTextField.text!
-//        presenter.auth(login: login, password: password)
+        let vc = ProfileUpdateViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
     }
     @objc func handleWishlistTouchUpInside() {
-        let vc = assembly.createWishlistViewController()
+        let vc = assembly.createWishlistViewController(id: meId)
+        vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
     }
     @objc func switchStateDidChange(_ sender:UISwitch!)
         {
-            if (sender.isOn == true){
+            
                 let delegateVC = self
                 delegateVC.delegate = self
                 ColorSkin.default.switchStrategy()
                 delegateVC.changeColorView()
                 delegateNotification?.changeColorView()
                 delegateTabBar?.changeColorView()
-            }
-            else{
-                let delegateVC = self
-                delegateVC.delegate = self
-                ColorSkin.default.switchStrategy()
-                delegateVC.changeColorView()
-                delegateNotification?.changeColorView()
-                delegateTabBar?.changeColorView()
-            }
         }
     
     func changeColorView(){
@@ -227,3 +217,40 @@ extension ProfileViewController{
     }
 }
 
+class ProfileUpdateViewController: UIViewController{
+    var navBar: UINavigationBar!
+    var navItem: UINavigationItem!
+    var backButton: UIBarButtonItem!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = ColorSkin.default.strategy.backgroundColor()
+        drawView()
+        addSubviewsTurnOnConstraints(view: view, elements: [navBar])
+        doConstraintsMagic()
+    }
+    
+    func drawView(){
+        navBar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: view.frame.size.width, height: 44))
+        navItem = UINavigationItem(title: "Редактировать профиль")
+        navItem.titleView?.tintColor = ColorSkin.default.strategy.fontColor()
+        backButton = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                         target: self,
+                                       action: #selector(back))
+        navItem.leftBarButtonItem = backButton
+        navBar.setItems([navItem], animated: false)
+    }
+    
+    func doConstraintsMagic(){
+        NSLayoutConstraint.activate([
+            navBar.heightAnchor.constraint(equalToConstant: 44),
+            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
+            navBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+            navBar.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
+    @objc func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
+}
