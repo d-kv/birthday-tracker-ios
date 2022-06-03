@@ -41,9 +41,6 @@ final class TabBarController: UITabBarController, ColorShifter{
     }
 
     private func setupTabBar() {
-        tabBar.layer.masksToBounds = true
-        tabBar.layer.borderWidth = 2
-        tabBar.layer.borderColor = ColorSkin.default.strategy.buttonBorderColor()
         let dataSource: [TabBarItem] = [.myNotifications, .profile]
         tabBar.backgroundColor = ColorSkin.default.strategy.tapBarBackgroundColor()
         tabBar.tintColor = ColorSkin.default.strategy.fontColor()

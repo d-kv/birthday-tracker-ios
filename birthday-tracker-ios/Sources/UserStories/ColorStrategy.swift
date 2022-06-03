@@ -15,21 +15,29 @@ protocol ColorStrategy{
     func buttonBorderColor() -> CGColor
     func messageBackgroundColor() -> UIColor
     func tapBarBackgroundColor() -> UIColor
-    func whishlistCellBackroundColor() -> UIColor
+    func cellColor() -> UIColor
+    func invisibleBackground() -> UIColor
+    func gradient() -> CAGradientLayer
 }
 
 class ColorStrategyLight: ColorStrategy{
-    
-    func whishlistCellBackroundColor() -> UIColor {
-        .lightGray
+    func gradient() -> CAGradientLayer {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor(red: 0.39, green: 0.40, blue: 0.95, alpha: 1.00).cgColor, UIColor(red: 0.39, green: 0.40, blue: 0.95, alpha: 0).cgColor]
+        return gradient
     }
     
+    func invisibleBackground() -> UIColor {
+        UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+    }
+    
+    
     func tapBarBackgroundColor() -> UIColor {
-        return .yellow
+        UIColor(red: 0.718, green: 0.718, blue: 0.992, alpha: 1)
     }
     
     func messageBackgroundColor() -> UIColor {
-        return .systemPink
+        return .gray
     }
     
     func backgroundColor() -> UIColor {
@@ -37,7 +45,7 @@ class ColorStrategyLight: ColorStrategy{
     }
     
     func buttonBackgroundColor() -> UIColor {
-        .yellow
+        UIColor(red: 0.599, green: 0.607, blue: 0.992, alpha: 1)
     }
     
     func buttonBorderColor() -> CGColor {
@@ -47,16 +55,27 @@ class ColorStrategyLight: ColorStrategy{
     func fontColor() -> UIColor {
         return .black
     }
+    
+    
+    func cellColor() -> UIColor {
+        UIColor(red: 0.835, green: 0.792, blue: 0.929, alpha: 1)
+    }
 }
 
 class ColorStrategyDark: ColorStrategy{
-    
-    func whishlistCellBackroundColor() -> UIColor {
-        .lightGray
+    func gradient() -> CAGradientLayer {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor(red: 0.39, green: 0.40, blue: 0.95, alpha: 1.00).cgColor, UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 0).cgColor]
+        return gradient
     }
     
+    func invisibleBackground() -> UIColor {
+        UIColor(red: 0.718, green: 0.718, blue: 0.992, alpha: 0)
+    }
+    
+    
     func fontColor() -> UIColor {
-        .black
+        .white
     }
     
     func backgroundColor() -> UIColor {
@@ -64,7 +83,7 @@ class ColorStrategyDark: ColorStrategy{
     }
     
     func buttonBackgroundColor() -> UIColor {
-        UIColor(red: 1, green: 0.867, blue: 0.176, alpha: 1)
+        UIColor(red: 0.392, green: 0.404, blue: 0.949, alpha: 1)
     }
     
     func buttonBorderColor() -> CGColor {
@@ -76,17 +95,20 @@ class ColorStrategyDark: ColorStrategy{
     }
     
     func tapBarBackgroundColor() -> UIColor {
-        UIColor(red: 1, green: 0.867, blue: 0.176, alpha: 1)
+        return UIColor(red: 0.153, green: 0.153, blue: 0.165, alpha: 1)
     }
     
     
+    func cellColor() -> UIColor {
+        UIColor(red: 0.153, green: 0.153, blue: 0.165, alpha: 1)
+    }
 }
 
 class ColorSkin{
     static let `default` = ColorSkin()
     var strategy: ColorStrategy
     private init(){
-        strategy = ColorStrategyLight()
+        strategy = ColorStrategyDark()
     }
     func switchStrategy(){
         if strategy is ColorStrategyDark {

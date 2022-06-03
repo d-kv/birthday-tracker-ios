@@ -10,7 +10,7 @@ import UIKit
 class EmployeeViewController: UIViewController{
     
     let assembly = WishlistAssemblyImpl()
-    let header = UILabel()
+    let nameLabel = UILabel()
     var picture = UIImageView(image: UIImage(named: "Trollface"))
     //let assembly = ProfileAssemblyImpl()
     let infoTable = UITableView()
@@ -20,9 +20,8 @@ class EmployeeViewController: UIViewController{
     let simpleTableIdentifier = "SimpleTableIdentifier"
     var profileInfoTitle = [String]()
     var profile: Employee!
-    var navBar: UINavigationBar!
-    var navItem: UINavigationItem!
-    var backButton: UIBarButtonItem!
+    var backButton: UIButton!
+    var header: UILabel!
     
     init(employee: Employee) {
         super.init(nibName: nil, bundle: nil)
@@ -43,26 +42,28 @@ class EmployeeViewController: UIViewController{
     
     
     func drawProfile(){
-        navBar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: view.frame.size.width, height: 44))
-        navItem = UINavigationItem(title: "Профиль именинника")
-        navItem.titleView?.tintColor = ColorSkin.default.strategy.fontColor()
-        backButton = UIBarButtonItem(barButtonSystemItem: .cancel,
-                                         target: self,
-                                       action: #selector(back))
-        navItem.leftBarButtonItem = backButton
-        navBar.setItems([navItem], animated: false)
+        infoTable.backgroundColor = ColorSkin.default.strategy.invisibleBackground()
+        header = UILabel()
+        header.text = "Профиль именинника"
+        header.textAlignment = .center
+        header.textColor = ColorSkin.default.strategy.fontColor()
+        backButton = UIButton()
+        backButton.settingsUI(backgroundColor: ColorSkin.default.strategy.invisibleBackground(),
+                              title: "Назад",
+                              titleColor: ColorSkin.default.strategy.fontColor(),
+                              cornerRadius: 0)
+        backButton.addTarget(self,
+                             action: #selector(back),
+                             for: .touchUpInside)
+        
         
         profileInfo = [profile.phone, profile.city, profile.birthday, profile.startWork,   "\(profile.projects.count)"]
         profileInfoTitle = ["Связаться:", "Город:", "ДР:", "Начало работы:", "Кол-во проектов:"]
-                            
-        infoTable.backgroundColor = .white
         
         wishlistButton.settingsUI(backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
                                   title: "Список пожеланий",
                                   titleColor: ColorSkin.default.strategy.fontColor(),
-                                  cornerRadius: 10,
-                                  borderWidth: 2,
-                                  borderColor: ColorSkin.default.strategy.buttonBorderColor())
+                                  cornerRadius: 10)
         wishlistButton.addTarget(self, action: #selector(handleWishlistTouchUpInside), for: .touchUpInside)
         
         picture.backgroundColor = .white
@@ -70,14 +71,12 @@ class EmployeeViewController: UIViewController{
         picture.layer.borderWidth = 2
         picture.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
         
-        header.settingsUI(textAlignment: .center,
+        nameLabel.settingsUI(textAlignment: .center,
                           text: profile.fullName,
                           backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
                           tintColor: ColorSkin.default.strategy.fontColor(),
                           masksToBounds: true,
-                          cornerRadius: 20,
-                          borderWidth: 2,
-                          borderColor: ColorSkin.default.strategy.buttonBorderColor())
+                          cornerRadius: 20)
         
         infoTable.register(UITableViewCell.self, forCellReuseIdentifier: "SimpleTableIdentifier")
         infoTable.dataSource = self
@@ -87,7 +86,7 @@ class EmployeeViewController: UIViewController{
         addSubviewsTurnOnConstraints(view: view,
                                      elements: [header, picture,
                                                 infoTable, wishlistButton,
-                                                navBar])
+                                                backButton, nameLabel])
         doConstraintsMagic()
     }
     
@@ -97,10 +96,16 @@ class EmployeeViewController: UIViewController{
     
     func doConstraintsMagic(){
         NSLayoutConstraint.activate([
-            navBar.heightAnchor.constraint(equalToConstant: 44),
-            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
-            navBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-            navBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            header.heightAnchor.constraint(equalToConstant: 44),
+            header.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
+            header.widthAnchor.constraint(equalTo: view.widthAnchor),
+            header.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            backButton.leftAnchor.constraint(equalTo: view.leftAnchor),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor,
+                                           constant: 44),
+            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.widthAnchor.constraint(equalToConstant: 100),
             //trollface constraints
             picture.widthAnchor.constraint(equalTo: view.widthAnchor,
                                            constant: -view.frame.width*6/10),
@@ -110,15 +115,15 @@ class EmployeeViewController: UIViewController{
                                              constant: -view.frame.width*2/3),
             picture.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            header.topAnchor.constraint(equalTo: picture.bottomAnchor,
+            nameLabel.topAnchor.constraint(equalTo: picture.bottomAnchor,
                                         constant: view.frame.height/40),
-            header.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            header.widthAnchor.constraint(equalTo: view.widthAnchor,
+            nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor,
                                           constant: -view.frame.width/5),
-            header.heightAnchor.constraint(equalTo: view.heightAnchor,
+            nameLabel.heightAnchor.constraint(equalTo: view.heightAnchor,
                                            constant: -view.frame.height*19/20),
             
-            infoTable.topAnchor.constraint(equalTo: header.bottomAnchor,
+            infoTable.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,
                                            constant: view.frame.height/40),
             infoTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             infoTable.widthAnchor.constraint(equalTo: view.widthAnchor,
@@ -153,13 +158,12 @@ extension EmployeeViewController: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: simpleTableIdentifier, for: indexPath)
             let leftLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 200, height: 20))
             leftLabel.settingsUI(textAlignment: .left,
-                             text: profileInfoTitle[indexPath.row],
-                             backgroundColor: .white,
-                             tintColor: ColorSkin.default.strategy.fontColor(),
-                             masksToBounds: false,
-                             cornerRadius: 0,
-                             borderWidth: 0,
-                             borderColor: ColorSkin.default.strategy.buttonBorderColor())
+                            text: profileInfoTitle[indexPath.row],
+                            backgroundColor: ColorSkin.default.strategy.invisibleBackground(),
+                            tintColor: ColorSkin.default.strategy.fontColor(),
+                            masksToBounds: false,
+                            cornerRadius: 0)
+            cell.backgroundColor = ColorSkin.default.strategy.invisibleBackground()
             cell.addSubview(leftLabel)
             cell.textLabel?.textAlignment = .right
             cell.textLabel?.textColor = ColorSkin.default.strategy.fontColor()

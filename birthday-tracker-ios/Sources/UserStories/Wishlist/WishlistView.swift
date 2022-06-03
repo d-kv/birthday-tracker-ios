@@ -19,9 +19,8 @@ class WishlistViewController: UIViewController, WishlistView {
     let wishlistTable = UITableView()
     let addPresentButton = UIButton()
     var employeeID: Int!
-    var navBar: UINavigationBar!
-    var navItem: UINavigationItem!
-    var backButton: UIBarButtonItem!
+    var header: UILabel!
+    var backButton: UIButton!
     
     init(employeeId: Int){
         super.init(nibName: nil, bundle: nil)
@@ -40,24 +39,35 @@ class WishlistViewController: UIViewController, WishlistView {
     }
     
     func handleSuccess(employee: Employee) {
-        wishlistTable.backgroundColor = ColorSkin.default.strategy.backgroundColor()
         wishlist = employee.wishlist
-        addSubviewsTurnOnConstraints(view: view, elements: [wishlistTable, navBar])
+        wishlistTable.reloadData()
         doConstraintMagicGood()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ColorSkin.default.strategy.backgroundColor()
-        navBar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: view.frame.size.width, height: 44))
-        navItem = UINavigationItem(title: "Список пожеланий")
-        navItem.titleView?.tintColor = ColorSkin.default.strategy.fontColor()
-        backButton = UIBarButtonItem(barButtonSystemItem: .cancel,
-                                         target: self,
-                                       action: #selector(back))
-        navItem.leftBarButtonItem = backButton
-        navBar.setItems([navItem], animated: false)
         
+        draw()
+    }
+    
+    func draw(){
+        header = UILabel()
+        header.text = "Список пожеланий"
+        header.textAlignment = .center
+        header.textColor = ColorSkin.default.strategy.fontColor()
+        backButton = UIButton()
+        backButton.settingsUI(backgroundColor: ColorSkin.default.strategy.invisibleBackground(),
+                              title: "Назад",
+                              titleColor: ColorSkin.default.strategy.fontColor(),
+                              cornerRadius: 0)
+        backButton.addTarget(self,
+                             action: #selector(back),
+                             for: .touchUpInside)
+        wishlistTable.backgroundColor = ColorSkin.default.strategy.backgroundColor()
+        wishlistTable.rowHeight = 60
+        addSubviewsTurnOnConstraints(view: view, elements: [wishlistTable, backButton,
+                                                           header])
         presenter.view = self
         presenter.getProfile(myEmployee: employeeID)
         
@@ -65,9 +75,7 @@ class WishlistViewController: UIViewController, WishlistView {
             addPresentButton.settingsUI(backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
                                         title: "Добавить подарок",
                                         titleColor: ColorSkin.default.strategy.fontColor(),
-                                        cornerRadius: 10,
-                                        borderWidth: 2,
-                                        borderColor: ColorSkin.default.strategy.buttonBorderColor())
+                                        cornerRadius: 10)
             addPresentButton.addTarget(self, action: #selector(touchAddButton(sender:)),
                                        for: .touchUpInside)
             addSubviewsTurnOnConstraints(view: view, elements: [addPresentButton])
@@ -76,8 +84,8 @@ class WishlistViewController: UIViewController, WishlistView {
                                                              constant: -view.frame.width/2),
                     addPresentButton.heightAnchor.constraint(equalToConstant: view.frame.height*1/20),
                     addPresentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    addPresentButton.topAnchor.constraint(equalTo: view.topAnchor,
-                                                          constant: view.frame.width*5/3),
+                    addPresentButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                                                            constant: -50)
                 ])
         }
         wishlistTable.register(UITableViewCell.self,
@@ -85,6 +93,7 @@ class WishlistViewController: UIViewController, WishlistView {
         wishlistTable.dataSource = self
         wishlistTable.delegate = self
     }
+        
     
     @objc func back(){
         self.dismiss(animated: true, completion: nil)
@@ -94,23 +103,28 @@ class WishlistViewController: UIViewController, WishlistView {
         var popUpWindow: AddPresentViewController!
         popUpWindow = AddPresentViewController()
         popUpWindow.modalPresentationStyle = .overCurrentContext
-
+        popUpWindow.delegate = self
         self.present(popUpWindow, animated: true, completion: nil)
     }
     
     func doConstraintMagicGood(){
         NSLayoutConstraint.activate([
-            navBar.heightAnchor.constraint(equalToConstant: 44),
-            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
-            navBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-            navBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            header.heightAnchor.constraint(equalToConstant: 44),
+            header.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
+            header.widthAnchor.constraint(equalTo: view.widthAnchor),
+            header.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
+            backButton.leftAnchor.constraint(equalTo: view.leftAnchor),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor,
+                                           constant: 44),
+            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.widthAnchor.constraint(equalToConstant: 100),
             
-            wishlistTable.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: view.frame.height/40),
-            wishlistTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            wishlistTable.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -40),
-            wishlistTable.heightAnchor.constraint(equalTo: view.widthAnchor,
-                                                  constant: view.frame.width/5)
+            wishlistTable.topAnchor.constraint(equalTo: view.topAnchor,
+                                              constant: 100),
+            wishlistTable.leftAnchor.constraint(equalTo: view.leftAnchor),
+            wishlistTable.rightAnchor.constraint(equalTo: view.rightAnchor),
+            wishlistTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -124,24 +138,35 @@ class WishlistViewController: UIViewController, WishlistView {
 
 extension WishlistViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return wishlist.count
+        return 1
     }
-    
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        wishlist.count
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: simpleTableIdentifier, for: indexPath)
-        cell.textLabel?.text = wishlist[indexPath.row].name
+        cell.textLabel?.text = wishlist[indexPath.section].name
+        cell.textLabel?.textColor = ColorSkin.default.strategy.fontColor()
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 10
-        cell.layer.borderColor = ColorSkin.default.strategy.buttonBorderColor()
-        cell.layer.borderWidth = 2
         let button = UIButton(frame: .init(x: 0, y: 0, width: 400, height: 500))
         button.backgroundColor = .green.withAlphaComponent(0)
-        button.tag = indexPath.row
+        button.tag = indexPath.section
         button.addTarget(self, action: #selector(touchCell), for: .touchUpInside)
         cell.addSubview(button)
-        cell.backgroundColor = ColorSkin.default.strategy.whishlistCellBackroundColor()
+        cell.backgroundColor = ColorSkin.default.strategy.cellColor()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+        
+        // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = ColorSkin.default.strategy.invisibleBackground()
+        return headerView
     }
     
     @objc func touchCell(sender:UIButton){
@@ -153,3 +178,4 @@ extension WishlistViewController: UITableViewDelegate, UITableViewDataSource{
         self.present(popUpWindow, animated: true, completion: nil)
     }
 }
+

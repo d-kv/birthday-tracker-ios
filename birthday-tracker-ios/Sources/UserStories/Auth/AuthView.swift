@@ -30,11 +30,16 @@ class AuthViewController: UIViewController, AuthView {
     var errorLabel: UILabel!
     var nameTextField: UITextField!
     var passwordTextField: UITextField!
+    var background: CAGradientLayer!
     var viewLogo = UIImageView(image: UIImage(named: "tink"))
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.view = self
+        
         view.backgroundColor = ColorSkin.default.strategy.backgroundColor()
+        background = ColorSkin.default.strategy.gradient()
+        background.frame = view.bounds
+        view.layer.insertSublayer(background, at: 0)
 
         loginButton = UIButton(type: .system)
         
@@ -42,9 +47,7 @@ class AuthViewController: UIViewController, AuthView {
         loginButton.settingsUI(backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
                                title: "Вход",
                                titleColor: ColorSkin.default.strategy.fontColor(),
-                               cornerRadius: 10,
-                               borderWidth: 2,
-                               borderColor: ColorSkin.default.strategy.buttonBorderColor())
+                               cornerRadius: 10)
 
         nameTextField = UITextField(frame: .zero)
         nameTextField.placeholder = "Логин"
@@ -67,17 +70,19 @@ class AuthViewController: UIViewController, AuthView {
             viewLogo.heightAnchor.constraint(equalTo: view.widthAnchor, constant: -viewLogo.frame.size.width/10),
             viewLogo.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -viewLogo.frame.height/3.5),
             
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 200),
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.widthAnchor.constraint(equalToConstant: CGFloat(200)),
+            loginButton.widthAnchor.constraint(equalTo: passwordTextField.widthAnchor),
+            loginButton.heightAnchor.constraint(equalTo: passwordTextField.heightAnchor,
+                                                constant: passwordTextField.frame.height/2),
 
             passwordTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor, constant: 20),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor, constant: -20),
+            passwordTextField.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor, constant: 30),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor, constant: -30),
 
             nameTextField.topAnchor.constraint(equalTo: viewLogo.bottomAnchor, constant: 20),
-            nameTextField.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor, constant: 20),
-            nameTextField.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor, constant: -20),
+            nameTextField.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor, constant: 30),
+            nameTextField.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor, constant: -30),
         ])
     }
     
@@ -88,9 +93,7 @@ class AuthViewController: UIViewController, AuthView {
                               backgroundColor: ColorSkin.default.strategy.messageBackgroundColor(),
                               tintColor: ColorSkin.default.strategy.fontColor(),
                               masksToBounds: true,
-                              cornerRadius: 10,
-                              borderWidth: 2,
-                              borderColor: ColorSkin.default.strategy.buttonBorderColor())
+                              cornerRadius: 10)
         addSubviewsTurnOnConstraints(view: view, elements: [errorLabel])
         errorConstraints()
     }

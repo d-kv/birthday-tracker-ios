@@ -11,12 +11,23 @@ protocol PresentPresenter: AnyObject {
 }
 
 class PresentPresenterImpl: PresentPresenter {
-    private let service: EmployeeService
-    weak var view: PresentViewController?
+    private let service: PresentService
+    weak var view: AddPresentViewController?
 
-    init(service: EmployeeService) {
+    init(service: PresentService) {
         self.service = service
     }
 
     func viewWillAppear() {}
+    
+    func getProfile(present: Present){
+        service.send(present: present, completion:  {[weak self] result in
+                     switch result {
+                     case let .failure(error):
+                         self?.view?.showError(error)
+                     case .success(_):
+                         self?.view?.handleSuccess()
+                     }
+        })
+    }
 }

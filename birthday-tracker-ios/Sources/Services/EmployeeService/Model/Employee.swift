@@ -2,11 +2,11 @@ import Foundation
 
 struct Employee: Codable {
     let id: Int
-    let fullName, phone: String
+    var fullName, phone: String
     let projects: [Project]
-    let birthday, startWork: String
+    var birthday, startWork: String
     let wishlist: [Present]
-    let city, username: String
+    var city, username: String
 
     enum CodingKeys: String, CodingKey {
         case id

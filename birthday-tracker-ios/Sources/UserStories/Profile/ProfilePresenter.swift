@@ -13,6 +13,7 @@ protocol ProfilePresenter: AnyObject {
 class ProfilePresenterImpl: ProfilePresenter {
     private let service: EmployeeService
     weak var view: ProfileViewController?
+    weak var updateView: ProfileUpdateViewController?
 
     init(service: EmployeeService) {
         self.service = service
@@ -23,8 +24,20 @@ class ProfilePresenterImpl: ProfilePresenter {
                      switch result {
                      case let .failure(error):
                          self?.view?.showError(error)
+                         print(result)
                      case .success(let employee):
                          self?.view?.handleSuccess(profile: employee)
+                     }
+        })
+    }
+    
+    func update(myEmployee: Employee){
+        service.edit(employee: myEmployee, completion:  {[weak self] result in
+                     switch result {
+                     case let .failure(error):
+                         self?.updateView?.showError(error: error)
+                     case .success():
+                         self?.updateView?.handleSuccess()
                      }
         })
     }

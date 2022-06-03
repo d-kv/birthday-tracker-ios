@@ -66,9 +66,7 @@ private class PopUpWindowView: UIView {
                               backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
                               tintColor: ColorSkin.default.strategy.fontColor(),
                               masksToBounds: true,
-                              cornerRadius: 10,
-                              borderWidth: 2,
-                              borderColor: ColorSkin.default.strategy.buttonBorderColor())
+                              cornerRadius: 10)
         
         
         descriptionText.textColor = ColorSkin.default.strategy.fontColor()
@@ -142,71 +140,118 @@ private class PopUpWindowView: UIView {
 }
 
 
-class AddPresentViewController: UIViewController{
-    var navBar: UINavigationBar!
-    var navItem: UINavigationItem!
-    var backButton: UIBarButtonItem!
+protocol AddPresent{
+    func showError(_ error: Error)
+    func handleSuccess()
+}
+
+class AddPresentViewController: UIViewController, AddPresent{
+    var backButton: UIButton!
     var presentName = UITextField(frame: .zero)
     var presentDescription = UITextField(frame: .zero)
     var presentLink = UITextField(frame: .zero)
+    var commitChangesButton = UIButton(type: .system)
+    weak var delegate: WishlistViewController?
+    let service = PresentPresenterImpl(service: PresentServiceImpl())
+    var header: UILabel!
+    
+    func showError(_ error: Error) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func handleSuccess() {
+        delegate?.draw()
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ColorSkin.default.strategy.backgroundColor()
         drawView()
         addSubviewsTurnOnConstraints(view: view, elements: [presentName,
-                                                           presentDescription,
-                                                           presentLink,
-                                                           navBar])
+                                                            presentDescription,
+                                                            presentLink,
+                                                            backButton,
+                                                            header,
+                                                            commitChangesButton])
         doConstraintMagic()
     }
     
     func drawView(){
-        navBar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: view.frame.size.width, height: 44))
-        navItem = UINavigationItem(title: "Добавить Подарок")
-        navItem.titleView?.tintColor = ColorSkin.default.strategy.fontColor()
-        backButton = UIBarButtonItem(barButtonSystemItem: .cancel,
-                                         target: self,
-                                       action: #selector(back))
-        navItem.leftBarButtonItem = backButton
-        navBar.setItems([navItem], animated: false)
+        header = UILabel()
+        header.text = "Добавить Подарок"
+        header.textAlignment = .center
+        header.textColor = ColorSkin.default.strategy.fontColor()
+        backButton = UIButton()
+        backButton.settingsUI(backgroundColor: ColorSkin.default.strategy.invisibleBackground(),
+                              title: "Отменa",
+                              titleColor: ColorSkin.default.strategy.fontColor(),
+                              cornerRadius: 0)
+        backButton.addTarget(self,
+                             action: #selector(back),
+                             for: .touchUpInside)
         
-        presentName.placeholder = "Введите название подарка"
-        drawTextField(text: presentName)
+        presentName.settingUI(placeholder: "Введите название подарка")
         
-        presentLink.placeholder = "Вставьте ссылку на подарок"
-        drawTextField(text: presentLink)
+        presentLink.settingUI(placeholder: "Вставьте ссылку на подарок")
         
-        presentDescription.placeholder = "Введите описание подарка"
-        drawTextField(text: presentDescription)
+        presentDescription.settingUI(placeholder: "Введите описание подарка")
+        
+        commitChangesButton.settingsUI(backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
+                                       title: "Сохранить",
+                                       titleColor: ColorSkin.default.strategy.fontColor(),
+                                       cornerRadius: 10)
+        commitChangesButton.addTarget(self, action: #selector(commitChanges), for: .touchUpInside)
     }
     
-    func drawTextField(text: UITextField){
-        text.layer.masksToBounds = true
-        text.layer.cornerRadius = 10
-        text.layer.borderColor = ColorSkin.default.strategy.buttonBorderColor()
-        text.layer.borderWidth = 2
-        text.borderStyle = .roundedRect
+    @objc func commitChanges(){
+        service.getProfile(present: Present(id: 0,
+                                            name: presentName.text ?? "",
+                                            link: presentLink.text ?? "",
+                                            presentDescription: presentDescription.text ?? "",
+                                            employeeID: meId))
+        delegate?.draw()
+        self.dismiss(animated: true, completion: nil)
     }
     
     func doConstraintMagic(){
         NSLayoutConstraint.activate([
-            navBar.heightAnchor.constraint(equalToConstant: 44),
-            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
-            navBar.widthAnchor.constraint(equalTo: view.widthAnchor),
-            navBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            header.heightAnchor.constraint(equalToConstant: 44),
+            header.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
+            header.widthAnchor.constraint(equalTo: view.widthAnchor),
+            header.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            presentName.topAnchor.constraint(equalTo: navBar.bottomAnchor,
-                                             constant: navBar.frame.height*2),
+            backButton.leftAnchor.constraint(equalTo: view.leftAnchor),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor,
+                                           constant: 44),
+            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.widthAnchor.constraint(equalToConstant: 100),
+            
+            
+            presentName.topAnchor.constraint(equalTo: view.topAnchor,
+                                             constant: 200),
             presentName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             presentName.widthAnchor.constraint(equalTo: view.widthAnchor,
-                                               constant: -view.frame.width/3),
+                                               constant: -40),
             
             presentDescription.topAnchor.constraint(equalTo: presentName.bottomAnchor,
-                                                    constant: presentName.frame.height*3),
+                                                    constant: 40),
             presentDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             presentDescription.widthAnchor.constraint(equalTo: view.widthAnchor,
-                                                      constant: -view.frame.width/3),
+                                                      constant: -40),
+            
+            presentLink.topAnchor.constraint(equalTo: presentDescription.bottomAnchor,
+                                             constant: 40),
+            presentLink.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            presentLink.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                               constant: -40),
+            
+            commitChangesButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            commitChangesButton.topAnchor.constraint(equalTo: presentLink.bottomAnchor,
+                                                     constant: 100),
+            commitChangesButton.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                                       constant: -150),
+            commitChangesButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     

@@ -12,15 +12,14 @@ extension UIButton{
     func settingsUI(backgroundColor: UIColor,
                     title: String,
                     titleColor: UIColor,
-                    cornerRadius: CGFloat,
-                    borderWidth: CGFloat,
-                    borderColor: CGColor){
+                    cornerRadius: CGFloat){
         self.backgroundColor = backgroundColor
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
         self.layer.cornerRadius = cornerRadius
-        self.layer.borderWidth = borderWidth
-        self.layer.borderColor = borderColor
+        self.layer.shadowRadius = 4.0
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowOffset = CGSize.zero
     }
 }
 
@@ -30,9 +29,7 @@ extension UILabel{
                     backgroundColor: UIColor,
                     tintColor: UIColor,
                     masksToBounds: Bool,
-                    cornerRadius: CGFloat,
-                    borderWidth: CGFloat,
-                    borderColor: CGColor){
+                    cornerRadius: CGFloat){
         self.backgroundColor = backgroundColor
         self.textAlignment = textAlignment
         self.text = text
@@ -41,7 +38,16 @@ extension UILabel{
         self.backgroundColor = backgroundColor
         self.layer.masksToBounds = masksToBounds
         self.layer.cornerRadius = cornerRadius
-        self.layer.borderWidth = borderWidth
-        self.layer.borderColor = borderColor
+    }
+}
+
+extension UITextField{
+    func settingUI(placeholder: String){
+        self.layer.masksToBounds = true
+        self.layer.borderColor = ColorSkin.default.strategy.buttonBorderColor()
+        self.layer.borderWidth = 2
+        self.layer.cornerRadius = 10
+        self.placeholder = placeholder
+        self.borderStyle = .roundedRect
     }
 }
