@@ -6,10 +6,19 @@
 //
 
 import UIKit
-
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+protocol breakAll{
+    func closeAuth()
+}
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, breakAll{
     var window: UIWindow?
-
+    func closeAuth(){
+        let viewController = AuthViewController()
+            // Assign the view controller as `window`'s root view controller
+        window?.rootViewController = viewController
+        // Show the window
+        window?.makeKeyAndVisible()
+    }
+    
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -18,8 +27,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = AuthViewController()
-        window?.makeKeyAndVisible()
+        if let myPass = KeyChainService.getKeychainData(key: "password") {
+            if let myLog = KeyChainService.getKeychainData(key: "login"){
+                print("work")
+                password = String(decoding: myPass, as: UTF8.self)
+                login = String(decoding: myLog, as: UTF8.self)
+                let viewController = TabBarController()
+                window?.rootViewController = viewController
+                window?.makeKeyAndVisible()
+            }
+        }
+            else {
+            let viewController = AuthViewController()
+                // Assign the view controller as `window`'s root view controller
+            window?.rootViewController = viewController
+            // Show the window
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_: UIScene) {

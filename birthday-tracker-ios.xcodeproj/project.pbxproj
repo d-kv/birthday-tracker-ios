@@ -45,6 +45,7 @@
 		A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAFB27E35695005A4B8F /* Wishlist.swift */; };
 		FA4D7B53281DE44B00E8C980 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D7B52281DE44B00E8C980 /* ProfileAssembly.swift */; };
 		FA4D7B55282128ED00E8C980 /* DrawFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D7B54282128ED00E8C980 /* DrawFeatures.swift */; };
+		FA6B77F2284A2C4300BD0AEB /* KeyChainCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B77F1284A2C4300BD0AEB /* KeyChainCommon.swift */; };
 		FA7DD853283454C00061F155 /* WishlistAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DD852283454C00061F155 /* WishlistAssembly.swift */; };
 		FA7DD855283537970061F155 /* ColorStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DD854283537970061F155 /* ColorStrategy.swift */; };
 		FA7DD857283A73E40061F155 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DD856283A73E40061F155 /* Extentions.swift */; };
@@ -91,6 +92,7 @@
 		A836EAFB27E35695005A4B8F /* Wishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
 		FA4D7B52281DE44B00E8C980 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		FA4D7B54282128ED00E8C980 /* DrawFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawFeatures.swift; sourceTree = "<group>"; };
+		FA6B77F1284A2C4300BD0AEB /* KeyChainCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainCommon.swift; sourceTree = "<group>"; };
 		FA7DD852283454C00061F155 /* WishlistAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistAssembly.swift; sourceTree = "<group>"; };
 		FA7DD854283537970061F155 /* ColorStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStrategy.swift; sourceTree = "<group>"; };
 		FA7DD856283A73E40061F155 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				574665E927E4A8F700D7B5AD /* AuthPresenter.swift */,
 				574665F527E4A99900D7B5AD /* AuthView.swift */,
+				FA6B77F1284A2C4300BD0AEB /* KeyChainCommon.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -424,6 +427,8 @@
 				Base,
 			);
 			mainGroup = 57E10B4427CCED96002B9749;
+			packageReferences = (
+			);
 			productRefGroup = 57E10B4E27CCED96002B9749 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -462,6 +467,7 @@
 				57D4046027F45851001AFA49 /* Settings.swift in Sources */,
 				FA4D7B55282128ED00E8C980 /* DrawFeatures.swift in Sources */,
 				FA4D7B53281DE44B00E8C980 /* ProfileAssembly.swift in Sources */,
+				FA6B77F2284A2C4300BD0AEB /* KeyChainCommon.swift in Sources */,
 				FA7DD853283454C00061F155 /* WishlistAssembly.swift in Sources */,
 				574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */,
 				574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */,

@@ -43,10 +43,6 @@ extension MyNotificationsViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
         let cell = tableView.dequeueReusableCell(withIdentifier: notificationIdentifier, for: indexPath)
-        cell.imageView!.image = UIImage(named: "Trollface")
-        cell.imageView!.backgroundColor = .white
-        cell.imageView!.layer.masksToBounds = true
-        cell.imageView!.layer.cornerRadius = 10
         cell.backgroundColor = ColorSkin.default.strategy.cellColor()
         cell.textLabel?.textAlignment = .right
         cell.textLabel?.textColor = ColorSkin.default.strategy.fontColor()

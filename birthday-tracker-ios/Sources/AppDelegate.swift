@@ -10,18 +10,31 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
+    let assembly = MainAssemblyImpl()
     func application(_: UIApplication,
                      didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool
     {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         // Create a view controller
-        let viewController = AuthViewController()
-        // Assign the view controller as `window`'s root view controller
-        window?.rootViewController = viewController
-        // Show the window
-        window?.makeKeyAndVisible()
+        guard let myPass = KeyChainService.getKeychainData(key: "password") else {
+            let viewController = AuthViewController()
+                // Assign the view controller as `window`'s root view controller
+            window?.rootViewController = viewController
+            // Show the window
+            window?.makeKeyAndVisible()
+            return true
+        }
+        if let myLog = KeyChainService.getKeychainData(key: "login"){
+            print("work")
+            password = String(decoding: myPass, as: UTF8.self)
+            login = String(decoding: myLog, as: UTF8.self)
+            window?.rootViewController = assembly.createMainViewController()
+            window?.makeKeyAndVisible()
+            return true
+        }
+        
+        
         return true
     }
 

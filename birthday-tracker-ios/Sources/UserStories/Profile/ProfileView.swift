@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController, ColorShifter {
     var myProfile: Employee!
     var background: CAGradientLayer!
     var header: UILabel!
+    var logoutButton: UIButton!
     
     
     
@@ -82,11 +83,19 @@ class ProfileViewController: UIViewController, ColorShifter {
         infoTable.delegate = self
         infoTable.reloadData()
         
-        
-        updateButton.settingsUI(backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
-                                title: "Редактировать",
+        logoutButton = UIButton(type: .system)
+        logoutButton.settingsUI(backgroundColor: ColorSkin.default.strategy.buttonBackgroundColor(),
+                                title: "Выйти",
                                 titleColor: ColorSkin.default.strategy.fontColor(),
                                 cornerRadius: 10)
+        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        
+        
+        updateButton.settingsUI(backgroundColor: ColorSkin.default.strategy.invisibleBackground(),
+                                title: "",
+                                titleColor: ColorSkin.default.strategy.fontColor(),
+                                cornerRadius: 10)
+        updateButton.setImage(UIImage(named: "Edit.svg"), for: .normal)
         updateButton.addTarget(self, action: #selector(handleUpdateTouchUpInside), for: .touchUpInside)
         
         
@@ -97,7 +106,7 @@ class ProfileViewController: UIViewController, ColorShifter {
                                      elements: [fullNameLabel, picture,
                                                 infoTable, wishlistButton,
                                                 updateButton, swithTheme,
-                                               header])
+                                               header, logoutButton])
         doConstraintsMagic()
     }
     
@@ -147,13 +156,17 @@ class ProfileViewController: UIViewController, ColorShifter {
             wishlistButton.heightAnchor.constraint(equalTo: view.heightAnchor,
                                                    constant: -view.frame.height*19/20),
             
-            updateButton.topAnchor.constraint(equalTo: wishlistButton.bottomAnchor,
-                                              constant: view.frame.height/7),
-            updateButton.widthAnchor.constraint(equalTo: view.widthAnchor,
-                                                constant: -view.frame.width/5),
-            updateButton.heightAnchor.constraint(equalTo: view.heightAnchor,
-                                                 constant: -view.frame.height*19/20),
-            updateButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            updateButton.topAnchor.constraint(equalTo: fullNameLabel.topAnchor),
+            updateButton.rightAnchor.constraint(equalTo: view.rightAnchor,
+                                                constant: -16),
+            updateButton.widthAnchor.constraint(equalTo: fullNameLabel.heightAnchor),
+            updateButton.heightAnchor.constraint(equalTo: fullNameLabel.heightAnchor),
+            logoutButton.topAnchor.constraint(equalTo: wishlistButton.bottomAnchor,
+                                              constant: 100),
+            logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoutButton.widthAnchor.constraint(equalTo: view.widthAnchor,
+                                                constant: -view.frame.width*3/5),
+            logoutButton.heightAnchor.constraint(equalTo: wishlistButton.heightAnchor)
         ])
     }
 }
@@ -163,7 +176,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
         return 5
     }
     
-    
+    //найти стандартный стиль для этого
+    //create cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: simpleTableIdentifier, for: indexPath)
         let leftLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 200, height: 20))
@@ -174,11 +188,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
                             masksToBounds: false,
                             cornerRadius: 0)
         cell.backgroundColor = ColorSkin.default.strategy.invisibleBackground()
-        
-        cell.addSubview(leftLabel)
+        //cell.addSubview(leftLabel)
         cell.textLabel?.textAlignment = .right
         cell.textLabel?.textColor = ColorSkin.default.strategy.fontColor()
         cell.textLabel?.text = profileInfo[indexPath.row]
+        cell.detailTextLabel?.text = profileInfoTitle[indexPath.row]
+        cell.detailTextLabel?.textAlignment = .left
+        cell.detailTextLabel?.textColor = ColorSkin.default.strategy.fontColor()
+        
         
         return cell
     }
@@ -201,6 +218,13 @@ extension ProfileViewController{
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
     }
+    @objc func logout(){
+        if KeyChainService.delete(key: "password") == 0 && KeyChainService.delete(key: "login") == 0 {
+            let vc = AuthViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: false)
+        }
+    }
     @objc func handleWishlistTouchUpInside() {
         let vc = assembly.createWishlistViewController(id: meId)
         vc.modalPresentationStyle = .overCurrentContext
@@ -208,25 +232,25 @@ extension ProfileViewController{
     }
     @objc func switchStateDidChange(_ sender:UISwitch!)
         {
-            
-                let delegateVC = self
-                delegateVC.delegate = self
-                ColorSkin.default.switchStrategy()
-                delegateVC.changeColorView()
-                delegateNotification?.changeColorView()
-                delegateTabBar?.changeColorView()
+            ColorSkin.default.switchStrategy()
+            changeColorView()
+            delegateNotification?.changeColorView()
+            delegateTabBar?.changeColorView()
         }
     
     func changeColorView(){
         wishlistButton.backgroundColor = ColorSkin.default.strategy.buttonBackgroundColor()
         wishlistButton.layer.borderColor = ColorSkin.default.strategy.buttonBorderColor()
+        logoutButton.backgroundColor = ColorSkin.default.strategy.buttonBackgroundColor()
         view.backgroundColor = ColorSkin.default.strategy.backgroundColor()
-        updateButton.backgroundColor = ColorSkin.default.strategy.buttonBackgroundColor()
+        updateButton.backgroundColor = ColorSkin.default.strategy.invisibleBackground()
         fullNameLabel.backgroundColor = ColorSkin.default.strategy.invisibleBackground()
+        fullNameLabel.textColor = ColorSkin.default.strategy.fontColor()
         background = ColorSkin.default.strategy.gradient()
         infoTable.reloadData()
         header.textColor = ColorSkin.default.strategy.fontColor()
         updateButton.setTitleColor(ColorSkin.default.strategy.fontColor(), for: .normal)
+        logoutButton.setTitleColor(ColorSkin.default.strategy.fontColor(), for: .normal)
         wishlistButton.setTitleColor(ColorSkin.default.strategy.fontColor(), for: .normal) 
         view.layer.insertSublayer(background, at: 0)
     }

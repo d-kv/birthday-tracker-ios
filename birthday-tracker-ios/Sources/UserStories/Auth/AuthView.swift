@@ -22,6 +22,8 @@ class AuthViewController: UIViewController, AuthView {
 
     func handleSuccess() {
         let vc = assembly.createMainViewController()
+        print(KeyChainService.save(key: "password", data: Data(password.utf8)))
+        print(KeyChainService.save(key: "login", data: Data(login.utf8)))
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
     }
