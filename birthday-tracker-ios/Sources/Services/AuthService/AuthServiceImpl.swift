@@ -11,7 +11,7 @@ class AuthServiceImpl: AuthService {
     let answer = NetworkService()
     let loginString = "\(login):\(password)"
 
-    func register(authentification: Auth, completion: @escaping (Result<Profile, Error>) -> Void) {
+    func register(authentification: Auth, completion: @escaping (Result<Employee, Error>) -> Void) {
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.registerAuth.rawValue)!,
                            method: NetworkService.Method.post,
                            body: authentification,
@@ -21,20 +21,20 @@ class AuthServiceImpl: AuthService {
                                case let .success(data):
                                    do {
                                        if let data = data {
-                                           let profile = try JSONDecoder().decode(Profile.self, from: data)
+                                           let profile = try JSONDecoder().decode(Employee.self, from: data)
                                            completion(.success(profile))
-                                       } else {}
+                                       } else {
+                                           completion(.failure(NetworkServiceError(code: .emptyData)))
+                                       }
                                    } catch {
                                        completion(.failure(error))
                                    }
-                                   print(String(decoding: data!, as: UTF8.self))
                                case let .failure(error):
                                    completion(.failure(error))
                                }
                            })
     }
 
-    // it's work
     func deleteRegister(username: String, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -47,10 +47,8 @@ class AuthServiceImpl: AuthService {
                            headers: ["Authorization": "Basic \(base64LoginString)"],
                            completion: { result in
                                switch result {
-                               case let .success(data):
-                                   if data != nil {
-                                       completion(.success(()))
-                                   } else {}
+                               case .success:
+                                   completion(.success(()))
                                case let .failure(error):
                                    completion(.failure(error))
                                }

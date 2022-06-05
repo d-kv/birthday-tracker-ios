@@ -13,7 +13,7 @@ class PresentServiceImpl: PresentService {
     let loginString = "\(login):\(password)"
 
     public
-//it's work
+
     func edit(present: Present, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -25,18 +25,15 @@ class PresentServiceImpl: PresentService {
                            headers: ["Authorization": "Basic \(base64LoginString)",
                                      "Content-Type": "application/json"],
                            completion: { result in
-            switch result {
-            case let .success(data):
-                if data != nil {
-                    completion(.success(()))
-                } else {}
-            case let .failure(error):
-                completion(.failure(error))
-            }
+                               switch result {
+                               case .success:
+                                   completion(.success(()))
+                               case let .failure(error):
+                                   completion(.failure(error))
+                               }
                            })
     }
 
-    // work only with auth
     func load(id: Int, completion: @escaping (Result<Present, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -54,11 +51,12 @@ class PresentServiceImpl: PresentService {
                                        if let data = data {
                                            let present = try JSONDecoder().decode(Present.self, from: data)
                                            completion(.success(present))
-                                       } else {}
+                                       } else {
+                                           completion(.failure(NetworkServiceError(code: .emptyData)))
+                                       }
                                    } catch {
                                        completion(.failure(error))
                                    }
-                                   print(String(decoding: data!, as: UTF8.self))
 
                                case let .failure(error):
                                    completion(.failure(error))
@@ -66,7 +64,6 @@ class PresentServiceImpl: PresentService {
                            })
     }
 
-    // work only with admin auth
     func send(present: Present, completion: @escaping (Result<Present, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -74,7 +71,7 @@ class PresentServiceImpl: PresentService {
         let base64LoginString = loginData.base64EncodedString()
         answer.makeRequest(for: URL(string: Constans.baseURL.rawValue + Constans.sendPresent.rawValue)!,
                            method: NetworkService.Method.post,
-                           params: ["employee_id": String(present.employeeId)],
+                           params: ["employee_id": String(present.employeeID)],
                            body: present,
                            headers: ["Authorization": "Basic \(base64LoginString)",
                                      "Content-Type": "application/json"],
@@ -85,11 +82,12 @@ class PresentServiceImpl: PresentService {
                                        if let data = data {
                                            let present = try JSONDecoder().decode(Present.self, from: data)
                                            completion(.success(present))
-                                       } else {}
+                                       } else {
+                                           completion(.failure(NetworkServiceError(code: .emptyData)))
+                                       }
                                    } catch {
                                        completion(.failure(error))
                                    }
-                                   print(String(decoding: data!, as: UTF8.self))
 
                                case let .failure(error):
                                    completion(.failure(error))
@@ -97,7 +95,6 @@ class PresentServiceImpl: PresentService {
                            })
     }
 
-    // it's work
     func deletePresent(present: Present, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let loginData = loginString.data(using: String.Encoding.utf8) else {
             return
@@ -109,10 +106,8 @@ class PresentServiceImpl: PresentService {
                            headers: ["Authorization": "Basic \(base64LoginString)", "Content-Type": "application/json"],
                            completion: { result in
                                switch result {
-                               case let .success(data):
-                                   if data != nil {
-                                       completion(.success(()))
-                                   } else {}
+                               case .success:
+                                   completion(.success(()))
                                case let .failure(error):
                                    completion(.failure(error))
                                }

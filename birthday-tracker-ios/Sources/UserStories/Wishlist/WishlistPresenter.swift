@@ -7,4 +7,27 @@
 
 import Foundation
 
-class WishlistPresenter {}
+protocol WishlistPresenter: AnyObject {
+}
+
+class WishlistPresenterImpl: WishlistPresenter {
+    private let service: EmployeeService
+    weak var view: WishlistViewController?
+
+    init(service: EmployeeService) {
+        self.service = service
+    }
+    
+    func getProfile(myEmployee: Int){
+        service.load(id: myEmployee, completion:  {[weak self] result in
+                     switch result {
+                     case let .failure(error):
+                         self?.view?.showError(error)
+                     case .success(let employee):
+                         self?.view?.handleSuccess(employee: employee)
+                     }
+        })
+    }
+    
+    func viewWillAppear() {}
+}

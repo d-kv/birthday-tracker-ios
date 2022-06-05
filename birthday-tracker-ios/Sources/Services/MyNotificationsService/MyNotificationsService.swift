@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MyNotificationService {
-    func load(id: Int, completion: @escaping (Result<MyNotifications, Error>) -> Void)
+    func load(id: Int, completion: @escaping (Result<[MyNotifications], Error>) -> Void)
 }

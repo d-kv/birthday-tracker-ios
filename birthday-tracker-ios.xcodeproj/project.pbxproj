@@ -10,11 +10,9 @@
 		5743639C27F3302700B0D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639B27F3302700B0D9C5 /* AppDelegate.swift */; };
 		574363A027F33BF200B0D9C5 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743639F27F33BF200B0D9C5 /* Project.swift */; };
 		574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CD27E4A49500D7B5AD /* EmployeeService.swift */; };
-		574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665CF27E4A51200D7B5AD /* WishlistService.swift */; };
 		574665D227E4A55100D7B5AD /* PresentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D127E4A55100D7B5AD /* PresentService.swift */; };
 		574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D327E4A59B00D7B5AD /* MyNotificationsService.swift */; };
 		574665D627E4A5CC00D7B5AD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D527E4A5CC00D7B5AD /* AuthService.swift */; };
-		574665D827E4A6EE00D7B5AD /* WishlistServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */; };
 		574665DA27E4A73500D7B5AD /* PresentServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */; };
 		574665DC27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DB27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift */; };
 		574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */; };
@@ -31,32 +29,35 @@
 		574665F627E4A99900D7B5AD /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574665F527E4A99900D7B5AD /* AuthView.swift */; };
 		5746660F27F1B57E00D7B5AD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746660E27F1B57E00D7B5AD /* ProfileView.swift */; };
 		5746661327F1B5C700D7B5AD /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */; };
-		5746661927F1C16600D7B5AD /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661827F1C16600D7B5AD /* ProfileService.swift */; };
-		5746661B27F1C18100D7B5AD /* ProfileServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */; };
-		5746661D27F1C19600D7B5AD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5746661C27F1C19600D7B5AD /* Profile.swift */; };
+		574DC87228080EFA00F24845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574DC87128080EFA00F24845 /* SceneDelegate.swift */; };
 		57D4045C27F45505001AFA49 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045B27F45505001AFA49 /* ProjectService.swift */; };
 		57D4045E27F4551A001AFA49 /* ProjectServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */; };
 		57D4046027F45851001AFA49 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4045F27F45851001AFA49 /* Settings.swift */; };
-		57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */; };
 		57E10B5527CCED98002B9749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5427CCED98002B9749 /* Assets.xcassets */; };
 		57E10B5827CCED98002B9749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E10B5727CCED98002B9749 /* Preview Assets.xcassets */; };
+		57F2551428193F7A00F28B55 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F2551328193F7A00F28B55 /* MainAssembly.swift */; };
+		57F25517281955A600F28B55 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F25516281955A600F28B55 /* TabBarController.swift */; };
 		A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */; };
 		A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF327E33CA8005A4B8F /* NetworkService.swift */; };
 		A836EAF627E33D86005A4B8F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF527E33D86005A4B8F /* Employee.swift */; };
 		A836EAF827E35158005A4B8F /* Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF727E35158005A4B8F /* Present.swift */; };
 		A836EAFA27E35507005A4B8F /* MyNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAF927E35507005A4B8F /* MyNotifications.swift */; };
 		A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A836EAFB27E35695005A4B8F /* Wishlist.swift */; };
+		FA4D7B53281DE44B00E8C980 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D7B52281DE44B00E8C980 /* ProfileAssembly.swift */; };
+		FA4D7B55282128ED00E8C980 /* DrawFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D7B54282128ED00E8C980 /* DrawFeatures.swift */; };
+		FA6B77F2284A2C4300BD0AEB /* KeyChainCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B77F1284A2C4300BD0AEB /* KeyChainCommon.swift */; };
+		FA7DD853283454C00061F155 /* WishlistAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DD852283454C00061F155 /* WishlistAssembly.swift */; };
+		FA7DD855283537970061F155 /* ColorStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DD854283537970061F155 /* ColorStrategy.swift */; };
+		FA7DD857283A73E40061F155 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DD856283A73E40061F155 /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5743639B27F3302700B0D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5743639F27F33BF200B0D9C5 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		574665CD27E4A49500D7B5AD /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
-		574665CF27E4A51200D7B5AD /* WishlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistService.swift; sourceTree = "<group>"; };
 		574665D127E4A55100D7B5AD /* PresentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentService.swift; sourceTree = "<group>"; };
 		574665D327E4A59B00D7B5AD /* MyNotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsService.swift; sourceTree = "<group>"; };
 		574665D527E4A5CC00D7B5AD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistServiceImpl.swift; sourceTree = "<group>"; };
 		574665D927E4A73500D7B5AD /* PresentServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentServiceImpl.swift; sourceTree = "<group>"; };
 		574665DB27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotificationsServiceImpl.swift; sourceTree = "<group>"; };
 		574665DD27E4A78500D7B5AD /* AuthServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceImpl.swift; sourceTree = "<group>"; };
@@ -73,22 +74,28 @@
 		574665F527E4A99900D7B5AD /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		5746660E27F1B57E00D7B5AD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5746661227F1B5C700D7B5AD /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		5746661827F1C16600D7B5AD /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
-		5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceImpl.swift; sourceTree = "<group>"; };
-		5746661C27F1C19600D7B5AD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		574DC87128080EFA00F24845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		574DC8732808131900F24845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		57D4045B27F45505001AFA49 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		57D4045D27F4551A001AFA49 /* ProjectServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectServiceImpl.swift; sourceTree = "<group>"; };
 		57D4045F27F45851001AFA49 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		57E10B4D27CCED96002B9749 /* birthday-tracker-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "birthday-tracker-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birthday_tracker_iosApp.swift; sourceTree = "<group>"; };
 		57E10B5427CCED98002B9749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57E10B5727CCED98002B9749 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57F2551328193F7A00F28B55 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
+		57F25516281955A600F28B55 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A836EAF127E33B4D005A4B8F /* EmployeeServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeServiceImpl.swift; sourceTree = "<group>"; };
 		A836EAF327E33CA8005A4B8F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A836EAF527E33D86005A4B8F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		A836EAF727E35158005A4B8F /* Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Present.swift; sourceTree = "<group>"; };
 		A836EAF927E35507005A4B8F /* MyNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotifications.swift; sourceTree = "<group>"; };
 		A836EAFB27E35695005A4B8F /* Wishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
+		FA4D7B52281DE44B00E8C980 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		FA4D7B54282128ED00E8C980 /* DrawFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawFeatures.swift; sourceTree = "<group>"; };
+		FA6B77F1284A2C4300BD0AEB /* KeyChainCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainCommon.swift; sourceTree = "<group>"; };
+		FA7DD852283454C00061F155 /* WishlistAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistAssembly.swift; sourceTree = "<group>"; };
+		FA7DD854283537970061F155 /* ColorStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStrategy.swift; sourceTree = "<group>"; };
+		FA7DD856283A73E40061F155 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +142,7 @@
 				574665FC27F1B0F500D7B5AD /* Services */,
 				574665FB27F1B0EC00D7B5AD /* Networking */,
 				5743639B27F3302700B0D9C5 /* AppDelegate.swift */,
+				574DC87128080EFA00F24845 /* SceneDelegate.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -151,13 +159,12 @@
 		574665FC27F1B0F500D7B5AD /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5743639D27F33BC700B0D9C5 /* ProjectService */,
-				5746661627F1C13400D7B5AD /* ProfileService */,
 				5746660827F1B3D900D7B5AD /* AuthService */,
-				5746660727F1B35800D7B5AD /* MyNotificationsService */,
+				5743639D27F33BC700B0D9C5 /* ProjectService */,
 				5746660327F1B2B100D7B5AD /* PresentService */,
-				5746660227F1B29B00D7B5AD /* WishlistService */,
+				5746660727F1B35800D7B5AD /* MyNotificationsService */,
 				574665FF27F1B19800D7B5AD /* EmployeeService */,
+				5746660227F1B29B00D7B5AD /* WishlistService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -165,12 +172,17 @@
 		574665FD27F1B11700D7B5AD /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				57F255152819558100F28B55 /* TabBar */,
+				57F2551228193F4700F28B55 /* Assemblies */,
 				5746660D27F1B50400D7B5AD /* Auth */,
 				5746660627F1B32500D7B5AD /* MyNotifications */,
 				5746660527F1B31100D7B5AD /* Wishlist */,
 				5746660427F1B30700D7B5AD /* Present */,
 				5746660127F1B21500D7B5AD /* Employee */,
 				574665FE27F1B12900D7B5AD /* Profile */,
+				FA4D7B54282128ED00E8C980 /* DrawFeatures.swift */,
+				FA7DD854283537970061F155 /* ColorStrategy.swift */,
+				FA7DD856283A73E40061F155 /* Extentions.swift */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -214,8 +226,6 @@
 		5746660227F1B29B00D7B5AD /* WishlistService */ = {
 			isa = PBXGroup;
 			children = (
-				574665D727E4A6EE00D7B5AD /* WishlistServiceImpl.swift */,
-				574665CF27E4A51200D7B5AD /* WishlistService.swift */,
 				5746660C27F1B40900D7B5AD /* Model */,
 			);
 			path = WishlistService;
@@ -315,26 +325,9 @@
 			children = (
 				574665E927E4A8F700D7B5AD /* AuthPresenter.swift */,
 				574665F527E4A99900D7B5AD /* AuthView.swift */,
+				FA6B77F1284A2C4300BD0AEB /* KeyChainCommon.swift */,
 			);
 			path = Auth;
-			sourceTree = "<group>";
-		};
-		5746661627F1C13400D7B5AD /* ProfileService */ = {
-			isa = PBXGroup;
-			children = (
-				5746661A27F1C18100D7B5AD /* ProfileServiceImpl.swift */,
-				5746661827F1C16600D7B5AD /* ProfileService.swift */,
-				5746661727F1C14400D7B5AD /* Model */,
-			);
-			path = ProfileService;
-			sourceTree = "<group>";
-		};
-		5746661727F1C14400D7B5AD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5746661C27F1C19600D7B5AD /* Profile.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		57E10B4427CCED96002B9749 = {
@@ -356,9 +349,9 @@
 		57E10B4F27CCED96002B9749 /* birthday-tracker-ios */ = {
 			isa = PBXGroup;
 			children = (
+				574DC8732808131900F24845 /* Info.plist */,
 				574665F927F1B0CB00D7B5AD /* Resources */,
 				574665FA27F1B0D600D7B5AD /* Sources */,
-				57E10B5027CCED96002B9749 /* birthday_tracker_iosApp.swift */,
 				57E10B5627CCED98002B9749 /* Preview Content */,
 			);
 			path = "birthday-tracker-ios";
@@ -370,6 +363,24 @@
 				57E10B5727CCED98002B9749 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57F2551228193F4700F28B55 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				57F2551328193F7A00F28B55 /* MainAssembly.swift */,
+				FA4D7B52281DE44B00E8C980 /* ProfileAssembly.swift */,
+				FA7DD852283454C00061F155 /* WishlistAssembly.swift */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		57F255152819558100F28B55 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				57F25516281955A600F28B55 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +427,8 @@
 				Base,
 			);
 			mainGroup = 57E10B4427CCED96002B9749;
+			packageReferences = (
+			);
 			productRefGroup = 57E10B4E27CCED96002B9749 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -449,36 +462,39 @@
 				574665E227E4A82E00D7B5AD /* EmployeePresenter.swift in Sources */,
 				574665DC27E4A75700D7B5AD /* MyNotificationsServiceImpl.swift in Sources */,
 				574665E827E4A8DC00D7B5AD /* MyNotificationsPresenter.swift in Sources */,
-				574665D027E4A51200D7B5AD /* WishlistService.swift in Sources */,
 				A836EAFC27E35695005A4B8F /* Wishlist.swift in Sources */,
 				574665E027E4A7DA00D7B5AD /* Auth.swift in Sources */,
-				5746661B27F1C18100D7B5AD /* ProfileServiceImpl.swift in Sources */,
 				57D4046027F45851001AFA49 /* Settings.swift in Sources */,
+				FA4D7B55282128ED00E8C980 /* DrawFeatures.swift in Sources */,
+				FA4D7B53281DE44B00E8C980 /* ProfileAssembly.swift in Sources */,
+				FA6B77F2284A2C4300BD0AEB /* KeyChainCommon.swift in Sources */,
+				FA7DD853283454C00061F155 /* WishlistAssembly.swift in Sources */,
 				574665E627E4A86A00D7B5AD /* PresentPresenter.swift in Sources */,
 				574665D427E4A59B00D7B5AD /* MyNotificationsService.swift in Sources */,
+				FA7DD857283A73E40061F155 /* Extentions.swift in Sources */,
 				574665CE27E4A49500D7B5AD /* EmployeeService.swift in Sources */,
 				5746660F27F1B57E00D7B5AD /* ProfileView.swift in Sources */,
 				57D4045C27F45505001AFA49 /* ProjectService.swift in Sources */,
 				A836EAF827E35158005A4B8F /* Present.swift in Sources */,
 				57D4045E27F4551A001AFA49 /* ProjectServiceImpl.swift in Sources */,
+				FA7DD855283537970061F155 /* ColorStrategy.swift in Sources */,
 				574665F627E4A99900D7B5AD /* AuthView.swift in Sources */,
 				574665D627E4A5CC00D7B5AD /* AuthService.swift in Sources */,
 				574665EE27E4A92F00D7B5AD /* WishlistView.swift in Sources */,
 				A836EAFA27E35507005A4B8F /* MyNotifications.swift in Sources */,
 				574665EA27E4A8F700D7B5AD /* AuthPresenter.swift in Sources */,
+				57F2551428193F7A00F28B55 /* MainAssembly.swift in Sources */,
+				57F25517281955A600F28B55 /* TabBarController.swift in Sources */,
 				A836EAF227E33B4D005A4B8F /* EmployeeServiceImpl.swift in Sources */,
 				574665EC27E4A91900D7B5AD /* EmployeeView.swift in Sources */,
 				5746661327F1B5C700D7B5AD /* ProfilePresenter.swift in Sources */,
 				574665DA27E4A73500D7B5AD /* PresentServiceImpl.swift in Sources */,
 				574665D227E4A55100D7B5AD /* PresentService.swift in Sources */,
-				5746661D27F1C19600D7B5AD /* Profile.swift in Sources */,
 				574665DE27E4A78500D7B5AD /* AuthServiceImpl.swift in Sources */,
 				A836EAF427E33CA8005A4B8F /* NetworkService.swift in Sources */,
+				574DC87228080EFA00F24845 /* SceneDelegate.swift in Sources */,
 				A836EAF627E33D86005A4B8F /* Employee.swift in Sources */,
-				574665D827E4A6EE00D7B5AD /* WishlistServiceImpl.swift in Sources */,
 				574363A027F33BF200B0D9C5 /* Project.swift in Sources */,
-				57E10B5127CCED96002B9749 /* birthday_tracker_iosApp.swift in Sources */,
-				5746661927F1C16600D7B5AD /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,12 +627,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"birthday-tracker-ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "birthday-tracker-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,12 +657,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"birthday-tracker-ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "birthday-tracker-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
